@@ -38,138 +38,47 @@
 
 
     <main
-        class=" flex flex-col items-center lg:w-3/4 w-full min-h-screen bg-white 2xl:px-12 pt-16  mg:rounded-3xl rounded-none shadow-xl overflow-x-hidden pb-8">
-
-
-        <!-- STEPPER 
-            Set { active-stepper } class to { li } of the current step.
-        -->
-        <ol class="stepper flex items-center  w-full max-w-full">
-            <!-- STEP 1 -->
-            <li class="w-1/4 relative h-full">
-                <div class=" relative z-[2] gap-y-3 flex items-center flex-col   ">
-                    <span text class="whitespace-nowrap text-black50 text-xs text-center sm:hidden block"> Info</span>
-                    <span text class="whitespace-nowrap text-black50 text-xs text-center hidden sm:block"> Your
-                        Information</span>
-                    <span circle
-                        class="bg-primary w-4 h-4  border-[1px] border-primary border-solid rounded-full"></span>
-                </div>
-                <span class="absolute w-full h-[1px] bg-darkBlack bottom-2 left-1/2 z-[1]"></span>
-            </li>
-            <!-- STEP 2 -->
-            <li class="w-1/4 relative h-full  ">
-                <div class=" relative z-[2] gap-y-3 flex items-center flex-col  ">
-                    <span text
-                        class="whitespace-nowrap text-black50 text-xs text-center sm:hidden block">Documents</span>
-                    <span text class="whitespace-nowrap text-black50 text-xs text-center hidden sm:block">Documents
-                        upload</span>
-                    <span circle
-                        class="bg-primary w-4 h-4  border-[1px] border-primary border-solid rounded-full"></span>
-                </div>
-                <span class="absolute w-full h-[1px] bg-darkBlack bottom-2 left-1/2 z-[1]"></span>
-
-            </li>
-            <!-- STEP 3 -->
-            <li class="w-1/4 relative">
-                <div class=" relative z-[2] gap-y-3 flex items-center flex-col  ">
-                    <span text class="whitespace-nowrap text-black50 text-xs text-center sm:hidden block">Meeting</span>
-                    <span text class="whitespace-nowrap text-black50 text-xs text-center hidden sm:block">Set a
-                        meeting</span>
-                    <span circle
-                        class="bg-primary w-4 h-4  border-[1px] border-primary border-solid rounded-full"></span>
-                </div>
-                <span class="absolute w-full h-[1px] bg-darkBlack bottom-2 left-1/2 z-[1]"></span>
-
-            </li>
-            <!-- STEP 4 -->
-            <li class="w-1/4 active-stepper">
-                <div class="relative z-[2] gap-y-3 flex items-center flex-col  ">
-                    <span text class="w-[140px] text-black50 text-xs text-center "> Purchase</span>
-                    <span circle
-                        class=" bg-primary w-4 h-4  border-[1px] border-primary border-solid rounded-full"></span>
-                </div>
-            </li>
-        </ol>
-
-
-
-        <!-- DOCUMENTS -->
-        <div class=" mt-16 flex flex-col items-center w-full max-w-full sm:max-w-xl px-4  ">
-            <h3 class=" w-full text-[24px] font-bold lg:mb-10 md:mb-8 mb-6 text-center"> Make your payment </h3>
-
-
-            <hr class="my-4 border-0" />
-
-            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full max-w-xl  p-4 ">
-                <div class="flex items-center flex-wrap flex-col sm:flex-row gap-y-4">
-                    <small class="whitespace-nowrap font-extrabold sm:mr-auto">11 A.M November 14 </small>
-                    <small class="text-xs text-darkBlack50">The price of this meeting will be</small>
-                    <small> <span class="text-primary text-sm mx-2">200$ </span> for 15 minutes</small>
-                </div>
-            </div>
-
-
-
-            <hr class="my-4 border-0" />
-
-            <small class="text-xs text-darkBlack50"> if you have any discount code, enter it down below </small>
-
-            <hr class="my-4 border-0" />
-
-
-            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full max-w-xs  px-3 py-2  flex flex-nowrap">
-                <input type="text" class="border-0 bg-none text-sm grow outline-none" placeholder="Enter your code">
-                <button
-                    class="bg-primary text-primaryLight rounded-3xl py-2 px-3 text-[10px] hover:brightness-90 transition">
-                    Submit
-                </button>
-            </div>
-
-
-            <hr class="my-4 border-0" />
+        class=" flex flex-col items-center lg:w-3/4 w-full min-h-screen bg-white 2xl:px-12 pt-8  mg:rounded-3xl rounded-none shadow-xl overflow-x-hidden pb-8">
 
 
 
 
+        <div class=" mt-16 flex flex-col items-center w-full max-w-full sm:max-w-sm px-4  ">
 
-            <div class="flex  items-center gap-4">
-                <p class="text-lg xl:text-xl"> Total Price for 4 sessions </p>
-                <span class="text-3xl text-primary font-extrabold"> 800$ </span>
-            </div>
-
-
-            <hr class="my-6 border-0" />
-
-            <div>
-                <input type="checkbox" name="" id="" class="accent-primary">
-                <label for="" class="text-xs text-darkBlack"> Please read the agreement and tick if you agree.</label>
-            </div>
-
-            <hr class="my-4 border-0" />
-
-            <div class="flex gap-4">
-                <button
-                    class="border-primary border-[1px] border-solid rounded-full px-4 text-xs py-3 mr-2 text-primary hover:bg-primaryLight transition">Paypal</button>
-                <button
-                    class="border-primary border-[1px] border-solid rounded-full px-4 text-xs py-3 mr-2 text-primary hover:bg-primaryLight transition">Bank
-                    Account</button>
-                <button
-                    class="border-primary border-[1px] border-solid rounded-full px-4 text-xs py-3 mr-2 text-primary hover:bg-primaryLight transition">Credit
-                    Card</button>
-            </div>
-
+            <img src="../assets/icons/success.svg" class="w-full max-w-[200px]" alt="succes">
+            
+            <hr class="my-8 border-0" />
+            
+            <h3 class=" w-full text-[24px] font-bold  text-center"> Congratulations  </h3>
+            
+            <hr class="my-2 border-0" />
+            
+            <p class="text-center text-darkBlack text-xs">
+                You have successfully booked a consultation with the doctor. Now all user panel menus are active for you and you can follow your treatment process under the supervision of Dr. Mohammadi.
+            </p>
 
             <hr class="my-8 border-0" />
 
 
-            <!-- STEPS NAVIGATION -->
-            <div class="flex items-center justify-center">
-                <button
-                    class="border-primary border-[1px] border-solid rounded-full text-xs px-8 py-3 mr-2 text-primary hover:bg-primaryLight transition">Prev</button>
-                <button
+            <button
                     class="bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-xs">
-                    Next</button>
+                    Go to the Home page</button>
+
+
+            <hr class="my-8 border-0" />
+
+            
+
+
+
+
+            <div class="flex  items-center justify-center gap-4 bg-primary p-4 rounded-3xl">
+                <p class="text-center text-xs text-white">If you have problems working with the user panel, you can find the section you want from the help section in the lower left corner and follow the instructions.</p>
+                
             </div>
+
+
+
     </main>
 
 
