@@ -7,117 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../tailwind/output.css">
     <link rel="stylesheet" href="../assets/styles/main.css">
-    <style>
-        .custom-select {
-            position: relative;
-            font-family: Arial;
-        }
-
-        .custom-select select {
-            display: none;
-        }
-
-        .select-selected {
-            background-color: transparent;
-        }
-
-        .select-selected:after {
-            position: absolute;
-            content: "";
-            top: 10px;
-            right: 10px;
-            width: 0;
-            height: 0;
-            border: 6px solid transparent;
-            border-color: #010101 transparent transparent transparent;
-        }
-
-        @media (max-width: 480px) {
-            .select-selected:after {
-                top: 8px;
-                border-width: 4px;
-            }
-        }
-
-        .select-selected.select-arrow-active:after {
-            border-color: transparent transparent #010101 transparent;
-            top: 3.5px;
-        }
-
-        .select-items div,
-        .select-selected {
-            color: #010101;
-            padding-left: 2rem;
-            padding-bottom: 0.25rem;
-            font-family: montserrat;
-            border: 1px solid transparent;
-            border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-            cursor: pointer;
-        }
-
-        @media (max-width: 1280px) {
-
-            .select-items div,
-            .select-selected {
-                padding-left: 1.75rem;
-            }
-        }
-
-        @media (max-width: 1024px) {
-
-            .select-items div,
-            .select-selected {
-                padding-left: 1.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-
-            .select-items div,
-            .select-selected {
-                padding-left: 1.25rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-
-            .select-items div,
-            .select-selected {
-                padding-left: 0.75rem;
-            }
-        }
-
-        .select-items div {
-            padding-left: 1.25rem;
-            padding-bottom: 0.25rem;
-            padding-top: 0.25rem;
-        }
-
-        .select-items {
-            position: absolute;
-            background-color: white;
-            top: 100%;
-            left: 0;
-            right: 0;
-            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-            z-index: 99;
-        }
-
-        .select-hide {
-            display: none;
-        }
-
-        .select-items div:hover,
-        .same-as-selected {
-            background-color: rgba(0, 0, 0, 0.1);
-        }
-    </style>
+   
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <title>Your Information</title>
 </head>
 
 <body class="flex flex-wrap justify-end bg-[#F5F5F5] font-montserrat">
-    <!-- Menu Desktop -->
     <nav id="menu-desktop"
         class="fixed left-0 inset-y-0 lg:flex hidden items-center flex-col w-3/12 min-h-screen overflow-y-scroll justify-between   ">
         <div class="placeholder"></div>
@@ -143,11 +38,10 @@
 
 
     <main
-        class=" flex flex-col items-center lg:w-3/4 w-full min-h-screen bg-white 2xl:px-12 pt-16  mg:rounded-3xl rounded-none shadow-xl">
+        class=" flex flex-col items-center lg:w-3/4 w-full min-h-screen bg-white 2xl:px-12 pt-16  mg:rounded-3xl rounded-none shadow-x overflow-x-hidden pb-8">
 
 
         <!-- 
-            
             STEPPER 
             Set { active-stepper } class to { li } of the current step.
         -->
