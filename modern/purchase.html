@@ -57,7 +57,7 @@
                 <span class="absolute w-full h-[1px] bg-darkBlack bottom-2 left-1/2 z-[1]"></span>
             </li>
             <!-- STEP 2 -->
-            <li class="w-1/4 relative h-full active-stepper ">
+            <li class="w-1/4 relative h-full  ">
                 <div class=" relative z-[2] gap-y-3 flex items-center flex-col  ">
                     <span text
                         class="whitespace-nowrap text-black50 text-xs text-center sm:hidden block">Documents</span>
@@ -82,7 +82,7 @@
 
             </li>
             <!-- STEP 4 -->
-            <li class="w-1/4 ">
+            <li class="w-1/4 active-stepper">
                 <div class="relative z-[2] gap-y-3 flex items-center flex-col  ">
                     <span text class="w-[140px] text-black50 text-xs text-center "> Purchase</span>
                     <span circle
@@ -94,64 +94,70 @@
 
 
         <!-- DOCUMENTS -->
-        <div class=" mt-16 flex flex-col items-center max-w-full sm:max-w-md  px-4  ">
-            <h3 class=" w-full text-[24px] font-bold lg:mb-10 md:mb-8 mb-6 text-center">Send your files</h3>
+        <div class=" mt-16 flex flex-col items-center w-full max-w-full sm:max-w-xl px-4  ">
+            <h3 class=" w-full text-[24px] font-bold lg:mb-10 md:mb-8 mb-6 text-center"> Make your payment </h3>
 
-            <ol class="list-decimal pl-4">
-                <li class="text-xs leading-7">To be photographed horizontally.</li>
-                <li class="text-xs leading-7">The hand and camera should be steady without shaking.</li>
-                <li class="text-xs leading-7">It should be filmed in a quiet environment so that it has enough standard
-                    movie sound.</li>
-                <li class="text-xs leading-7">The video should be recorded in one piece and not interrupted.</li>
-                <li class="text-xs leading-7">Mention the types of diseases you have and mention things such as how long
-                    you have had this disease, the treatment you have done, the doctors' opinion, etc. </li>
-            </ol>
+
+            <hr class="my-4 border-0" />
+
+            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full max-w-xl  p-4 ">
+                <div class="flex items-center flex-wrap flex-col sm:flex-row gap-y-4">
+                    <small class="whitespace-nowrap font-extrabold sm:mr-auto">11 A.M November 14 </small>
+                    <small class="text-xs text-darkBlack50">The price of this meeting will be</small>
+                    <small> <span class="text-primary text-sm mx-2">200$ </span> for 15 minutes</small>
+                </div>
+            </div>
+
+
+
+            <hr class="my-4 border-0" />
+
+            <small class="text-xs text-darkBlack50"> if you have any discount code, enter it down below </small>
 
             <hr class="my-4 border-0" />
 
 
-            <div
-                class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl flex justify-center flex-col items-center gap-y-7 w-full py-16 ">
-                <small>Drag and drop your files here, or:</small>
-                <div class="flex gap-x-3">
-                    <button class="rounded-full grid place-items-center w-12 h-12 bg-[#3C82F5] text-white">
-                        <img src="../assets/icons/mic.svg" alt="mic">
-                    </button>
-                    <button class="rounded-full grid place-items-center w-12 h-12 bg-[#F63E61]">
-                        <img src="../assets/icons/webcam.svg" alt="webcam">
-                    </button>
-                    <button class="rounded-full grid place-items-center w-12 h-12 bg-[#22C35E]">
-                        <img src="../assets/icons/clipboard.svg" alt="clipboard">
-                    </button>
-                </div>
+            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full max-w-xs  px-3 py-2  flex flex-nowrap">
+                <input type="text" class="border-0 bg-none text-sm grow outline-none" placeholder="Enter your code">
+                <button
+                    class="bg-primary text-primaryLight rounded-3xl py-2 px-3 text-[10px] hover:brightness-90 transition">
+                    Submit
+                </button>
+            </div>
+
+
+            <hr class="my-4 border-0" />
+
+
+
+
+
+            <div class="flex  items-center gap-4">
+                <p class="text-lg xl:text-xl"> Total Price for 4 sessions </p>
+                <span class="text-3xl text-primary font-extrabold"> 800$ </span>
             </div>
 
 
             <hr class="my-6 border-0" />
 
-
-            <!-- NO DOCUMENTS -->
-                <p class="hidden text-darkBlack50 text-xs"> You haven’t upload anything yet!</p>
-
-            <!-- YES DOCUMENTS :D -->
-            <div
-                class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full max-w-sm  p-4 ">
-                <div class="flex  items-center gap-y-7">
-                    <img src="../assets/images/docky.png" class="rounded-md" alt="">
-                    <div class="flex flex-col mr-auto ml-4 gap-y-3">
-                        <p class="text-xs"> Video recorded 5.mp4 </p>
-                        <p class="text-darkBlack50 text-xs">5.7 MB of 5.7 MB ...</p>
-                    </div>
-                    
-                    <!-- Progress -->
-                    <!-- CHART Should be used here 
-                        this is just a placeholder
-                    -->
-                    <div class="border-2 border-primary border-solid rounded-full w-16 h-16 grid place-items-center">
-                        <small>100%</small>
-                    </div>
-                </div>
+            <div>
+                <input type="checkbox" name="" id="">
+                <label for="" class="text-xs text-darkBlack"> Please read the agreement and tick if you agree.</label>
             </div>
+
+            <hr class="my-4 border-0" />
+
+            <div class="flex gap-4">
+                <button
+                    class="border-primary border-[1px] border-solid rounded-full px-4 text-xs py-3 mr-2 text-primary hover:bg-primaryLight transition">Paypal</button>
+                <button
+                    class="border-primary border-[1px] border-solid rounded-full px-4 text-xs py-3 mr-2 text-primary hover:bg-primaryLight transition">Bank
+                    Account</button>
+                <button
+                    class="border-primary border-[1px] border-solid rounded-full px-4 text-xs py-3 mr-2 text-primary hover:bg-primaryLight transition">Credit
+                    Card</button>
+            </div>
+
 
             <hr class="my-8 border-0" />
 
@@ -201,9 +207,9 @@
                             again</button>
                         <div class="order-1 sm:order-2 w-full sm:w-auto flex justify-center">
                             <button
-                            class="w-16 h-16 rounded-full border-4 border-solid border-primary grid place-items-center ">
-                            <span class="w-6 h-6 bg-primary rounded-full"></span>
-                        </button>
+                                class="w-16 h-16 rounded-full border-4 border-solid border-primary grid place-items-center ">
+                                <span class="w-6 h-6 bg-primary rounded-full"></span>
+                            </button>
                         </div>
                         <button
                             class="order-3 bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-sm">
