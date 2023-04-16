@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./tailwind/output.css">
+    <link rel="stylesheet" href="./assets/styles/main.css">
+    <style>
+        .custom-select {
+            position: relative;
+            font-family: Arial;
+        }
+
+        .custom-select select {
+            display: none;
+        }
+
+        .select-selected {
+            background-color: transparent;
+        }
+
+        .select-selected:after {
+            position: absolute;
+            content: "";
+            top: 10px;
+            right: 10px;
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-color: #010101 transparent transparent transparent;
+        }
+
+        @media (max-width: 480px) {
+            .select-selected:after {
+                top: 8px;
+                border-width: 4px;
+            }
+        }
+
+        .select-selected.select-arrow-active:after {
+            border-color: transparent transparent #010101 transparent;
+            top: 3.5px;
+        }
+
+        .select-items div,
+        .select-selected {
+            color: #010101;
+            padding-left: 2rem;
+            padding-bottom: 0.25rem;
+            font-family: montserrat;
+            border: 1px solid transparent;
+            border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+            cursor: pointer;
+        }
+
+        @media (max-width: 1280px) {
+
+            .select-items div,
+            .select-selected {
+                padding-left: 1.75rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+
+            .select-items div,
+            .select-selected {
+                padding-left: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .select-items div,
+            .select-selected {
+                padding-left: 1.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .select-items div,
+            .select-selected {
+                padding-left: 0.75rem;
+            }
+        }
+
+        .select-items div {
+            padding-left: 1.25rem;
+            padding-bottom: 0.25rem;
+            padding-top: 0.25rem;
+        }
+
+        .select-items {
+            position: absolute;
+            background-color: white;
+            top: 100%;
+            left: 0;
+            right: 0;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+            z-index: 99;
+        }
+
+        .select-hide {
+            display: none;
+        }
+
+        .select-items div:hover,
+        .same-as-selected {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <title>Your Information</title>
+</head>
+
+<body class="flex flex-wrap justify-center bg-[#F5F5F5] font-montserrat">
+    <!-- Menu Desktop -->
+    <nav id="menu-desktop"
+        class="fixed left-0 inset-y-0 md:flex hidden items-center flex-col w-3/12 min-h-screen overflow-y-scroll">
+        <div class="w-full flex flex-col items-center lg:mb-14 mb-11">
+            <div
+                class="flex justify-center items-center w-[16.5rem] h-[16.5rem] border-solid border-[#062635]/5 border-[0.5px] rounded-full lg:scale-100 scale-75">
+                <div
+                    class="flex justify-center items-center w-[15rem] h-[15rem] border-solid border-[#062635]/10 border-[1px] rounded-full">
+                    <div
+                        class="flex justify-center items-center w-[13.5rem] h-[13.5rem] border-solid border-[#062635]/20 border-[1.25px] rounded-full">
+                        <div
+                            class="flex justify-center items-center w-[12rem] h-[12rem] border-solid border-[#062635]/40 border-[1.5px] rounded-full">
+                            <div
+                                class="relative flex justify-center items-center w-[10.5rem] h-[10.5rem] border-solid border-[#062635]/60 border-2 rounded-full">
+                                <img src="./assets/images/profile.png" alt=""
+                                    class="w-36 h-36 border-solid border-[#062635] border-2 rounded-full">
+                                <button class="absolute right-[13px] bottom-[13px] p-[10px] bg-[#BC63F2] rounded-full">
+                                    <img class="w-5 h-5" src="./assets/icons/camera.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3 class="text-[#181818] lg:text-2xl text-xl font-bold lg:-mt-6 -mt-12 mb-1">Jane Cooper</h3>
+            <span class="text-[#181818]/50 lg:text-sm text-xs font-normal">Join 27 September 2022</span>
+        </div>
+        <div class="w-full lg:pl-10 pl-6 lg:mb-10 mb-8">
+            <dl class="mb-6">
+                <dt class="text-[#181818]/50 uppercase mb-5">Main</dt>
+                <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                    Main
+                </dd>
+                <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                    Session
+                </dd>
+            </dl>
+            <dl class="mb-1">
+                <dt class="text-[#181818]/50 uppercase mb-5">General</dt>
+                <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                    Meetings</dd>
+                <dd
+                    class="lg:text-lg text-sm text-[#BC63F2] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 border-solid border-[#BC63F2] lg:border-r-8 border-r-4 cursor-pointer">
+                    Payments
+                </dd>
+                <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                    Agreements</dd>
+                <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                    Your
+                    Information</dd>
+                <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                    Tasks
+                </dd>
+            </dl>
+        </div>
+        <div
+            class="w-5/6 flex lg:flex-row flex-col-reverse items-center bg-[#FFFCAA]/50 py-4 px-5 rounded-2xl lg:mb-8 mb-6">
+            <p class="text-[#181818]/50 lg:text-left text-center lg:text-sm text-xs font-medium mr-3">
+                By click on this icon, we guide you, how can you use this website step by step
+            </p>
+            <img src="./assets/icons/question.svg" alt="" class="w-12 lg:mb-0 mb-2">
+        </div>
+    </nav>
+
+    <!-- Menu Mobile -->
+    <div class="md:hidden flex absolute right-0 z-[6]">
+        <button class="absolute right-5 top-5 w-max" onclick="openNav()">
+            <img src="./assets/icons/menu.svg" alt="" class="w-6">
+        </button>
+        <nav id="nav-mobile"
+            class="fixed top-0 -right-[300px] invisible flex items-center flex-col w-[240px] min-h-screen bg-gradient-to-l from-[#213C49] to-[#062635] rounded-l-3xl shadow-2xl duration-[0.5s]">
+            <button class="absolute right-6 top-6" onclick="closeNav()">
+                <img src="./assets/icons/close.svg" alt="">
+            </button>
+            <div class="w-full flex flex-col items-center mb-11">
+                <div
+                    class="flex justify-center items-center w-[16.5rem] h-[16.5rem] border-solid border-[#062635]/5 border-[0.5px] rounded-full lg:scale-100 scale-75">
+                    <div
+                        class="flex justify-center items-center w-[15rem] h-[15rem] border-solid border-[#062635]/10 border-[1px] rounded-full">
+                        <div
+                            class="flex justify-center items-center w-[13.5rem] h-[13.5rem] border-solid border-[#062635]/20 border-[1.25px] rounded-full">
+                            <div
+                                class="flex justify-center items-center w-[12rem] h-[12rem] border-solid border-[#062635]/40 border-[1.5px] rounded-full">
+                                <div
+                                    class="relative flex justify-center items-center w-[10.5rem] h-[10.5rem] border-solid border-[#062635]/60 border-2 rounded-full">
+                                    <img src="./assets/images/profile.png" alt=""
+                                        class="w-36 h-36 border-solid border-[#062635] border-2 rounded-full">
+                                    <button
+                                        class="absolute right-[13px] bottom-[13px] p-[10px] bg-[#BC63F2] rounded-full">
+                                        <img class="w-5 h-5" src="./assets/icons/camera.svg" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-[#FFFFFF] lg:text-2xl text-xl font-bold lg:-mt-6 -mt-12 mb-1">Jane Cooper</h3>
+                <span class="text-[#FFFFFF]/50 lg:text-sm text-xs font-normal">Join 27 September 2022</span>
+            </div>
+            <div class="w-full pl-7 mb-11">
+                <dl class="mb-6">
+                    <dt class="text-[#FFFFFF]/50 text-xs uppercase mb-5">Main</dt>
+                    <dd class="lg:text-lg text-sm text-[#FFFFFF] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        Main
+                    </dd>
+                    <dd class="lg:text-lg text-sm text-[#FFFFFF] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        Session
+                    </dd>
+                </dl>
+                <dl class="mb-1">
+                    <dt class="text-[#FFFFFF]/50 text-xs uppercase mb-5">General</dt>
+                    <dd class="lg:text-lg text-sm text-[#FFFFFF] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        Meetings</dd>
+                    <dd class="lg:text-lg text-sm text-[#BC63F2] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        Payments
+                    </dd>
+                    <dd class="lg:text-lg text-sm text-[#FFFFFF] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        Agreements</dd>
+                    <dd class="lg:text-lg text-sm text-[#FFFFFF] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        Your
+                        Information</dd>
+                    <dd class="lg:text-lg text-sm text-[#FFFFFF] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        Tasks
+                    </dd>
+                </dl>
+            </div>
+            <div class="w-5/6 flex lg:flex-row items-center bg-[#FFFCAA]/50 py-4 px-5 rounded-2xl lg:mb-8 mb-6">
+                <p class="text-[#181818]/70 text-xs font-medium">
+                    By click on this icon, we guide you, how can you use this website step by step
+                </p>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Main -->
+    <main
+        class="flex flex-col items-center md:w-6/12 w-full min-h-screen bg-white 2xl:px-12 px-5 md:pt-16 pt-28 mg:rounded-3xl rounded-none shadow-xl">
+        <div class="flex justify-center lg:gap-4 xs:gap-2.5 gap-1.5 xl:mb-22 md:mb-18 xs:mb-14 mb-10">
+            <button
+                class="xl:w-44 lg:w-36 xs:w-28 w-24 bg-[#BC63F2] text-white xl:text-xl lg:text-lg xs:text-sm text-xs xs:font-normal font-medium xs:py-3 py-2 xs:rounded-xl rounded-lg">Personal</button>
+            <button
+                class="xl:w-44 lg:w-36 xs:w-28 w-24 bg-white text-[#BC63F2] border-solid border-[1px] border-[#BC63F2] xl:text-xl lg:text-lg xs:text-sm text-[11.5px] xs:font-normal font-medium xs:py-3 py-2 xs:rounded-xl rounded-lg">Medical
+                status</button>
+            <button
+                class="xl:w-44 lg:w-36 xs:w-28 w-24 bg-white text-[#BC63F2] border-solid border-[1px] border-[#BC63F2] xl:text-xl lg:text-lg xs:text-sm text-xs xs:font-normal font-medium xs:py-3 py-2 xs:rounded-xl rounded-lg"">Habits
+                & Diets</button>
+        </div>
+        <div class=" flex flex-col items-center xl:w-[600px] md:w-[100%] xs:w-[80%] w-[18rem] ">
+            <h3 class="w-full lg:text-2xl xs:text-lg text-base font-bold lg:mb-10 md:mb-8 mb-6">Personal
+                information</h3>
+                <div class="flex lg:gap-8 md:gap-5 xs:gap-6 gap-3 w-full mb-8">
+                    <div class="relative flex flex-col w-[50%] h-fit border-solid border-b-[1px] border-[#BC63F2]">
+                        <span class="mr-2 mb-0.5 lg:text-sm xs:text-[13px] text-xs">First Name</span>
+                        <input type="text"
+                            class="w-full xl:pl-8 lg:pl-7 md:pl-6 xs:pl-5 pl-3 pb-1 bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none"
+                            autocomplete="off">
+                    </div>
+                    <div class="relative relative flex flex-col w-[50%] h-fit border-solid border-b-[1px] border-[#f90000]">
+                        <span class="mr-2 mb-0.5 lg:text-sm xs:text-[13px] text-xs">Last Name</span>
+                        <input type="text"
+                            class="w-full xl:pl-8 lg:pl-7 md:pl-6 xs:pl-5 pl-3 pb-1 bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none"
+                            autocomplete="off">
+                        <span class="absolute bottom-[-1.175rem] lg:text-[13px] xs:text-xs text-[11px] text-[#f90000]">last name error</span>
+                    </div>
+                </div>
+                <div class="flex lg:gap-8 md:gap-5 xs:gap-6 gap-3 w-full mb-8">
+                    <div class="relative flex flex-col w-[50%] h-fit border-solid border-b-[1px] border-[#BC63F2]">
+                        <span class="mr-2 mb-0.5 lg:text-sm xs:text-[13px] text-xs">Date of Birth</span>
+                        <input type="text"
+                            class="w-full xl:pl-8 lg:pl-7 md:pl-6 xs:pl-5 pl-3 pb-1 bg-transparent lg:text-base xs:text-sm text-xs lg:placeholder:text-sm xs:placeholder:text-xs placeholder:text-[10px] font-semibold placeholder:font-normal outline-none"
+                            placeholder="MM/DD/YYYY" autocomplete="off">
+                    </div>
+                    <div class="relative flex flex-col w-[50%] h-fit border-solid border-b-[1px] border-[#BC63F2]">
+                        <span class="mr-2 mb-0.5 lg:text-sm xs:text-[13px] text-xs">Gender</span>
+                        <div class="custom-select w-full lg:text-base xs:text-sm text-xs !font-semibold">
+                            <select autocomplete="off">
+                                <option value="select">Select</option>
+                                <option value="man">Man</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex lg:gap-8 md:gap-5 xs:gap-6 gap-3 w-full mb-8">
+                    <div class="relative flex flex-col w-[50%] h-fit border-solid border-b-[1px] border-[#BC63F2]">
+                        <span class="mr-2 mb-0.5 lg:text-sm xs:text-[13px] text-xs">Email address</span>
+                        <input type="email"
+                            class="w-full xl:pl-8 lg:pl-7 md:pl-6 xs:pl-5 pl-3 pb-1 bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none"
+                            autocomplete="off">
+                    </div>
+                    <div class="relative flex flex-col w-[50%] h-fit border-solid border-b-[1px] border-[#BC63F2]">
+                        <span class="mr-2 mb-0.5 lg:text-sm xs:text-[13px] text-xs">Marital status</span>
+                        <div class="custom-select w-full lg:text-base xs:text-sm text-xs !font-semibold">
+                            <select autocomplete="off">
+                                <option value="select">Select</option>
+                                <option value="item1">Item1</option>
+                                <option value="item2">Item2</option>
+                                <option value="item3">Item3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex lg:gap-8 md:gap-5 xs:gap-6 gap-3 w-full mb-8">
+                    <div class="relative flex flex-col w-[50%] h-fit border-solid border-b-[1px] border-[#BC63F2]">
+                        <span class="mr-2 mb-0.5 lg:text-sm xs:text-[13px] text-xs">Occupation</span>
+                        <input type="text"
+                            class="w-full xl:pl-8 lg:pl-7 md:pl-6 xs:pl-5 pl-3 pb-1 bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none"
+                            autocomplete="off">
+                    </div>
+                    <div class="relative flex flex-col w-[50%] h-fit border-solid border-b-[1px] border-[#BC63F2]">
+                        <span class="mr-2 mb-0.5 lg:text-sm xs:text-[13px] text-xs">Phone Number</span>
+                        <input type="tel"
+                            class="w-full xl:pl-8 lg:pl-7 md:pl-6 xs:pl-5 pl-3 pb-1 bg-transparent lg:text-base xs:text-sm text-xs font-semibold tracking-wider outline-none"
+                            autocomplete="off">
+                    </div>
+                </div>
+                <div class="flex lg:gap-8 md:gap-5 xs:gap-6 gap-3 w-full mb-8">
+                    <div class="flex flex-col w-full h-fit border-solid border-b-[1px] border-[#BC63F2]">
+                        <span class="mr-2 mb-0.5 lg:text-sm xs:text-[13px] text-xs">Address address</span>
+                        <input type="text"
+                            class="w-full xl:pl-8 lg:pl-7 md:pl-6 xs:pl-5 pl-3 pb-1 bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none"
+                            autocomplete="off">
+                    </div>
+                </div>
+                <div class="flex lg:gap-8 md:gap-5 xs:gap-6 gap-3 w-full mb-8">
+                    <div class="flex flex-col w-full h-fit border-solid border-b-[1px] border-[#BC63F2]">
+                        <span class="mr-2 mb-0.5 lg:text-sm xs:text-[13px] text-xs">Address address line 2</span>
+                        <input type="text"
+                            class="w-full xl:pl-8 lg:pl-7 md:pl-6 xs:pl-5 pl-3 pb-1 bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none"
+                            autocomplete="off">
+                    </div>
+                </div>
+                <div class="flex lg:gap-8 md:gap-5 xs:gap-6 gap-3 w-full md:mb-14 mb-12">
+                    <div class="flex flex-col w-[33%] h-fit border-solid border-b-[1px] border-[#BC63F2]">
+                        <span class="mr-2 mb-0.5 lg:text-sm xs:text-[13px] text-xs">City</span>
+                        <input type="text"
+                            class="w-full xl:pl-8 lg:pl-7 md:pl-6 xs:pl-5 pl-2 pb-1 bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none"
+                            autocomplete="off">
+                    </div>
+                    <div class="flex flex-col w-[33%] h-fit border-solid border-b-[1px] border-[#BC63F2]">
+                        <span class="mr-2 mb-0.5 lg:text-sm xs:text-[13px] text-xs">State</span>
+                        <input type="text"
+                            class="w-full xl:pl-8 lg:pl-7 md:pl-6 xs:pl-5 pl-2 pb-1 bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none"
+                            autocomplete="off">
+                    </div>
+                    <div class="flex flex-col w-[33%] h-fit border-solid border-b-[1px] border-[#BC63F2]">
+                        <span class="mr-2 mb-0.5 lg:text-sm xs:text-[13px] text-xs">Country</span>
+                        <input type="text"
+                            class="w-full xl:pl-8 lg:pl-7 md:pl-6 xs:pl-5 pl-2 pb-1 bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none"
+                            autocomplete="off">
+                    </div>
+                </div>
+                <h3 class="w-full lg:text-2xl xs:text-lg text-sm font-bold lg:mb-10 md:mb-8 mb-6">Emergency Contact</h3>
+                <div class="flex lg:gap-8 md:gap-5 xs:gap-6 gap-3 w-full mb-8">
+                    <div class="relative flex flex-col w-[50%] h-fit border-solid border-b-[1px] border-[#BC63F2]">
+                        <span class="mr-2 mb-0.5 lg:text-sm xs:text-[13px] text-xs">First Name</span>
+                        <input type="text"
+                            class="w-full xl:pl-8 lg:pl-7 md:pl-6 xs:pl-5 pl-3 pb-1 bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none"
+                            autocomplete="off">
+                    </div>
+                    <div class="relative flex flex-col w-[50%] h-fit border-solid border-b-[1px] border-[#BC63F2]">
+                        <span class="mr-2 mb-0.5 lg:text-sm xs:text-[13px] text-xs">Last Name</span>
+                        <input type="text"
+                            class="w-full xl:pl-8 lg:pl-7 md:pl-6 xs:pl-5 pl-3 pb-1 bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none"
+                            autocomplete="off">
+                    </div>
+                </div>
+                <div class="flex lg:gap-8 md:gap-5 xs:gap-6 gap-3 w-full md:mb-12 mb-10">
+                    <div class="relative flex flex-col w-[50%] h-fit border-solid border-b-[1px] border-[#BC63F2]">
+                        <span class="mr-2 mb-0.5 lg:text-sm xs:text-[13px] text-xs">Relationship</span>
+                        <input type="text"
+                            class="w-full xl:pl-8 lg:pl-7 md:pl-6 xs:pl-5 pl-3 pb-1 bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none"
+                            autocomplete="off">
+                    </div>
+                    <div class="relative flex flex-col w-[50%] h-fit border-solid border-b-[1px] border-[#BC63F2]">
+                        <span class="mr-2 mb-0.5 lg:text-sm xs:text-[13px] text-xs">Phone Number</span>
+                        <input type="tel"
+                            class="w-full xl:pl-8 lg:pl-7 md:pl-6 xs:pl-5 pl-3 pb-1 bg-transparent lg:text-base xs:text-sm text-xs font-semibold tracking-wider outline-none"
+                            autocomplete="off">
+                    </div>
+                </div>
+                <div class="flex justify-center w-full mb-8 mt-2">
+                    <button
+                        class="lg:w-60 xs:w-48 w-36 bg-[#BC63F2] text-white lg:text-xl xs:text-base text-[13px] xs:font-normal font-medium xs:py-3 py-2.5 xs:rounded-xl rounded-lg">Save
+                        Changes
+                    </button>
+                </div>
+    </main>
+
+    <!-- Notifications Mobile -->
+    <div class="md:hidden flex absolute right-0">
+        <button class="absolute right-16 top-[18px] w-max" onclick="openNotifications_mobile()">
+            <img src="./assets/icons/notification.svg" alt="" class="w-6">
+            <span class="absolute right-0 top-0 w-2 h-2 bg-[#FF5353] rounded-full">
+                <span>
+        </button>
+        <div id="notifications-mobile"
+            class="absolute right-[45px] top-[58px] invisible bg-[#fdfdfd] xs:w-[350px] w-[80vw] h-fit p-3.5 rounded-xl border-solid border-[1px] border-gray-200 shadow-xl opacity-0 duration-[0.2s]">
+            <div
+                class="absolute right-[20px] top-[-7px] w-5 h-5 border-solid border-[#fdfdfd] border-t-[15px] border-r-[15px] rounded-[0.25rem] -rotate-45 shadow-[3px_-3px_7px_#f2f2f2]">
+            </div>
+            <div class="flex flex-col lg:gap-2 gap-1.5">
+                <div class="px-2.5 py-2 bg-[#29CC6A] text-[11px] text-[#181818] leading-[15px] rounded-xl shadow-lg">
+                    You recieve new agreement sheets. Please check agreements session and sign it. If you have any
+                    question please check help session.
+                </div>
+                <div class="px-2.5 py-2 bg-[#29CC6A] text-[11px] text-[#181818] leading-[15px] rounded-xl shadow-lg">
+                    New daily tasks added to your profile. please check the Tasks session. If you have any question
+                    please check help session.
+                </div>
+                <div class="px-2.5 py-2 bg-[#29CC6A] text-[11px] text-[#181818] leading-[15px] rounded-xl shadow-lg">
+                    Your payment accepted. Check payment session.
+                </div>
+                <div
+                    class="lg:p-3 px-3 py-2 bg-[#29CC6A] text-[11px] text-[#181818] leading-[15px] rounded-xl shadow-lg opacity-40">
+                    You recieve new agreement sheets. Please check agreements session and sign it. If you have any
+                    question please check help session.
+                </div>
+                <div
+                    class="px-2.5 py-2 bg-[#29CC6A] text-[11px] text-[#181818] leading-[15px] rounded-xl shadow-lg opacity-40">
+                    Your payment accepted. Check payment session.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- History Desktop -->
+    <div id="history-desktop"
+        class="fixed right-0 inset-y-0 md:flex hidden flex-col items-center w-3/12 min-h-screen lg:pt-14 pt-12 overflow-y-scroll">
+        <div class="relative flex justify-between items-center w-[85%] h-fit mb-7">
+            <span class="text-[#181818]/50 lg:text-base text-sm uppercase">Your History</span>
+            <img src="./assets/icons/notification.svg" alt="" class="xl:w-10 lg:w-8 w-6 cursor-pointer"
+                onclick="openNotifications_desktop()">
+            <span
+                class="absolute right-0 top-0 xl:w-3.5 xl:h-3.5 lg:w-3 lg:h-3 w-2 h-2 bg-[#FF5353] rounded-full"></span>
+        </div>
+        <div class="flex flex-col lg:gap-4 gap-2.5 w-[85%] mb-7">
+            <div
+                class="w-full lg:px-6 lg:py-3 px-5 py-2.5 bg-white rounded-3xl border-solid border-[1px] border-gray-200 lg:shadow-lg shadow-md">
+                <h3 class="text-[#181818] xl:text-lg lg:text-base text-sm font-bold lg:mb-1.5 mb-1">
+                    Name of the Problem
+                </h3>
+                <p class="text-[#181818] xl:text-[11px] lg:text[10px] text-[9px] mb-3">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard
+                </p>
+                <div class="flex justify-between">
+                    <div class="flex items-center">
+                        <span class="lg:w-3 lg:h-3 w-2 h-2 bg-[#FC5555] lg:mr-1.5 mr-1 rounded-full"></span>
+                        <span class="text-[#FC5555] lg:text-[10px] text-[8px]">In Progress</span>
+                    </div>
+                    <span class="text-[#0099FF] lg:text-base text-xs font-bold cursor-pointer">View</span>
+                </div>
+            </div>
+            <div
+                class="w-full lg:px-6 lg:py-3 px-5 py-2.5 bg-white rounded-3xl border-solid border-[1px] border-gray-200 lg:shadow-lg shadow-md">
+                <h3 class="text-[#181818] xl:text-lg lg:text-base text-sm font-bold lg:mb-1.5 mb-1">
+                    Name of the Problem
+                </h3>
+                <p class="text-[#181818] xl:text-[11px] lg:text[10px] text-[9px] mb-3">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard
+                </p>
+                <div class="flex justify-between">
+                    <div class="flex items-center">
+                        <span class="lg:w-3 lg:h-3 w-2 h-2 bg-[#FC5555] lg:mr-1.5 mr-1 rounded-full"></span>
+                        <span class="text-[#FC5555] lg:text-[10px] text-[8px]">In Progress</span>
+                    </div>
+                    <span class="text-[#0099FF] lg:text-base text-xs font-bold cursor-pointer">View</span>
+                </div>
+            </div>
+            <div
+                class="w-full lg:px-6 lg:py-3 px-5 py-2.5 bg-white rounded-3xl border-solid border-[1px] border-gray-200 lg:shadow-lg shadow-md">
+                <h3 class="text-[#181818] xl:text-lg lg:text-base text-sm font-bold lg:mb-1.5 mb-1">
+                    Name of the Problem
+                </h3>
+                <p class="text-[#181818] xl:text-[11px] lg:text[10px] text-[9px] mb-3">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard
+                </p>
+                <div class="flex justify-between">
+                    <div class="flex items-center">
+                        <span class="lg:w-3 lg:h-3 w-2 h-2 bg-[#29CC6A] lg:mr-1.5 mr-1 rounded-full"></span>
+                        <span class="text-[#29CC6A] lg:text-[10px] text-[8px]">In Progress</span>
+                    </div>
+                    <span class="text-[#0099FF] lg:text-base text-xs font-bold cursor-pointer">View</span>
+                </div>
+            </div>
+            <div
+                class="w-full lg:px-6 lg:py-3 px-5 py-2.5 bg-white rounded-3xl border-solid border-[1px] border-gray-200 lg:shadow-lg shadow-md">
+                <h3 class="text-[#181818] xl:text-lg lg:text-base text-sm font-bold lg:mb-1.5 mb-1">
+                    Name of the Problem
+                </h3>
+                <p class="text-[#181818] xl:text-[11px] lg:text[10px] text-[9px] mb-3">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard
+                </p>
+                <div class="flex justify-between">
+                    <div class="flex items-center">
+                        <span class="lg:w-3 lg:h-3 w-2 h-2 bg-[#29CC6A] lg:mr-1.5 mr-1 rounded-full"></span>
+                        <span class="text-[#29CC6A] lg:text-[10px] text-[8px]">In Progress</span>
+                    </div>
+                    <span class="text-[#0099FF] lg:text-base text-xs font-bold cursor-pointer">View</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="notifications-desktop"
+        class="fixed xl:right-[90px] lg:right-[84px] right-[69px] lg:top-[30px] top-[20px] invisible md:block hidden bg-[#fdfdfd] w-96 h-fit lg:p-5 p-4 lg:rounded-2xl rounded-xl border-solid border-[1px] border-gray-200 shadow-xl opacity-0 duration-[0.2s]">
+        <div
+            class="absolute right-[-10px] top-[30px] w-8 h-8 border-solid border-[#fdfdfd] border-t-[15px] border-r-[15px] rounded-md rotate-45">
+        </div>
+        <div class="flex flex-col lg:gap-2 gap-1.5">
+            <div
+                class="lg:p-3 px-3 py-2 bg-[#29CC6A] lg:text-sm text-xs text-[#181818] lg:leading-5 leading-4 rounded-xl shadow-lg">
+                You recieve new agreement sheets. Please check agreements session and sign it. If you have any
+                question please check help session.
+            </div>
+            <div
+                class="lg:p-3 px-3 py-2 bg-[#29CC6A] lg:text-sm text-xs text-[#181818] lg:leading-5 leading-4 rounded-xl shadow-lg">
+                New daily tasks added to your profile. please check the Tasks session. If you have any question
+                please check help session.
+            </div>
+            <div
+                class="lg:p-3 px-3 py-2 bg-[#29CC6A] lg:text-sm text-xs text-[#181818] lg:leading-5 leading-4 rounded-xl shadow-lg">
+                Your payment accepted. Check payment session.
+            </div>
+            <div
+                class="lg:p-3 px-3 py-2 bg-[#29CC6A] lg:text-sm text-xs text-[#181818] leading-5 rounded-xl shadow-lg opacity-40">
+                You recieve new agreement sheets. Please check agreements session and sign it. If you have any
+                question please check help session.
+            </div>
+            <div
+                class="lg:p-3 px-3 py-2 bg-[#29CC6A] lg:text-sm text-xs text-[#181818] lg:leading-5 leading-4 rounded-xl shadow-lg opacity-40">
+                Your payment accepted. Check payment session.
+            </div>
+        </div>
+    </div>
+
+    <!-- History Mobile -->
+    <div class="md:hidden flex absolute left-0 z-[5]">
+        <button class="absolute left-5 top-[18px] w-max" onclick="openHistory()">
+            <img src="./assets/icons/history.svg" alt="" class="w-7">
+        </button>
+        <div id="history-mobile"
+            class="fixed top-0 -left-[300px] invisible flex items-center flex-col w-[240px] min-h-screen pt-16 bg-gradient-to-r from-[#213C49] to-[#062635] rounded-r-3xl shadow-2xl duration-[0.5s]">
+            <button class="absolute left-6 top-6" onclick="closeHistory()">
+                <img src="./assets/icons/close.svg" alt="">
+            </button>
+            <div
+                class="relative flex justify-between items-center w-[85%] h-fit mb-5 pb-1 border-solid border-b-[1px] border-white/20">
+                <span class="text-[#FFFFFF]/50 pr-3 text-base uppercase">Your History</span>
+            </div>
+            <div class="flex flex-col lg:gap-4 gap-2.5 w-[85%] mb-6">
+                <div
+                    class="w-full lg:px-6 lg:py-3 px-5 py-2.5 bg-white md:rounded-3xl rounded-2xl border-solid border-[1px] border-gray-200 lg:shadow-lg shadow-md">
+                    <h3 class="text-[#181818] xl:text-lg lg:text-base text-sm font-bold lg:mb-1.5 mb-1">
+                        Name of the Problem
+                    </h3>
+                    <p class="text-[#181818] xl:text-[11px] lg:text[10px] text-[9px] mb-3">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the
+                        industry's standard
+                    </p>
+                    <div class="flex justify-between">
+                        <div class="flex items-center">
+                            <span class="lg:w-3 lg:h-3 w-2 h-2 bg-[#FC5555] lg:mr-1.5 mr-1 rounded-full"></span>
+                            <span class="text-[#FC5555] lg:text-[10px] text-[8px]">In Progress</span>
+                        </div>
+                        <span class="text-[#0099FF] lg:text-base text-xs font-bold cursor-pointer">View</span>
+                    </div>
+                </div>
+                <div
+                    class="w-full lg:px-6 lg:py-3 px-5 py-2.5 bg-white rounded-3xl border-solid border-[1px] border-gray-200 lg:shadow-lg shadow-md">
+                    <h3 class="text-[#181818] xl:text-lg lg:text-base text-sm font-bold lg:mb-1.5 mb-1">
+                        Name of the Problem
+                    </h3>
+                    <p class="text-[#181818] xl:text-[11px] lg:text[10px] text-[9px] mb-3">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the
+                        industry's standard
+                    </p>
+                    <div class="flex justify-between">
+                        <div class="flex items-center">
+                            <span class="lg:w-3 lg:h-3 w-2 h-2 bg-[#FC5555] lg:mr-1.5 mr-1 rounded-full"></span>
+                            <span class="text-[#FC5555] lg:text-[10px] text-[8px]">In Progress</span>
+                        </div>
+                        <span class="text-[#0099FF] lg:text-base text-xs font-bold cursor-pointer">View</span>
+                    </div>
+                </div>
+                <div
+                    class="w-full lg:px-6 lg:py-3 px-5 py-2.5 bg-white rounded-3xl border-solid border-[1px] border-gray-200 lg:shadow-lg shadow-md">
+                    <h3 class="text-[#181818] xl:text-lg lg:text-base text-sm font-bold lg:mb-1.5 mb-1">
+                        Name of the Problem
+                    </h3>
+                    <p class="text-[#181818] xl:text-[11px] lg:text[10px] text-[9px] mb-3">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the
+                        industry's standard
+                    </p>
+                    <div class="flex justify-between">
+                        <div class="flex items-center">
+                            <span class="lg:w-3 lg:h-3 w-2 h-2 bg-[#29CC6A] lg:mr-1.5 mr-1 rounded-full"></span>
+                            <span class="text-[#29CC6A] lg:text-[10px] text-[8px]">In Progress</span>
+                        </div>
+                        <span class="text-[#0099FF] lg:text-base text-xs font-bold cursor-pointer">View</span>
+                    </div>
+                </div>
+                <div
+                    class="w-full lg:px-6 lg:py-3 px-5 py-2.5 bg-white rounded-3xl border-solid border-[1px] border-gray-200 lg:shadow-lg shadow-md">
+                    <h3 class="text-[#181818] xl:text-lg lg:text-base text-sm font-bold lg:mb-1.5 mb-1">
+                        Name of the Problem
+                    </h3>
+                    <p class="text-[#181818] xl:text-[11px] lg:text[10px] text-[9px] mb-3">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the
+                        industry's standard
+                    </p>
+                    <div class="flex justify-between">
+                        <div class="flex items-center">
+                            <span class="lg:w-3 lg:h-3 w-2 h-2 bg-[#29CC6A] lg:mr-1.5 mr-1 rounded-full"></span>
+                            <span class="text-[#29CC6A] lg:text-[10px] text-[8px]">In Progress</span>
+                        </div>
+                        <span class="text-[#0099FF] lg:text-base text-xs font-bold cursor-pointer">View</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="./assets/js/navbar.js"></script>
+<script src="./assets/js/notifications.js"></script>
+<script src="./assets/js/history.js"></script>
+
+<script>
+    var x, i, j, l, ll, selElmnt, a, b, c;
+    x = document.getElementsByClassName("custom-select");
+    l = x.length;
+    for (i = 0; i < l; i++) {
+        selElmnt = x[i].getElementsByTagName("select")[0];
+        ll = selElmnt.length;
+        a = document.createElement("DIV");
+        a.setAttribute("class", "select-selected");
+        a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+        x[i].appendChild(a);
+        b = document.createElement("DIV");
+        b.setAttribute("class", "select-items select-hide");
+        for (j = 1; j < ll; j++) {
+            c = document.createElement("DIV");
+            c.innerHTML = selElmnt.options[j].innerHTML;
+            c.addEventListener("click", function (e) {
+                var y, i, k, s, h, sl, yl;
+                s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                sl = s.length;
+                h = this.parentNode.previousSibling;
+                for (i = 0; i < sl; i++) {
+                    if (s.options[i].innerHTML == this.innerHTML) {
+                        s.selectedIndex = i;
+                        h.innerHTML = this.innerHTML;
+                        y = this.parentNode.getElementsByClassName("same-as-selected");
+                        yl = y.length;
+                        for (k = 0; k < yl; k++) {
+                            y[k].removeAttribute("class");
+                        }
+                        this.setAttribute("class", "same-as-selected");
+                        break;
+                    }
+                }
+                h.click();
+            });
+            b.appendChild(c);
+        }
+        x[i].appendChild(b);
+        a.addEventListener("click", function (e) {
+            e.stopPropagation();
+            closeAllSelect(this);
+            this.nextSibling.classList.toggle("select-hide");
+            this.classList.toggle("select-arrow-active");
+        });
+    }
+
+    function closeAllSelect(elmnt) {
+        var x, y, i, xl, yl, arrNo = [];
+        x = document.getElementsByClassName("select-items");
+        y = document.getElementsByClassName("select-selected");
+        xl = x.length;
+        yl = y.length;
+        for (i = 0; i < yl; i++) {
+            if (elmnt == y[i]) {
+                arrNo.push(i)
+            } else {
+                y[i].classList.remove("select-arrow-active");
+            }
+        }
+        for (i = 0; i < xl; i++) {
+            if (arrNo.indexOf(i)) {
+                x[i].classList.add("select-hide");
+            }
+        }
+    }
+
+    document.addEventListener("click", closeAllSelect); 
+</script>

@@ -1,0 +1,29 @@
+#menu-desktop::-webkit-scrollbar {
+    width: 5px;
+    scroll-margin-right: 10px;
+}
+
+#menu-desktop::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#menu-desktop::-webkit-scrollbar-thumb {
+    background: #a3a3a3;
+    border-radius: 100px;
+    scroll-margin-right: 10px;
+}
+
+#history-desktop::-webkit-scrollbar {
+    width: 5px;
+    scroll-margin-right: 10px;
+}
+
+#history-desktop::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#history-desktop::-webkit-scrollbar-thumb {
+    background: #a3a3a3;
+    border-radius: 100px;
+    scroll-margin-right: 10px;
+}

@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face{
+        font-family: 'Montserrat';
+        src: url(../assets/fonts/Montserrat/Montserrat-Medium.ttf);
+    }
+}
+@layer components{
+    .stepper .active-stepper ~ li [circle]{
+        @apply bg-white;
+    }
+    .stepper .active-stepper [text]{
+        @apply text-black text-[14px];
+    }
+
+
+}
