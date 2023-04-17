@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../tailwind/output.css">
     <link rel="stylesheet" href="../assets/styles/main.css">
 
-    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <title>Your Information</title>
 </head>
 
@@ -42,7 +42,7 @@
         </div>
         <div class="w-full lg:pl-10 pl-6 lg:mb-10 mb-8">
             <dl class="mb-6">
-                <dt class="text-[#181818]/50 uppercase mb-5">Main</dt>
+                <dt class="text-[#181818]/50 uppercase mb-5">Menu</dt>
                 <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
                     Main
                 </dd>
@@ -73,19 +73,19 @@
             <p class="text-[#181818]/50 lg:text-left text-center lg:text-sm text-xs font-medium mr-3">
                 By click on this icon, we guide you, how can you use this website step by step
             </p>
-            <img src="./assets/icons/question.svg" alt="" class="w-12 lg:mb-0 mb-2">
+            <img src="../assets/icons/question.svg" alt="" class="w-12 lg:mb-0 mb-2">
         </div>
     </nav>
 
     <!-- Menu Mobile -->
     <div class="md:hidden flex absolute right-0 z-[6]">
         <button class="absolute right-5 top-5 w-max" onclick="openNav()">
-            <img src="./assets/icons/menu.svg" alt="" class="w-6">
+            <img src="../assets/icons/menu.svg" alt="" class="w-6">
         </button>
         <nav id="nav-mobile"
             class="fixed top-0 -right-[300px] invisible flex items-center flex-col w-[240px] min-h-screen bg-gradient-to-l from-[#213C49] to-[#062635] rounded-l-3xl shadow-2xl duration-[0.5s]">
             <button class="absolute right-6 top-6" onclick="closeNav()">
-                <img src="./assets/icons/close.svg" alt="">
+                <img src="../assets/icons/close.svg" alt="">
             </button>
             <div class="w-full flex flex-col items-center mb-11">
                 <div
@@ -98,11 +98,11 @@
                                 class="flex justify-center items-center w-[12rem] h-[12rem] border-solid border-[#062635]/40 border-[1.5px] rounded-full">
                                 <div
                                     class="relative flex justify-center items-center w-[10.5rem] h-[10.5rem] border-solid border-[#062635]/60 border-2 rounded-full">
-                                    <img src="./assets/images/profile.png" alt=""
+                                    <img src="../assets/images/profile.png" alt=""
                                         class="w-36 h-36 border-solid border-[#062635] border-2 rounded-full">
                                     <button
                                         class="absolute right-[13px] bottom-[13px] p-[10px] bg-[#BC63F2] rounded-full">
-                                        <img class="w-5 h-5" src="./assets/icons/camera.svg" alt="">
+                                        <img class="w-5 h-5" src="../assets/icons/camera.svg" alt="">
                                     </button>
                                 </div>
                             </div>
@@ -149,17 +149,30 @@
 
     <!-- Main -->
     <main
-        class="flex flex-col items-center md:w-6/12 w-full min-h-screen bg-white 2xl:px-12 px-5 md:pt-16 pt-28 mg:rounded-3xl rounded-none shadow-xl">
+        class="flex flex-col items-center md:w-6/12 w-full min-h-screen bg-white 2xl:px-16 px-8 pt-16  mg:rounded-3xl rounded-none shadow-xl">
 
+         <!-- Meeting (Slider!!) on mobile -->
+         <div class=" md:hidden text flex justify-center mb-8">
+            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full max-w-xs  p-3  flex flex-col items-center bg-white">
+                <p class="text-sm mb-2">Your next meeting</p>
+                <h3 class="text-primary">November 14</h3>
+                <h3 class="text-primary">11 A.M </h3>
+
+                <small class="text-[#DE5753] text-[10px] text-center mt-4"> The Google Meet link will be activated for you 15 minutes before the start of the meeting. </small>
+
+                <button
+                    class="border-primary border-[1px] border-solid rounded-full text-[11px] mt-4 px-4 py-1 mr-2 text-primary hover:bg-primaryLight transition"> Meeting link </button>
+            </div>
+        </div>  
         <div class=" flex flex-col items-center w-full max-w-3xl ">
             <h3 class="w-full lg:text-2xl xs:text-lg text-base font-bold lg:mb-10 md:mb-8 mb-6">Personal
                 information</h3>
-            <div class=" lg:gap-8 md:gap-5 xs:gap-6 gap-3 w-full grid grid-cols-2">
+            <div class=" lg:gap-8 md:gap-5 xs:gap-6 gap-3 w-full grid grid-cols-1 lg:grid-cols-2">
                 <!-- First name -->
                 <div class="relative flex h-fit col-span-1">
                     <span class="mr-2  lg:text-sm leading-8 xs:text-[13px] text-xs whitespace-nowrap">First Name</span>
                     <input type="text"
-                        class="ml-3 bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey"
+                        class="ml-3 w-full bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey"
                         autocomplete="off">
 
 
@@ -171,7 +184,7 @@
                 <div class="relative flex h-fit col-span-1">
                     <span class="mr-2  lg:text-sm leading-8 xs:text-[13px] text-xs whitespace-nowrap">Last Name</span>
                     <input type="text"
-                        class="ml-3 bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey"
+                        class="ml-3 w-full bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey"
                         autocomplete="off">
 
 
@@ -182,7 +195,7 @@
                     <span class="mr-2  lg:text-sm leading-8 xs:text-[13px] text-xs whitespace-nowrap"> Date of Birth
                     </span>
                     <input type="text" placeholder=" MM/DD/YYYY"
-                        class="ml-3 bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey placeholder:text-[#e7e7e7]"
+                        class="ml-3 w-full bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey placeholder:text-[#e7e7e7]"
                         autocomplete="off">
                 </div>
 
@@ -192,7 +205,7 @@
                     <span class="mr-2  lg:text-sm leading-8 xs:text-[13px] text-xs whitespace-nowrap"> Gender
                     </span>
                     <input type="text"
-                        class="ml-3 bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey placeholder:text-[#e7e7e7]"
+                        class="ml-3 w-full bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey placeholder:text-[#e7e7e7]"
                         autocomplete="off">
                 </div>
 
@@ -201,7 +214,7 @@
                     <span class="mr-2  lg:text-sm leading-8 xs:text-[13px] text-xs whitespace-nowrap"> Email address
                     </span>
                     <input type="text"
-                        class="ml-3 bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey placeholder:text-[#e7e7e7]"
+                        class="ml-3 w-full bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey placeholder:text-[#e7e7e7]"
                         autocomplete="off">
                 </div>
 
@@ -210,7 +223,7 @@
                     <span class="mr-2  lg:text-sm leading-8 xs:text-[13px] text-xs whitespace-nowrap"> Marital status
                     </span>
                     <input type="text"
-                        class="ml-3 bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey placeholder:text-[#e7e7e7]"
+                        class="ml-3 w-full bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey placeholder:text-[#e7e7e7]"
                         autocomplete="off">
                 </div>
 
@@ -219,7 +232,7 @@
                     <span class="mr-2  lg:text-sm leading-8 xs:text-[13px] text-xs whitespace-nowrap"> Occupation
                     </span>
                     <input type="text"
-                        class="ml-3 bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey placeholder:text-[#e7e7e7]"
+                        class="ml-3 w-full bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey placeholder:text-[#e7e7e7]"
                         autocomplete="off">
                 </div>
 
@@ -228,14 +241,14 @@
                     <span class="mr-2  lg:text-sm leading-8 xs:text-[13px] text-xs whitespace-nowrap"> Phone Number
                     </span>
                     <input type="text"
-                        class="ml-3 bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey placeholder:text-[#e7e7e7]"
+                        class="ml-3 w-full bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey placeholder:text-[#e7e7e7]"
                         autocomplete="off">
                 </div>
                 <!-- Address  -->
                 <div class="relative flex h-fit col-span-1 lg:col-span-2">
                     <span class="mr-2  lg:text-sm leading-8 xs:text-[13px] text-xs whitespace-nowrap"> Address </span>
                     <input type="text"
-                        class="ml-3 bg-transparent grow  lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey placeholder:text-[#e7e7e7]"
+                        class="ml-3 w-full bg-transparent grow  lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey placeholder:text-[#e7e7e7]"
                         autocomplete="off">
                 </div>
                 <!-- Address 2  -->
@@ -243,13 +256,13 @@
                     <span class="mr-2  lg:text-sm leading-8 xs:text-[13px] text-xs whitespace-nowrap"> Address line 2
                     </span>
                     <input type="text"
-                        class="ml-3 bg-transparent grow lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey placeholder:text-[#e7e7e7]"
+                        class="ml-3 w-full bg-transparent grow lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey placeholder:text-[#e7e7e7]"
                         autocomplete="off">
                 </div>
 
             </div>
 
-            <div class="grid grid-cols-3 w-full my-8">
+            <div class="grid grid-cols-3 w-full my-8 gap-y-4">
                 <!-- City  -->
                 <div class="relative flex h-fit col-span-3 lg:col-span-1 pr-4">
                     <span class="mr-2  lg:text-sm leading-8 xs:text-[13px] text-xs whitespace-nowrap"> City
@@ -280,19 +293,19 @@
 
             
             <h3 class="w-full lg:text-2xl xs:text-lg text-sm font-bold lg:mb-10 md:mb-8 mb-6">Emergency Contact</h3>
-            <div class=" lg:gap-8 md:gap-5 xs:gap-6 gap-3 w-full grid grid-cols-2">
+            <div class=" lg:gap-8 md:gap-5 xs:gap-6 gap-3 w-full grid grid-cols-1 lg:grid-cols-2">
                 <!-- First name -->
                 <div class="relative flex h-fit col-span-1">
                     <span class="mr-2  lg:text-sm leading-8 xs:text-[13px] text-xs whitespace-nowrap">First Name</span>
                     <input type="text"
-                        class="ml-3 bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey"
+                        class="ml-3 w-full bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey"
                         autocomplete="off">
                 </div>
                 <!-- Last name -->
                 <div class="relative flex h-fit col-span-1">
                     <span class="mr-2  lg:text-sm leading-8 xs:text-[13px] text-xs whitespace-nowrap">Last Name</span>
                     <input type="text"
-                        class="ml-3 bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey"
+                        class="ml-3 w-full bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey"
                         autocomplete="off">
 
 
@@ -301,7 +314,7 @@
                 <div class="relative flex h-fit col-span-1">
                     <span class="mr-2  lg:text-sm leading-8 xs:text-[13px] text-xs whitespace-nowrap">Relationship</span>
                     <input type="text"
-                        class="ml-3 bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey"
+                        class="ml-3 w-full bg-transparent lg:text-base xs:text-sm text-xs font-semibold outline-none border-b-[1px] border-solid border-grey"
                         autocomplete="off">
                 </div>
                 <!-- Phone Number -->
@@ -371,7 +384,7 @@
     <!-- Notifications Mobile -->
     <div class="md:hidden flex absolute right-0">
         <button class="absolute right-16 top-[18px] w-max" onclick="openNotifications_mobile()">
-            <img src="./assets/icons/notification.svg" alt="" class="w-6">
+            <img src="../assets/icons/notification.svg" alt="" class="w-6">
             <span class="absolute right-0 top-0 w-2 h-2 bg-[#FF5353] rounded-full">
                 <span>
         </button>
@@ -409,82 +422,36 @@
     <div id="history-desktop"
         class="fixed right-0 inset-y-0 md:flex hidden flex-col items-center w-3/12 min-h-screen lg:pt-14 pt-12 overflow-y-scroll">
         <div class="relative flex justify-between items-center w-[85%] h-fit mb-7">
-            <span class="text-[#181818]/50 lg:text-base text-sm uppercase">Your History</span>
-            <img src="./assets/icons/notification.svg" alt="" class="xl:w-10 lg:w-8 w-6 cursor-pointer"
+            <span class="text-[#181818]/50 lg:text-base text-sm uppercase">Sessions panel</span>
+            <img src="../assets/icons/notification.svg" alt="" class="xl:w-10 lg:w-8 w-6 cursor-pointer"
                 onclick="openNotifications_desktop()">
             <span
                 class="absolute right-0 top-0 xl:w-3.5 xl:h-3.5 lg:w-3 lg:h-3 w-2 h-2 bg-[#FF5353] rounded-full"></span>
         </div>
-        <div class="flex flex-col lg:gap-4 gap-2.5 w-[85%] mb-7">
-            <div
-                class="w-full lg:px-6 lg:py-3 px-5 py-2.5 bg-white rounded-3xl border-solid border-[1px] border-gray-200 lg:shadow-lg shadow-md">
-                <h3 class="text-[#181818] xl:text-lg lg:text-base text-sm font-bold lg:mb-1.5 mb-1">
-                    Name of the Problem
-                </h3>
-                <p class="text-[#181818] xl:text-[11px] lg:text[10px] text-[9px] mb-3">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard
-                </p>
-                <div class="flex justify-between">
-                    <div class="flex items-center">
-                        <span class="lg:w-3 lg:h-3 w-2 h-2 bg-[#FC5555] lg:mr-1.5 mr-1 rounded-full"></span>
-                        <span class="text-[#FC5555] lg:text-[10px] text-[8px]">In Progress</span>
-                    </div>
-                    <span class="text-[#0099FF] lg:text-base text-xs font-bold cursor-pointer">View</span>
-                </div>
-            </div>
-            <div
-                class="w-full lg:px-6 lg:py-3 px-5 py-2.5 bg-white rounded-3xl border-solid border-[1px] border-gray-200 lg:shadow-lg shadow-md">
-                <h3 class="text-[#181818] xl:text-lg lg:text-base text-sm font-bold lg:mb-1.5 mb-1">
-                    Name of the Problem
-                </h3>
-                <p class="text-[#181818] xl:text-[11px] lg:text[10px] text-[9px] mb-3">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard
-                </p>
-                <div class="flex justify-between">
-                    <div class="flex items-center">
-                        <span class="lg:w-3 lg:h-3 w-2 h-2 bg-[#FC5555] lg:mr-1.5 mr-1 rounded-full"></span>
-                        <span class="text-[#FC5555] lg:text-[10px] text-[8px]">In Progress</span>
-                    </div>
-                    <span class="text-[#0099FF] lg:text-base text-xs font-bold cursor-pointer">View</span>
-                </div>
-            </div>
-            <div
-                class="w-full lg:px-6 lg:py-3 px-5 py-2.5 bg-white rounded-3xl border-solid border-[1px] border-gray-200 lg:shadow-lg shadow-md">
-                <h3 class="text-[#181818] xl:text-lg lg:text-base text-sm font-bold lg:mb-1.5 mb-1">
-                    Name of the Problem
-                </h3>
-                <p class="text-[#181818] xl:text-[11px] lg:text[10px] text-[9px] mb-3">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard
-                </p>
-                <div class="flex justify-between">
-                    <div class="flex items-center">
-                        <span class="lg:w-3 lg:h-3 w-2 h-2 bg-[#29CC6A] lg:mr-1.5 mr-1 rounded-full"></span>
-                        <span class="text-[#29CC6A] lg:text-[10px] text-[8px]">In Progress</span>
-                    </div>
-                    <span class="text-[#0099FF] lg:text-base text-xs font-bold cursor-pointer">View</span>
-                </div>
-            </div>
-            <div
-                class="w-full lg:px-6 lg:py-3 px-5 py-2.5 bg-white rounded-3xl border-solid border-[1px] border-gray-200 lg:shadow-lg shadow-md">
-                <h3 class="text-[#181818] xl:text-lg lg:text-base text-sm font-bold lg:mb-1.5 mb-1">
-                    Name of the Problem
-                </h3>
-                <p class="text-[#181818] xl:text-[11px] lg:text[10px] text-[9px] mb-3">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard
-                </p>
-                <div class="flex justify-between">
-                    <div class="flex items-center">
-                        <span class="lg:w-3 lg:h-3 w-2 h-2 bg-[#29CC6A] lg:mr-1.5 mr-1 rounded-full"></span>
-                        <span class="text-[#29CC6A] lg:text-[10px] text-[8px]">In Progress</span>
-                    </div>
-                    <span class="text-[#0099FF] lg:text-base text-xs font-bold cursor-pointer">View</span>
-                </div>
+
+
+        <div class="flex flex-col lg:gap-4 gap-2.5 w-[85%] mb-7 ">
+            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full max-w-xs  p-3  flex flex-col items-center bg-white">
+                <p class="text-sm mb-2">Your next meeting</p>
+                <h3 class="text-primary">November 14</h3>
+                <h3 class="text-primary">11 A.M </h3>
+
+                <small class="text-[#DE5753] text-[10px] text-center mt-4"> The Google Meet link will be activated for you 15 minutes before the start of the meeting. </small>
+
+                <button
+                    class="border-primary border-[1px] border-solid rounded-full text-[11px] mt-4 px-4 py-1 mr-2 text-primary hover:bg-primaryLight transition"> Meeting link </button>
             </div>
         </div>
+        <div class="flex flex-col lg:gap-4 gap-2.5 w-[85%] mb-7">
+            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full max-w-xs  p-3  flex flex-col items-center bg-white">
+                <p class="text-sm mb-2">Book another meeting</p>
+                <small class="text-[#DE5753] text-[10px] text-center mt-4"> It is possible to book a meeting if you do not have an active meeting. </small>
+
+                <button
+                    class="border-primary border-[1px] border-solid rounded-full text-sm mt-4 px-8 py-1 mr-2 text-primary hover:bg-primaryLight transition">+ </button>
+            </div>
+        </div>
+        
     </div>
     <div id="notifications-desktop"
         class="fixed xl:right-[90px] lg:right-[84px] right-[69px] lg:top-[30px] top-[20px] invisible md:block hidden bg-[#fdfdfd] w-96 h-fit lg:p-5 p-4 lg:rounded-2xl rounded-xl border-solid border-[1px] border-gray-200 shadow-xl opacity-0 duration-[0.2s]">
@@ -518,103 +485,13 @@
         </div>
     </div>
 
-    <!-- History Mobile -->
-    <div class="md:hidden flex absolute left-0 z-[5]">
-        <button class="absolute left-5 top-[18px] w-max" onclick="openHistory()">
-            <img src="./assets/icons/history.svg" alt="" class="w-7">
-        </button>
-        <div id="history-mobile"
-            class="fixed top-0 -left-[300px] invisible flex items-center flex-col w-[240px] min-h-screen pt-16 bg-gradient-to-r from-[#213C49] to-[#062635] rounded-r-3xl shadow-2xl duration-[0.5s]">
-            <button class="absolute left-6 top-6" onclick="closeHistory()">
-                <img src="./assets/icons/close.svg" alt="">
-            </button>
-            <div
-                class="relative flex justify-between items-center w-[85%] h-fit mb-5 pb-1 border-solid border-b-[1px] border-white/20">
-                <span class="text-[#FFFFFF]/50 pr-3 text-base uppercase">Your History</span>
-            </div>
-            <div class="flex flex-col lg:gap-4 gap-2.5 w-[85%] mb-6">
-                <div
-                    class="w-full lg:px-6 lg:py-3 px-5 py-2.5 bg-white md:rounded-3xl rounded-2xl border-solid border-[1px] border-gray-200 lg:shadow-lg shadow-md">
-                    <h3 class="text-[#181818] xl:text-lg lg:text-base text-sm font-bold lg:mb-1.5 mb-1">
-                        Name of the Problem
-                    </h3>
-                    <p class="text-[#181818] xl:text-[11px] lg:text[10px] text-[9px] mb-3">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the
-                        industry's standard
-                    </p>
-                    <div class="flex justify-between">
-                        <div class="flex items-center">
-                            <span class="lg:w-3 lg:h-3 w-2 h-2 bg-[#FC5555] lg:mr-1.5 mr-1 rounded-full"></span>
-                            <span class="text-[#FC5555] lg:text-[10px] text-[8px]">In Progress</span>
-                        </div>
-                        <span class="text-[#0099FF] lg:text-base text-xs font-bold cursor-pointer">View</span>
-                    </div>
-                </div>
-                <div
-                    class="w-full lg:px-6 lg:py-3 px-5 py-2.5 bg-white rounded-3xl border-solid border-[1px] border-gray-200 lg:shadow-lg shadow-md">
-                    <h3 class="text-[#181818] xl:text-lg lg:text-base text-sm font-bold lg:mb-1.5 mb-1">
-                        Name of the Problem
-                    </h3>
-                    <p class="text-[#181818] xl:text-[11px] lg:text[10px] text-[9px] mb-3">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the
-                        industry's standard
-                    </p>
-                    <div class="flex justify-between">
-                        <div class="flex items-center">
-                            <span class="lg:w-3 lg:h-3 w-2 h-2 bg-[#FC5555] lg:mr-1.5 mr-1 rounded-full"></span>
-                            <span class="text-[#FC5555] lg:text-[10px] text-[8px]">In Progress</span>
-                        </div>
-                        <span class="text-[#0099FF] lg:text-base text-xs font-bold cursor-pointer">View</span>
-                    </div>
-                </div>
-                <div
-                    class="w-full lg:px-6 lg:py-3 px-5 py-2.5 bg-white rounded-3xl border-solid border-[1px] border-gray-200 lg:shadow-lg shadow-md">
-                    <h3 class="text-[#181818] xl:text-lg lg:text-base text-sm font-bold lg:mb-1.5 mb-1">
-                        Name of the Problem
-                    </h3>
-                    <p class="text-[#181818] xl:text-[11px] lg:text[10px] text-[9px] mb-3">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the
-                        industry's standard
-                    </p>
-                    <div class="flex justify-between">
-                        <div class="flex items-center">
-                            <span class="lg:w-3 lg:h-3 w-2 h-2 bg-[#29CC6A] lg:mr-1.5 mr-1 rounded-full"></span>
-                            <span class="text-[#29CC6A] lg:text-[10px] text-[8px]">In Progress</span>
-                        </div>
-                        <span class="text-[#0099FF] lg:text-base text-xs font-bold cursor-pointer">View</span>
-                    </div>
-                </div>
-                <div
-                    class="w-full lg:px-6 lg:py-3 px-5 py-2.5 bg-white rounded-3xl border-solid border-[1px] border-gray-200 lg:shadow-lg shadow-md">
-                    <h3 class="text-[#181818] xl:text-lg lg:text-base text-sm font-bold lg:mb-1.5 mb-1">
-                        Name of the Problem
-                    </h3>
-                    <p class="text-[#181818] xl:text-[11px] lg:text[10px] text-[9px] mb-3">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the
-                        industry's standard
-                    </p>
-                    <div class="flex justify-between">
-                        <div class="flex items-center">
-                            <span class="lg:w-3 lg:h-3 w-2 h-2 bg-[#29CC6A] lg:mr-1.5 mr-1 rounded-full"></span>
-                            <span class="text-[#29CC6A] lg:text-[10px] text-[8px]">In Progress</span>
-                        </div>
-                        <span class="text-[#0099FF] lg:text-base text-xs font-bold cursor-pointer">View</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>
 
-<script src="./assets/js/navbar.js"></script>
-<script src="./assets/js/notifications.js"></script>
-<script src="./assets/js/history.js"></script>
+<script src="../assets/js/navbar.js"></script>
+<script src="../assets/js/notifications.js"></script>
+<script src="../assets/js/history.js"></script>
 
 <script>
     var x, i, j, l, ll, selElmnt, a, b, c;

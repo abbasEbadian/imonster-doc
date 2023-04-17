@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../tailwind/output.css">
+    <link rel="stylesheet" href="../assets/styles/main.css">
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <title>Payments</title>
+</head>
+
+<body class="flex flex-wrap justify-center bg-[#F5F5F5] font-montserrat">
+    <!-- Menu Desktop -->
+    <nav id="menu-desktop"
+        class="fixed left-0 inset-y-0 md:flex hidden items-center flex-col w-3/12 min-h-screen overflow-y-scroll">
+        <div class="w-full flex flex-col items-center lg:mb-14 mb-11">
+            <div
+                class="flex justify-center items-center w-[16.5rem] h-[16.5rem] border-solid border-[#062635]/5 border-[0.5px] rounded-full lg:scale-100 scale-75">
+                <div
+                    class="flex justify-center items-center w-[15rem] h-[15rem] border-solid border-[#062635]/10 border-[1px] rounded-full">
+                    <div
+                        class="flex justify-center items-center w-[13.5rem] h-[13.5rem] border-solid border-[#062635]/20 border-[1.25px] rounded-full">
+                        <div
+                            class="flex justify-center items-center w-[12rem] h-[12rem] border-solid border-[#062635]/40 border-[1.5px] rounded-full">
+                            <div
+                                class="relative flex justify-center items-center w-[10.5rem] h-[10.5rem] border-solid border-[#062635]/60 border-2 rounded-full">
+                                <img src="../assets/images/profile.png" alt=""
+                                    class="w-36 h-36 border-solid border-[#062635] border-2 rounded-full">
+                                <button class="absolute right-[13px] bottom-[13px] p-[10px] bg-[#BC63F2] rounded-full">
+                                    <img class="w-5 h-5" src="../assets/icons/camera.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3 class="text-[#181818] lg:text-2xl text-xl font-bold lg:-mt-6 -mt-12 mb-1">Jane Cooper</h3>
+            <span class="text-[#181818]/50 lg:text-sm text-xs font-normal">Join 27 September 2022</span>
+        </div>
+        <div class="w-full lg:pl-10 pl-6 lg:mb-10 mb-8">
+            <dl class="mb-6">
+                <dt class="text-[#181818]/50 uppercase mb-5">Menu</dt>
+                <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                    Main
+                </dd>
+
+                <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                    Meetings</dd>
+
+                <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                    Your
+                    Information</dd>
+
+                <dd
+                    class="lg:text-lg text-sm text-[#BC63F2] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 border-solid border-[#BC63F2] lg:border-r-8 border-r-4 cursor-pointer">
+                    Payments
+                </dd>
+                <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                    FAQ
+                </dd>
+            </dl>
+            
+        </div>
+        <div
+            class="w-5/6 flex lg:flex-row flex-col-reverse items-center bg-[#FFFCAA]/50 py-4 px-5 rounded-2xl lg:mb-8 mb-6">
+            <p class="text-[#181818]/50 lg:text-left text-center lg:text-sm text-xs font-medium mr-3">
+                By click on this icon, we guide you, how can you use this website step by step
+            </p>
+            <img src="../assets/icons/question.svg" alt="" class="w-12 lg:mb-0 mb-2">
+        </div>
+    </nav>
+
+    <!-- Menu Mobile -->
+    <div class="md:hidden flex absolute right-0 z-[6]">
+        <button class="absolute right-5 top-5 w-max" onclick="openNav()">
+            <img src="../assets/icons/menu.svg" alt="" class="w-6">
+        </button>
+        <nav id="nav-mobile"
+            class="fixed top-0 -right-[300px] invisible flex items-center flex-col w-[240px] min-h-screen bg-gradient-to-l from-[#213C49] to-[#062635] rounded-l-3xl shadow-2xl duration-[0.5s]">
+            <button class="absolute right-6 top-6" onclick="closeNav()">
+                <img src="../assets/icons/close.svg" alt="">
+            </button>
+            <div class="w-full flex flex-col items-center mb-11">
+                <div
+                    class="flex justify-center items-center w-[16.5rem] h-[16.5rem] border-solid border-[#062635]/5 border-[0.5px] rounded-full lg:scale-100 scale-75">
+                    <div
+                        class="flex justify-center items-center w-[15rem] h-[15rem] border-solid border-[#062635]/10 border-[1px] rounded-full">
+                        <div
+                            class="flex justify-center items-center w-[13.5rem] h-[13.5rem] border-solid border-[#062635]/20 border-[1.25px] rounded-full">
+                            <div
+                                class="flex justify-center items-center w-[12rem] h-[12rem] border-solid border-[#062635]/40 border-[1.5px] rounded-full">
+                                <div
+                                    class="relative flex justify-center items-center w-[10.5rem] h-[10.5rem] border-solid border-[#062635]/60 border-2 rounded-full">
+                                    <img src="../assets/images/profile.png" alt=""
+                                        class="w-36 h-36 border-solid border-[#062635] border-2 rounded-full">
+                                    <button
+                                        class="absolute right-[13px] bottom-[13px] p-[10px] bg-[#BC63F2] rounded-full">
+                                        <img class="w-5 h-5" src="../assets/icons/camera.svg" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-[#FFFFFF] lg:text-2xl text-xl font-bold lg:-mt-6 -mt-12 mb-1">Jane Cooper</h3>
+                <span class="text-[#FFFFFF]/50 lg:text-sm text-xs font-normal">Join 27 September 2022</span>
+            </div>
+            <div class="w-full pl-7 mb-11">
+                <dl class="mb-6">
+                    <dt class="text-[#FFFFFF]/50 text-xs uppercase mb-5">Main</dt>
+                    <dd class="lg:text-lg text-sm text-[#FFFFFF] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        Main
+                    </dd>
+                    <dd class="lg:text-lg text-sm text-[#FFFFFF] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        Session
+                    </dd>
+                </dl>
+                <dl class="mb-1">
+                    <dt class="text-[#FFFFFF]/50 text-xs uppercase mb-5">General</dt>
+                    <dd class="lg:text-lg text-sm text-[#FFFFFF] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        Meetings</dd>
+                    <dd class="lg:text-lg text-sm text-[#BC63F2] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        Payments
+                    </dd>
+                    <dd class="lg:text-lg text-sm text-[#FFFFFF] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        Agreements</dd>
+                    <dd class="lg:text-lg text-sm text-[#FFFFFF] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        Your
+                        Information</dd>
+                    <dd class="lg:text-lg text-sm text-[#FFFFFF] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        Tasks
+                    </dd>
+                </dl>
+            </div>
+            <div class="w-5/6 flex lg:flex-row items-center bg-[#FFFCAA]/50 py-4 px-5 rounded-2xl lg:mb-8 mb-6">
+                <p class="text-[#181818]/70 text-xs font-medium">
+                    By click on this icon, we guide you, how can you use this website step by step
+                </p>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Main -->
+    <main
+        class="flex flex-col md:w-6/12 w-full min-h-screen bg-white 2xl:px-8 px-5 pt-16  mg:rounded-3xl rounded-none shadow-xl">
+
+         <!-- Meeting (Slider!!) on mobile -->
+         <div class=" md:hidden text flex justify-center mb-8">
+            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full max-w-xs  p-3  flex flex-col items-center bg-white">
+                <p class="text-sm mb-2">Your next meeting</p>
+                <h3 class="text-primary">November 14</h3>
+                <h3 class="text-primary">11 A.M </h3>
+
+                <small class="text-[#DE5753] text-[10px] text-center mt-4"> The Google Meet link will be activated for you 15 minutes before the start of the meeting. </small>
+
+                <button
+                    class="border-primary border-[1px] border-solid rounded-full text-[11px] mt-4 px-4 py-1 mr-2 text-primary hover:bg-primaryLight transition"> Meeting link </button>
+            </div>
+        </div>  
+
+        <div class="md:mb-12 mb-16">
+            <p class=" text-lg font-bold  mb-12 text-darkBlack50 ">Payment</p>
+
+            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full p-4 grid  grid-cols-5 gap-y-3 mb-8">
+                <div class="text-[13px] text-start text-primary col-span-5 md:col-span-2">Counseling meeting</div>
+                <div class="text-[13px] text-left md:text-center col-span-2 md:col-span-1"> November 1 </div>
+                <div class="text-[13px] text-center col-span-1"> 250$ </div>
+                <div class="text-[13px] text-center col-span-2 md:col-span-1 text-[#15803d]"> Paid </div>
+            </div>
+            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full p-4 grid  grid-cols-5 gap-y-3 mb-8">
+                <div class="text-[13px] text-start text-primary col-span-5 md:col-span-2">Counseling meeting</div>
+                <div class="text-[13px] text-left md:text-center col-span-2 md:col-span-1"> November 2 </div>
+                <div class="text-[13px] text-center col-span-1"> 250$ </div>
+                <div class="text-[13px] text-center col-span-2 md:col-span-1 text-[#15803d]"> Paid </div>
+            </div>
+            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full p-4 grid  grid-cols-5 gap-y-3 mb-8">
+                <div class="text-[13px] text-start text-primary col-span-5 md:col-span-2">Counseling meeting</div>
+                <div class="text-[13px] text-left md:text-center col-span-2 md:col-span-1"> November 3 </div>
+                <div class="text-[13px] text-center col-span-1"> 20$ </div>
+                <div class="text-[13px] text-center col-span-2 md:col-span-1 text-[#15803d]"> Paid </div>
+            </div>
+            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full p-4 grid  grid-cols-5 gap-y-3 mb-8">
+                <div class="text-[13px] text-start text-primary col-span-5 md:col-span-2">Counseling meeting</div>
+                <div class="text-[13px] text-left md:text-center col-span-2 md:col-span-1"> November 4 </div>
+                <div class="text-[13px] text-center col-span-1"> 250$ </div>
+                <div class="text-[13px] text-center col-span-2 md:col-span-1 text-[#15803d]"> Paid </div>
+            </div>
+            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full p-4 grid  grid-cols-5 gap-y-3 mb-8">
+                <div class="text-[13px] text-start text-primary col-span-5 md:col-span-2">Counseling meeting</div>
+                <div class="text-[13px] text-left md:text-center col-span-2 md:col-span-1"> November  5</div>
+                <div class="text-[13px] text-center col-span-1"> 50$ </div>
+                <div class="text-[13px] text-center col-span-2 md:col-span-1 text-[#15803d]"> Paid </div>
+            </div>
+            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full p-4 grid  grid-cols-5 gap-y-3 mb-8">
+                <div class="text-[13px] text-start text-primary col-span-5 md:col-span-2">Counseling meeting</div>
+                <div class="text-[13px] text-left md:text-center col-span-2 md:col-span-1"> November 6 </div>
+                <div class="text-[13px] text-center col-span-1"> 250$ </div>
+                <div class="text-[13px] text-center col-span-2 md:col-span-1 text-[#b91c1c]"> Failed </div>
+            </div>
+          
+
+            <div class="flex justify-center gap-x-2">
+                <button class="text-primary border-[1px] border-grey shadow-xl  rounded-xl grid place-items-center w-10 h-10 "> 1</button>
+                <button class="text-darkBlack50 border-[1px] border-grey shadow-xl  border-solid rounded-xl grid place-items-center w-10 h-10 hover:bg-primaryLight">2</button>
+                <button class="text-darkBlack50 border-[1px] border-grey shadow-xl  border-solid rounded-xl grid place-items-center w-10 h-10 hover:bg-primaryLight">3</button>
+                <button class="text-darkBlack50 border-[1px] border-grey shadow-xl  border-solid rounded-xl grid place-items-center w-10 h-10 hover:bg-primaryLight">4</button>
+            </div>
+            
+        </div>
+    </main>
+
+
+    <!-- TRACKING CODE MODAL -->
+    <div class="hidden  relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- BACKDROP -->
+        <div class="fixed inset-0 bg-[#0008] bg-opacity-75 transition-opacity"></div>
+
+        <!-- CONTENT -->
+        <div class="fixed inset-0 z-10 overflow-y-auto ">
+            <div class="flex min-h-full items-start justify-center p-4 text-center sm:items-center sm:p-0  ">
+                <div
+                    class="transform overflow-hidden rounded-3xl bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-xl p-4 sm:p-8 relative ">
+                    <span class="absolute top-2 right-8 text-xl">  x</span>
+                    <div class="flex flex-col items-center">
+                        <p class="text-md"> Your tracking code is : </p>
+                        <p class="text-md border-[1px] rounded-full text-center w-full mt-10 py-2"> lsdgdfgjhkjshdflkalsjdlakshglghskdjghskjgh </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notifications Mobile -->
+    <div class="md:hidden flex absolute right-0">
+        <button class="absolute right-16 top-[18px] w-max" onclick="openNotifications_mobile()">
+            <img src="../assets/icons/notification.svg" alt="" class="w-6">
+            <span class="absolute right-0 top-0 w-2 h-2 bg-[#FF5353] rounded-full">
+                <span>
+        </button>
+        <div id="notifications-mobile"
+            class="absolute right-[45px] top-[58px] invisible bg-[#fdfdfd] xs:w-[350px] w-[80vw] h-fit p-3.5 rounded-xl border-solid border-[1px] border-gray-200 shadow-xl opacity-0 duration-[0.2s]">
+            <div
+                class="absolute right-[20px] top-[-7px] w-5 h-5 border-solid border-[#fdfdfd] border-t-[15px] border-r-[15px] rounded-[0.25rem] -rotate-45 shadow-[3px_-3px_7px_#f2f2f2]">
+            </div>
+            <div class="flex flex-col lg:gap-2 gap-1.5">
+                <div class="px-2.5 py-2 bg-[#29CC6A] text-[11px] text-[#181818] leading-[15px] rounded-xl shadow-lg">
+                    You recieve new agreement sheets. Please check agreements session and sign it. If you have any
+                    question please check help session.
+                </div>
+                <div class="px-2.5 py-2 bg-[#29CC6A] text-[11px] text-[#181818] leading-[15px] rounded-xl shadow-lg">
+                    New daily tasks added to your profile. please check the Tasks session. If you have any question
+                    please check help session.
+                </div>
+                <div class="px-2.5 py-2 bg-[#29CC6A] text-[11px] text-[#181818] leading-[15px] rounded-xl shadow-lg">
+                    Your payment accepted. Check payment session.
+                </div>
+                <div
+                    class="lg:p-3 px-3 py-2 bg-[#29CC6A] text-[11px] text-[#181818] leading-[15px] rounded-xl shadow-lg opacity-40">
+                    You recieve new agreement sheets. Please check agreements session and sign it. If you have any
+                    question please check help session.
+                </div>
+                <div
+                    class="px-2.5 py-2 bg-[#29CC6A] text-[11px] text-[#181818] leading-[15px] rounded-xl shadow-lg opacity-40">
+                    Your payment accepted. Check payment session.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- History Desktop -->
+    <div id="history-desktop"
+        class="fixed right-0 inset-y-0 md:flex hidden flex-col items-center w-3/12 min-h-screen lg:pt-14 pt-12 overflow-y-scroll">
+        <div class="relative flex justify-between items-center w-[85%] h-fit mb-7">
+            <span class="text-[#181818]/50 lg:text-base text-sm uppercase">Sessions panel</span>
+            <img src="../assets/icons/notification.svg" alt="" class="xl:w-10 lg:w-8 w-6 cursor-pointer"
+                onclick="openNotifications_desktop()">
+            <span
+                class="absolute right-0 top-0 xl:w-3.5 xl:h-3.5 lg:w-3 lg:h-3 w-2 h-2 bg-[#FF5353] rounded-full"></span>
+        </div>
+
+
+        <div class="flex flex-col lg:gap-4 gap-2.5 w-[85%] mb-7 ">
+            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full max-w-xs  p-3  flex flex-col items-center bg-white">
+                <p class="text-sm mb-2">Your next meeting</p>
+                <h3 class="text-primary">November 14</h3>
+                <h3 class="text-primary">11 A.M </h3>
+
+                <small class="text-[#DE5753] text-[10px] text-center mt-4"> The Google Meet link will be activated for you 15 minutes before the start of the meeting. </small>
+
+                <button
+                    class="border-primary border-[1px] border-solid rounded-full text-[11px] mt-4 px-4 py-1 mr-2 text-primary hover:bg-primaryLight transition"> Meeting link </button>
+            </div>
+        </div>
+        <div class="flex flex-col lg:gap-4 gap-2.5 w-[85%] mb-7">
+            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full max-w-xs  p-3  flex flex-col items-center bg-white">
+                <p class="text-sm mb-2">Book another meeting</p>
+                <small class="text-[#DE5753] text-[10px] text-center mt-4"> It is possible to book a meeting if you do not have an active meeting. </small>
+
+                <button
+                    class="border-primary border-[1px] border-solid rounded-full text-sm mt-4 px-8 py-1 mr-2 text-primary hover:bg-primaryLight transition">+ </button>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+    <div id="notifications-desktop"
+        class="fixed xl:right-[90px] lg:right-[84px] right-[69px] lg:top-[30px] top-[20px] invisible md:block hidden bg-[#fdfdfd] w-96 h-fit lg:p-5 p-4 lg:rounded-2xl rounded-xl border-solid border-[1px] border-gray-200 shadow-xl opacity-0 duration-[0.2s]">
+        <div
+            class="absolute right-[-10px] top-[30px] w-8 h-8 border-solid border-[#fdfdfd] border-t-[15px] border-r-[15px] rounded-md rotate-45">
+        </div>
+        <div class="flex flex-col lg:gap-2 gap-1.5">
+            <div
+                class="lg:p-3 px-3 py-2 bg-[#29CC6A] lg:text-sm text-xs text-[#181818] lg:leading-5 leading-4 rounded-xl shadow-lg">
+                You recieve new agreement sheets. Please check agreements session and sign it. If you have any
+                question please check help session.
+            </div>
+            <div
+                class="lg:p-3 px-3 py-2 bg-[#29CC6A] lg:text-sm text-xs text-[#181818] lg:leading-5 leading-4 rounded-xl shadow-lg">
+                New daily tasks added to your profile. please check the Tasks session. If you have any question
+                please check help session.
+            </div>
+            <div
+                class="lg:p-3 px-3 py-2 bg-[#29CC6A] lg:text-sm text-xs text-[#181818] lg:leading-5 leading-4 rounded-xl shadow-lg">
+                Your payment accepted. Check payment session.
+            </div>
+            <div
+                class="lg:p-3 px-3 py-2 bg-[#29CC6A] lg:text-sm text-xs text-[#181818] leading-5 rounded-xl shadow-lg opacity-40">
+                You recieve new agreement sheets. Please check agreements session and sign it. If you have any
+                question please check help session.
+            </div>
+            <div
+                class="lg:p-3 px-3 py-2 bg-[#29CC6A] lg:text-sm text-xs text-[#181818] lg:leading-5 leading-4 rounded-xl shadow-lg opacity-40">
+                Your payment accepted. Check payment session.
+            </div>
+        </div>
+    </div>
+
+    <!-- History Mobile -->
+    <div class="md:hidden flex absolute left-0 z-[5]">
+        <button class="absolute left-5 top-[18px] w-max" onclick="openHistory()">
+            <img src="../assets/icons/history.svg" alt="" class="w-7">
+        </button>
+        <div id="history-mobile"
+            class="fixed top-0 -left-[300px] invisible flex items-center flex-col w-[240px] min-h-screen pt-16 bg-gradient-to-r from-[#213C49] to-[#062635] rounded-r-3xl shadow-2xl duration-[0.5s]">
+            <button class="absolute left-6 top-6" onclick="closeHistory()">
+                <img src="../assets/icons/close.svg" alt="">
+            </button>
+            <div
+                class="relative flex justify-between items-center w-[85%] h-fit mb-5 pb-1 border-solid border-b-[1px] border-white/20">
+                <span class="text-[#FFFFFF]/50 pr-3 text-base uppercase">Your History</span>
+            </div>
+            <div class="flex flex-col lg:gap-4 gap-2.5 w-[85%] mb-6">
+                <div
+                    class="w-full lg:px-6 lg:py-3 px-5 py-2.5 bg-white md:rounded-3xl rounded-2xl border-solid border-[1px] border-gray-200 lg:shadow-lg shadow-md">
+                    <h3 class="text-[#181818] xl:text-lg lg:text-base text-sm font-bold lg:mb-1.5 mb-1">
+                        Name of the Problem
+                    </h3>
+                    <p class="text-[#181818] xl:text-[11px] lg:text[10px] text-[9px] mb-3">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the
+                        industry's standard
+                    </p>
+                    <div class="flex justify-between">
+                        <div class="flex items-center">
+                            <span class="lg:w-3 lg:h-3 w-2 h-2 bg-[#FC5555] lg:mr-1.5 mr-1 rounded-full"></span>
+                            <span class="text-[#FC5555] lg:text-[10px] text-[8px]">In Progress</span>
+                        </div>
+                        <span class="text-[#0099FF] lg:text-base text-xs font-bold cursor-pointer">View</span>
+                    </div>
+                </div>
+                <div
+                    class="w-full lg:px-6 lg:py-3 px-5 py-2.5 bg-white rounded-3xl border-solid border-[1px] border-gray-200 lg:shadow-lg shadow-md">
+                    <h3 class="text-[#181818] xl:text-lg lg:text-base text-sm font-bold lg:mb-1.5 mb-1">
+                        Name of the Problem
+                    </h3>
+                    <p class="text-[#181818] xl:text-[11px] lg:text[10px] text-[9px] mb-3">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the
+                        industry's standard
+                    </p>
+                    <div class="flex justify-between">
+                        <div class="flex items-center">
+                            <span class="lg:w-3 lg:h-3 w-2 h-2 bg-[#FC5555] lg:mr-1.5 mr-1 rounded-full"></span>
+                            <span class="text-[#FC5555] lg:text-[10px] text-[8px]">In Progress</span>
+                        </div>
+                        <span class="text-[#0099FF] lg:text-base text-xs font-bold cursor-pointer">View</span>
+                    </div>
+                </div>
+                <div
+                    class="w-full lg:px-6 lg:py-3 px-5 py-2.5 bg-white rounded-3xl border-solid border-[1px] border-gray-200 lg:shadow-lg shadow-md">
+                    <h3 class="text-[#181818] xl:text-lg lg:text-base text-sm font-bold lg:mb-1.5 mb-1">
+                        Name of the Problem
+                    </h3>
+                    <p class="text-[#181818] xl:text-[11px] lg:text[10px] text-[9px] mb-3">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the
+                        industry's standard
+                    </p>
+                    <div class="flex justify-between">
+                        <div class="flex items-center">
+                            <span class="lg:w-3 lg:h-3 w-2 h-2 bg-[#29CC6A] lg:mr-1.5 mr-1 rounded-full"></span>
+                            <span class="text-[#29CC6A] lg:text-[10px] text-[8px]">In Progress</span>
+                        </div>
+                        <span class="text-[#0099FF] lg:text-base text-xs font-bold cursor-pointer">View</span>
+                    </div>
+                </div>
+                <div
+                    class="w-full lg:px-6 lg:py-3 px-5 py-2.5 bg-white rounded-3xl border-solid border-[1px] border-gray-200 lg:shadow-lg shadow-md">
+                    <h3 class="text-[#181818] xl:text-lg lg:text-base text-sm font-bold lg:mb-1.5 mb-1">
+                        Name of the Problem
+                    </h3>
+                    <p class="text-[#181818] xl:text-[11px] lg:text[10px] text-[9px] mb-3">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the
+                        industry's standard
+                    </p>
+                    <div class="flex justify-between">
+                        <div class="flex items-center">
+                            <span class="lg:w-3 lg:h-3 w-2 h-2 bg-[#29CC6A] lg:mr-1.5 mr-1 rounded-full"></span>
+                            <span class="text-[#29CC6A] lg:text-[10px] text-[8px]">In Progress</span>
+                        </div>
+                        <span class="text-[#0099FF] lg:text-base text-xs font-bold cursor-pointer">View</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="../assets/js/navbar.js"></script>
+<script src="../assets/js/notifications.js"></script>
+<script src="../assets/js/history.js"></script>
+
+<script>
+    $(".numberInput").on('input', function (e) {
+        $(this).val($(this).val().replace(/[^0-9]/g, ''));
+    });
+
+    $(".input-cardNumber").bind("input", function () {
+        var $this = $(this);
+        setTimeout(function () {
+            if ($this.val().length >= parseInt($this.attr("maxlength"), 10))
+                $this.next("span").next(".input-cardNumber").focus();
+        }, 0);
+    });
+</script>

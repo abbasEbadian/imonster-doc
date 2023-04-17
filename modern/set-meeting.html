@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../tailwind/output.css">
+    <link rel="stylesheet" href="../assets/styles/main.css">
+
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <title>Documents upload</title>
+</head>
+
+<body class="flex flex-wrap justify-end bg-[#F5F5F5] font-montserrat">
+    <nav id="menu-desktop"
+        class="fixed left-0 inset-y-0 lg:flex hidden items-center flex-col w-3/12 min-h-screen overflow-y-scroll justify-between   ">
+        <div class="placeholder"></div>
+        <div class="w-full pl-10 lg:mb-10 mb-8">
+            <img src="../assets/images/rafiki.svg" alt="rafiki" />
+
+            <p class="mt-4 font-extrabold pe-8">
+                Register now and book an session with <br />Dr.Mohammadi
+            </p>
+            <p class="font-thin pe-8 mt-4 text-sm">
+                To book an session, you need to fill all the available fields with your real information and also upload
+                your latest medical documents and tests.
+            </p>
+        </div>
+        <div
+            class="w-5/6 flex lg:flex-row flex-col-reverse items-center bg-[#FFFCAA]/50 py-4 px-5 rounded-2xl lg:mb-8 mb-6">
+            <p class="text-[#181818]/50 lg:text-left text-center lg:text-sm text-xs font-medium mr-3">
+                By click on this icon, we guide you, how can you use this website step by step
+            </p>
+            <img src="../assets/icons/question.svg" alt="" class="w-12 lg:mb-0 mb-2">
+        </div>
+    </nav>
+
+
+    <main
+        class=" flex flex-col items-center lg:w-3/4 w-full min-h-screen bg-white 2xl:px-12 pt-16  mg:rounded-3xl rounded-none shadow-xl overflow-x-hidden pb-8">
+
+
+        <!-- STEPPER 
+            Set { active-stepper } class to { li } of the current step.
+        -->
+        <ol class="stepper flex items-center  w-full max-w-full">
+            <!-- STEP 1 -->
+            <li class="w-1/4 relative h-full">
+                <div class=" relative z-[2] gap-y-3 flex items-center flex-col   ">
+                    <span text class="whitespace-nowrap text-black50 text-xs text-center sm:hidden block"> Info</span>
+                    <span text class="whitespace-nowrap text-black50 text-xs text-center hidden sm:block"> Your
+                        Information</span>
+                    <span circle
+                        class="bg-primary w-4 h-4  border-[1px] border-primary border-solid rounded-full"></span>
+                </div>
+                <span class="absolute w-full h-[1px] bg-darkBlack bottom-2 left-1/2 z-[1]"></span>
+            </li>
+            <!-- STEP 2 -->
+            <li class="w-1/4 relative h-full  ">
+                <div class=" relative z-[2] gap-y-3 flex items-center flex-col  ">
+                    <span text
+                        class="whitespace-nowrap text-black50 text-xs text-center sm:hidden block">Documents</span>
+                    <span text class="whitespace-nowrap text-black50 text-xs text-center hidden sm:block">Documents
+                        upload</span>
+                    <span circle
+                        class="bg-primary w-4 h-4  border-[1px] border-primary border-solid rounded-full"></span>
+                </div>
+                <span class="absolute w-full h-[1px] bg-darkBlack bottom-2 left-1/2 z-[1]"></span>
+
+            </li>
+            <!-- STEP 3 -->
+            <li class="w-1/4 active-stepper relative">
+                <div class=" relative z-[2] gap-y-3 flex items-center flex-col  ">
+                    <span text class="whitespace-nowrap text-black50 text-xs text-center sm:hidden block">Meeting</span>
+                    <span text class="whitespace-nowrap text-black50 text-xs text-center hidden sm:block">Set a
+                        meeting</span>
+                    <span circle
+                        class="bg-primary w-4 h-4  border-[1px] border-primary border-solid rounded-full"></span>
+                </div>
+                <span class="absolute w-full h-[1px] bg-darkBlack bottom-2 left-1/2 z-[1]"></span>
+
+            </li>
+            <!-- STEP 4 -->
+            <li class="w-1/4 ">
+                <div class="relative z-[2] gap-y-3 flex items-center flex-col  ">
+                    <span text class="w-[140px] text-black50 text-xs text-center "> Purchase</span>
+                    <span circle
+                        class=" bg-primary w-4 h-4  border-[1px] border-primary border-solid rounded-full"></span>
+                </div>
+            </li>
+        </ol>
+
+
+
+        <!-- DOCUMENTS -->
+        <div class=" mt-16 flex flex-col items-center w-full max-w-full sm:max-w-xl px-4  ">
+            <h3 class=" w-full text-[24px] font-bold lg:mb-10 md:mb-8 mb-6 text-center"> Make your payment </h3>
+
+
+            <hr class="my-4 border-0" />
+
+            <h1> CALENDAR WILL GO HERE  </h1>
+
+
+            <hr class="my-8 border-0" />
+
+            <div>
+                <button
+                    class="border-primary border-[1px] border-solid rounded-full text-xs px-8 py-3 mr-2 text-primary hover:bg-primaryLight transition shadow-md">10:30 AM</button>
+                <button
+                    class="border-primary border-[1px] border-solid rounded-full text-xs px-8 py-3 mr-2 text-primary hover:bg-primaryLight transition shadow-md">12:30 PM</button>
+            </div>
+
+
+            <hr class="my-8 border-0" />
+            <!-- STEPS NAVIGATION -->
+            <div class="flex items-center justify-center">
+                <button
+                    class="border-primary border-[1px] border-solid rounded-full text-xs px-8 py-3 mr-2 text-primary hover:bg-primaryLight transition">Prev</button>
+                <button
+                    class="bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-xs">
+                    Next</button>
+            </div>
+    </main>
+
+
+    <!-- UPLOAD RECORD MODAL 
+        {.hidden} => hidden
+        remove hidden class to show.
+    -->
+    <div class="hidden relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!--
+          
+            
+          
+        -->
+        <!-- BACKDROP -->
+        <div class="fixed inset-0 bg-[#0008] bg-opacity-75 transition-opacity"></div>
+
+        <!-- CONTENT -->
+        <div class="fixed inset-0 z-10 overflow-y-auto ">
+            <div class="flex min-h-full items-start justify-center p-4 text-center sm:items-center sm:p-0  ">
+                <div
+                    class="relative transform overflow-hidden rounded-3xl bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-xl p-4 sm:p-8 ">
+
+
+                    <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4 ">
+                        <div class="bg-black rounded-lg flex items-center flex-col justify-center min-h-[300px]">
+                            <p class="text-6xl text-white mb-6 ">!</p>
+                            <small class="text-white max-w-[340px] text-center">Click the icon to start recording. If
+                                you click on the icon again, the recording will stop and the final file will be ready to
+                                be sent.</small>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center gap-x-4 gap-y-6 mt-6 flex-wrap">
+                        <button
+                            class="order-2 sm:order-1 border-primary border-[1px] border-solid rounded-full px-8 py-3  text-primary hover:bg-primaryLight transition text-sm">Try
+                            again</button>
+                        <div class="order-1 sm:order-2 w-full sm:w-auto flex justify-center">
+                            <button
+                                class="w-16 h-16 rounded-full border-4 border-solid border-primary grid place-items-center ">
+                                <span class="w-6 h-6 bg-primary rounded-full"></span>
+                            </button>
+                        </div>
+                        <button
+                            class="order-3 bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-sm">
+                            Upload</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script src="./assets/js/navbar.js"></script>
+<script src="./assets/js/notifications.js"></script>
+<script src="./assets/js/history.js"></script>
+
+<script>
+    var x, i, j, l, ll, selElmnt, a, b, c;
+    x = document.getElementsByClassName("custom-select");
+    l = x.length;
+    for (i = 0; i < l; i++) {
+        selElmnt = x[i].getElementsByTagName("select")[0];
+        ll = selElmnt.length;
+        a = document.createElement("DIV");
+        a.setAttribute("class", "select-selected");
+        a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+        x[i].appendChild(a);
+        b = document.createElement("DIV");
+        b.setAttribute("class", "select-items select-hide");
+        for (j = 1; j < ll; j++) {
+            c = document.createElement("DIV");
+            c.innerHTML = selElmnt.options[j].innerHTML;
+            c.addEventListener("click", function (e) {
+                var y, i, k, s, h, sl, yl;
+                s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                sl = s.length;
+                h = this.parentNode.previousSibling;
+                for (i = 0; i < sl; i++) {
+                    if (s.options[i].innerHTML == this.innerHTML) {
+                        s.selectedIndex = i;
+                        h.innerHTML = this.innerHTML;
+                        y = this.parentNode.getElementsByClassName("same-as-selected");
+                        yl = y.length;
+                        for (k = 0; k < yl; k++) {
+                            y[k].removeAttribute("class");
+                        }
+                        this.setAttribute("class", "same-as-selected");
+                        break;
+                    }
+                }
+                h.click();
+            });
+            b.appendChild(c);
+        }
+        x[i].appendChild(b);
+        a.addEventListener("click", function (e) {
+            e.stopPropagation();
+            closeAllSelect(this);
+            this.nextSibling.classList.toggle("select-hide");
+            this.classList.toggle("select-arrow-active");
+        });
+    }
+
+    function closeAllSelect(elmnt) {
+        var x, y, i, xl, yl, arrNo = [];
+        x = document.getElementsByClassName("select-items");
+        y = document.getElementsByClassName("select-selected");
+        xl = x.length;
+        yl = y.length;
+        for (i = 0; i < yl; i++) {
+            if (elmnt == y[i]) {
+                arrNo.push(i)
+            } else {
+                y[i].classList.remove("select-arrow-active");
+            }
+        }
+        for (i = 0; i < xl; i++) {
+            if (arrNo.indexOf(i)) {
+                x[i].classList.add("select-hide");
+            }
+        }
+    }
+
+    document.addEventListener("click", closeAllSelect); 
+</script>
