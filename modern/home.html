@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="../tailwind/output.css">
     <link rel="stylesheet" href="../assets/styles/main.css">
    
-    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-    <title>Your Information</title>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <title> Home </title>
 </head>
 
 <body class="flex flex-wrap justify-end bg-[#F5F5F5] font-montserrat">
@@ -112,24 +112,19 @@
 
 
             <!-- User gender -->
-            <div class="relative  w-full ">
-                <button type="button"
-                    class="relative cursor-default  w-full  bg-white   border-[1px] border-solid border-primary rounded-full text-xs py-3 "
+            <div class="relative  w-full selectBox">
+                <button type="button" data-toggle="dropdown"
+                    class="z-20 relative  w-full  bg-white   border-[1px] border-solid border-primary rounded-full text-xs py-3 "
                     aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
-                    <span class="flex items-center  text-center justify-center">
-                        <span class=" block truncate text-xs text-black50 ">select your gender</span>
+                    <span class="flex items-center  text-center justify-center pointer-events-none">
+                        <span class=" block truncate text-xs text-black50 title" >select your gender</span>
                     </span>
-                    <span class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
+                    <i class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
                         <img src="../assets/icons/arrow-down.svg" alt="arrow">
-                    </span>
+                    </i>
                 </button>
 
-                <!--
-                        Dropdown
-                        to show: set { block } class
-                        to hide: set { hidden } class
-                    -->
-                <ul class="hidden absolute z-10 pt-16 max-h-56 w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
+                <ul class="hidden absolute z-10 bg-white pt-12 max-h-56 w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
                     tabindex="-1" role="listbox" aria-labelledby="listbox-label"
                     aria-activedescendant="listbox-option-3">
                     <li class=" cursor-pointer select-none py-2 transition-all hover:bg-primaryLight" role="option">
@@ -256,9 +251,10 @@
 
 </html>
 
-<script src="./assets/js/navbar.js"></script>
-<script src="./assets/js/notifications.js"></script>
-<script src="./assets/js/history.js"></script>
+<script src="../assets/js/navbar.js"></script>
+<script src="../assets/js/notifications.js"></script>
+<script src="../assets/js/history.js"></script>
+<script src="../assets/js/master.js"></script>
 
 <script>
     var x, i, j, l, ll, selElmnt, a, b, c;

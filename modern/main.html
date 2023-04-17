@@ -41,31 +41,28 @@
         </div>
         <div class="w-full lg:pl-10 pl-6 lg:mb-10 mb-8">
             <dl class="mb-6">
-                <dt class="text-[#181818]/50 uppercase mb-5">Main</dt>
-                <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                <dt class="text-[#181818]/50 uppercase mb-5">Menu</dt>
+                <dd class="lg:text-lg text-sm text-[#BC63F2] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer border-[#BC63F2] lg:border-r-8 border-r-4">
                     Main
                 </dd>
-                <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
-                    Session
-                </dd>
-            </dl>
-            <dl class="mb-1">
-                <dt class="text-[#181818]/50 uppercase mb-5">General</dt>
+
                 <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
                     Meetings</dd>
-                <dd
-                    class="lg:text-lg text-sm text-[#BC63F2] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 border-solid border-[#BC63F2] lg:border-r-8 border-r-4 cursor-pointer">
-                    Payments
-                </dd>
-                <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
-                    Agreements</dd>
+
                 <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
                     Your
                     Information</dd>
-                <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
-                    Tasks
+
+                <dd
+                    class="lg:text-lg text-sm  text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 border-solid cursor-pointer">
+                    Payments
+                </dd>
+                <dd
+                    class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer  ">
+                    FAQ
                 </dd>
             </dl>
+
         </div>
         <div class="w-5/6 flex lg:flex-row flex-col-reverse items-center bg-[#FFFCAA]/50 py-4 px-5 rounded-2xl lg:mb-8 mb-6 cursor-pointer"
             onclick="openModal1()">
@@ -152,15 +149,18 @@
 
         <!-- Meeting (Slider!!) on mobile -->
         <div class=" md:hidden text flex justify-center mb-8">
-            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full max-w-xs  p-3  flex flex-col items-center bg-white">
+            <div
+                class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full max-w-xs  p-3  flex flex-col items-center bg-white">
                 <p class="text-sm mb-2">Your next meeting</p>
                 <h3 class="text-primary">November 14</h3>
                 <h3 class="text-primary">11 A.M </h3>
 
-                <small class="text-[#DE5753] text-[10px] text-center mt-4"> The Google Meet link will be activated for you 15 minutes before the start of the meeting. </small>
+                <small class="text-[#DE5753] text-[10px] text-center mt-4"> The Google Meet link will be activated for
+                    you 15 minutes before the start of the meeting. </small>
 
                 <button
-                    class="border-primary border-[1px] border-solid rounded-full text-[11px] mt-4 px-4 py-1 mr-2 text-primary hover:bg-primaryLight transition"> Meeting link </button>
+                    class="border-primary border-[1px] border-solid rounded-full text-[11px] mt-4 px-4 py-1 mr-2 text-primary hover:bg-primaryLight transition">
+                    Meeting link </button>
             </div>
         </div>
         <div class="flex justify-between md:mb-12 mb-16">
@@ -414,42 +414,48 @@
         </div>
     </div>
 
-   
-     <!-- History Desktop -->
-     <div id="history-desktop"
-     class="fixed right-0 inset-y-0 md:flex hidden flex-col items-center w-3/12 min-h-screen lg:pt-14 pt-12 overflow-y-scroll">
-     <div class="relative flex justify-between items-center w-[85%] h-fit mb-7">
-         <span class="text-[#181818]/50 lg:text-base text-sm uppercase">Sessions panel</span>
-         <img src="../assets/icons/notification.svg" alt="" class="xl:w-10 lg:w-8 w-6 cursor-pointer"
-             onclick="openNotifications_desktop()">
-         <span
-             class="absolute right-0 top-0 xl:w-3.5 xl:h-3.5 lg:w-3 lg:h-3 w-2 h-2 bg-[#FF5353] rounded-full"></span>
-     </div>
+
+    <!-- History Desktop -->
+    <div id="history-desktop"
+        class="fixed right-0 inset-y-0 md:flex hidden flex-col items-center w-3/12 min-h-screen lg:pt-14 pt-12 overflow-y-scroll">
+        <div class="relative flex justify-between items-center w-[85%] h-fit mb-7">
+            <span class="text-[#181818]/50 lg:text-base text-sm uppercase">Sessions panel</span>
+            <img src="../assets/icons/notification.svg" alt="" class="xl:w-10 lg:w-8 w-6 cursor-pointer"
+                onclick="openNotifications_desktop()">
+            <span
+                class="absolute right-0 top-0 xl:w-3.5 xl:h-3.5 lg:w-3 lg:h-3 w-2 h-2 bg-[#FF5353] rounded-full"></span>
+        </div>
 
 
-     <div class="flex flex-col lg:gap-4 gap-2.5 w-[85%] mb-7 ">
-         <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full max-w-xs  p-3  flex flex-col items-center bg-white">
-             <p class="text-sm mb-2">Your next meeting</p>
-             <h3 class="text-primary">November 14</h3>
-             <h3 class="text-primary">11 A.M </h3>
+        <div class="flex flex-col lg:gap-4 gap-2.5 w-[85%] mb-7 ">
+            <div
+                class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full max-w-xs  p-3  flex flex-col items-center bg-white">
+                <p class="text-sm mb-2">Your next meeting</p>
+                <h3 class="text-primary">November 14</h3>
+                <h3 class="text-primary">11 A.M </h3>
 
-             <small class="text-[#DE5753] text-[10px] text-center mt-4"> The Google Meet link will be activated for you 15 minutes before the start of the meeting. </small>
+                <small class="text-[#DE5753] text-[10px] text-center mt-4"> The Google Meet link will be activated for
+                    you 15 minutes before the start of the meeting. </small>
 
-             <button
-                 class="border-primary border-[1px] border-solid rounded-full text-[11px] mt-4 px-4 py-1 mr-2 text-primary hover:bg-primaryLight transition"> Meeting link </button>
-         </div>
-     </div>
-     <div class="flex flex-col lg:gap-4 gap-2.5 w-[85%] mb-7">
-         <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full max-w-xs  p-3  flex flex-col items-center bg-white">
-             <p class="text-sm mb-2">Book another meeting</p>
-             <small class="text-[#DE5753] text-[10px] text-center mt-4"> It is possible to book a meeting if you do not have an active meeting. </small>
+                <button
+                    class="border-primary border-[1px] border-solid rounded-full text-[11px] mt-4 px-4 py-1 mr-2 text-primary hover:bg-primaryLight transition">
+                    Meeting link </button>
+            </div>
+        </div>
+        <div class="flex flex-col lg:gap-4 gap-2.5 w-[85%] mb-7">
+            <div
+                class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full max-w-xs  p-3  flex flex-col items-center bg-white">
+                <p class="text-sm mb-2">Book another meeting</p>
+                <small class="text-[#DE5753] text-[10px] text-center mt-4"> It is possible to book a meeting if you do
+                    not have an active meeting. </small>
 
-             <button
-                 class="border-primary border-[1px] border-solid rounded-full text-sm mt-4 px-8 py-1 mr-2 text-primary hover:bg-primaryLight transition">+ </button>
-         </div>
-     </div>
-     
- </div>
+                <button
+                    class="border-primary border-[1px] border-solid rounded-full text-sm mt-4 px-8 py-1 mr-2 text-primary hover:bg-primaryLight transition">+
+                </button>
+            </div>
+        </div>
+
+    </div>
 
     <div id="notifications-desktop"
         class="fixed xl:right-[90px] lg:right-[84px] right-[69px] lg:top-[30px] top-[20px] invisible md:block hidden bg-[#fdfdfd] w-96 h-fit lg:p-5 p-4 lg:rounded-2xl rounded-xl border-solid border-[1px] border-gray-200 shadow-xl opacity-0 duration-[0.2s]">
@@ -483,7 +489,7 @@
         </div>
     </div>
 
-  
+
 </body>
 
 </html>
