@@ -784,6 +784,18 @@ video {
   top: 2rem;
 }
 
+.left-1 {
+  left: 0.25rem;
+}
+
+.top-1 {
+  top: 0.25rem;
+}
+
+.left-2 {
+  left: 0.5rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -806,6 +818,14 @@ video {
 
 .z-20 {
   z-index: 20;
+}
+
+.z-30 {
+  z-index: 30;
+}
+
+.z-40 {
+  z-index: 40;
 }
 
 .order-1 {
@@ -2708,6 +2728,10 @@ video {
 
 .text-darkBlack50\/70 {
   color: rgb(24 24 24 / 0.7);
+}
+
+.text-white\/50 {
+  color: rgb(255 255 255 / 0.5);
 }
 
 .accent-\[\#BC63F2\] {

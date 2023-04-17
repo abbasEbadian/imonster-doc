@@ -46,18 +46,20 @@
                     <a href="/modern/main.html"> Main </a>
                 </dd>
 
-                <dd class="lg:text-lg text-sm text-primary font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer  border-[#BC63F2] lg:border-r-8 border-r-4">
-                    <a href="/modern/meetings.html"> Meetings </a></dd>
+                <dd
+                    class="lg:text-lg text-sm text-primary font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer  border-[#BC63F2] lg:border-r-8 border-r-4">
+                    <a href="/modern/meetings.html"> Meetings </a>
+                </dd>
 
                 <dd class="lg:text-lg text-sm text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
-                    <a href="/modern/user-information.html"> Your Information </a></dd>
+                    <a href="/modern/user-information.html"> Your Information </a>
+                </dd>
 
                 <dd
                     class="lg:text-lg text-sm  text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 border-solid cursor-pointer">
                     <a href="/modern/payments.html"> Payments </a>
                 </dd>
-                <dd
-                    class="lg:text-lg text-sm text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer ">
+                <dd class="lg:text-lg text-sm text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer ">
                     <a href="/modern/faq.html"> FAQ </a>
                 </dd>
             </dl>
@@ -109,28 +111,29 @@
             </div>
             <div class="w-full lg:pl-10 pl-6 lg:mb-10 mb-8">
                 <dl class="mb-6">
-                    <dt class="text-darkBlack/50 uppercase mb-5">Menu</dt>
-                    <dd class="lg:text-lg text-sm text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer ">
-                        Main
+                    <dt class="text-white/50 uppercase mb-5">Menu</dt>
+                    <dd class="lg:text-lg text-sm text-white font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        <a href="/modern/main.html"> Main </a>
                     </dd>
-    
-                    <dd class="lg:text-lg text-sm text-[#BC63F2] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer border-[#BC63F2] lg:border-r-8 border-r-4">
-                        Meetings</dd>
-    
-                    <dd class="lg:text-lg text-sm text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
-                        Your
-                        Information</dd>
-    
+
                     <dd
-                        class="lg:text-lg text-sm  text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 border-solid cursor-pointer">
-                        Payments
+                        class="lg:text-lg text-sm text-primary font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer  border-[#BC63F2] lg:border-r-8 border-r-4">
+                        <a href="/modern/meetings.html"> Meetings </a>
                     </dd>
+
+                    <dd class="lg:text-lg text-sm text-white font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        <a href="/modern/user-information.html"> Your Information </a>
+                    </dd>
+
                     <dd
-                        class="lg:text-lg text-sm text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer  ">
-                        FAQ
+                        class="lg:text-lg text-sm  text-white font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 border-solid cursor-pointer">
+                        <a href="/modern/payments.html"> Payments </a>
+                    </dd>
+                    <dd class="lg:text-lg text-sm text-white font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer ">
+                        <a href="/modern/faq.html"> FAQ </a>
                     </dd>
                 </dl>
-    
+
             </div>
             <div class="w-5/6 flex lg:flex-row items-center bg-[#FFFCAA]/50 py-4 px-5 rounded-2xl lg:mb-8 mb-6">
                 <p class="text-darkBlack/70 text-xs font-medium">
@@ -146,35 +149,42 @@
 
 
         <!-- MEETING REMINDER -->
-        <div class="hidden flex absolute inset-0 bg-white z-10 p-8 md:p-16  flex-col">
-            <div class="flex items-center">
+        <div class="flex absolute inset-0 bg-white z-40 p-8 md:p-16  flex-col invisible opacity-0 transition"
+            data-meeting-reminder data-should-show="false">
+            <div class="flex items-center cursor-pointer" closer>
                 <img src="../assets/icons/back.svg" alt="back" class="w-5" />
                 <span class="ml-8 text-sm"> Back to Meeting page </span>
             </div>
-            
+
             <hr class="my-8 border-0" />
             <div class="flex flex-col items-center">
-                <span class="text-center text-xs leading-7">Dr. Mohammadi diagnosed your disease as 
-                    <b class="font-extrabolds">liver disease</b> 
-                    and has planned 5 treatment sessions for you. In the bottom box, you can see the version and the things you have to do.</span>
-            </div>
-            
-            <hr class="my-4 border-0" />
-            <div class=" text-xs leading-7 rounded-2xl grid place-items-center p-6 bg-success text-white">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <span class="text-center text-xs leading-7">Dr. Mohammadi diagnosed your disease as
+                    <b class="font-extrabolds">liver disease</b>
+                    and has planned 5 treatment sessions for you. In the bottom box, you can see the version and the
+                    things you have to do.</span>
             </div>
 
             <hr class="my-4 border-0" />
-            
+            <div class=" text-xs leading-7 rounded-2xl grid place-items-center p-6 bg-success text-white">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.
+            </div>
+
+            <hr class="my-4 border-0" />
+
             <span class="text-xs leading-7 text-error">
-                You can also specify and reserve the meeting date from the side menu. Because the session time is limited and the number of patients is high, please act as soon as possible.
+                You can also specify and reserve the meeting date from the side menu. Because the session time is
+                limited and the number of patients is high, please act as soon as possible.
             </span>
             <hr class="my-8 border-0" />
             <button class="bg-primary text-white rounded-xl py-3 mb-4 text-xs mx-auto px-6 ">
                 Set your meetings dates
             </button>
         </div>
-    
+
         <div class="md:mb-12 mb-16">
             <p class=" text-xs text-center font-bold">Your next meeting</p>
             <h1 class="text-primary text-4xl md:text-6xl text-center my-3 font-bold">November 14</h1>
@@ -195,16 +205,17 @@
 
 
                 <div class="absolute right-3 md:top-[12px] top-6">
-                    <button>
+                    <button dropdown-toggler>
                         <img src="../assets/icons/dots.svg" alt="open menu" />
-
                     </button>
-                    <div
-                        class="hidden flex  shadow-[0px_0px_24px_#e1e1e1]  rounded-xl p-6 absolute bg-white  z-10 right-0 w-[300px]  flex-col justify-center">
+                    <div togglable
+                        class="transition flex  shadow-[0px_0px_24px_#e1e1e1]  rounded-xl p-6 absolute bg-white  z-10 right-0 w-[300px]  flex-col justify-center">
+                        <span closer class="text-xl left-2 top-0 absolute cursor-pointer">x</span>
                         <button class="bg-primary text-white rounded-xl py-2 mb-4">
                             Go to the meeting
                         </button>
-                        <button class="bg-none text-darkBlack50 border-none text-xs ">
+                        <button class="bg-none text-darkBlack50 border-none text-xs" modal-toggler
+                            data-target="#cancel-modal">
                             Cancel Session
                         </button>
                     </div>
@@ -222,16 +233,18 @@
                 <div class="text-[12px] text-center col-span-2 md:col-span-1 text-primary"> Pending </div>
 
                 <div class="absolute right-3 md:top-[12px] top-6">
-                    <button>
+                    <button dropdown-toggler>
                         <img src="../assets/icons/dots.svg" alt="open menu" />
-
                     </button>
-                    <div
-                        class="hidden flex  shadow-[0px_0px_24px_#e1e1e1]  rounded-xl p-6 absolute bg-white  z-10 right-0 w-[300px]  flex-col justify-center">
+                    <div togglable
+                        class="transition flex  shadow-[0px_0px_24px_#e1e1e1]  rounded-xl p-6 absolute bg-white  z-10 right-0 w-[300px]  flex-col justify-center">
+                        <span closer class="text-xl left-2 top-0 absolute cursor-pointer">x</span>
+
                         <button class="bg-primary text-white rounded-xl py-2 mb-4">
                             Go to the meeting
                         </button>
-                        <button class="bg-none text-darkBlack50 border-none text-xs ">
+                        <button class="bg-none text-darkBlack50 border-none text-xs" modal-toggler
+                            data-target="#cancel-modal">
                             Cancel Session
                         </button>
                     </div>
@@ -249,16 +262,19 @@
                 <div class="text-[12px] text-center col-span-2 md:col-span-1 text-success"> Done </div>
 
                 <div class="absolute right-3 md:top-[12px] top-6">
-                    <button>
+                    <button dropdown-toggler>
                         <img src="../assets/icons/dots.svg" alt="open menu" />
 
                     </button>
-                    <div
-                        class="hidden flex shadow-[0px_0px_24px_#e1e1e1]  rounded-xl p-6 absolute bg-white  z-10 right-0 w-[300px]   flex-col justify-center">
+                    <div togglable
+                        class="transition flex shadow-[0px_0px_24px_#e1e1e1]  rounded-xl p-6 absolute bg-white  z-10 right-0 w-[300px]   flex-col justify-center">
+
+                        <span closer class="text-xl left-2 top-0 absolute cursor-pointer">x</span>
                         <button class="bg-primary text-white rounded-xl py-2 mb-4">
                             Go to the meeting
                         </button>
-                        <button class="bg-none text-darkBlack50 border-none text-xs ">
+                        <button class="bg-none text-darkBlack50 border-none text-xs" modal-toggler
+                            data-target="#cancel-modal">
                             Cancel Session
                         </button>
                     </div>
@@ -281,7 +297,8 @@
 
 
     <!-- Payment MODAL -->
-    <div class="hidden  relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="transition opacity-0 pointer-events-none  relative z-10" id="payment-modal" togglable
+        aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <!-- BACKDROP -->
         <div class="fixed inset-0 bg-[#0008] bg-opacity-75 transition-opacity"></div>
 
@@ -291,7 +308,7 @@
                 <div
                     class="transform overflow-hidden rounded-3xl bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-xl p-4 sm:p-8 relative ">
                     <!-- CLOSE BUTTON -->
-                    <span class="absolute top-2 right-8 text-xl" role="button"> x </span>
+                    <span class="absolute top-2 right-8 text-xl" role="button" closer> x </span>
                     <div class="flex flex-col items-center">
                         <p class="text-sm font-bold"> Make your payment </p>
 
@@ -346,7 +363,7 @@
                                 class="border-primary border-[1px] border-solid rounded-full px-4 text-xs py-3 mr-2 text-primary hover:bg-primaryLight transition">Credit
                                 Card</button>
                         </div>
-                        
+
 
                         <hr class="my-6 border-0" />
                         <!-- STEPS NAVIGATION -->
@@ -363,15 +380,73 @@
         </div>
     </div>
 
+
+    <!-- Cancel MODAL -->
+    <div class="transition opacity-0 pointer-events-none  relative z-10" id="cancel-modal" togglable
+        aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- BACKDROP -->
+        <div class="fixed inset-0 bg-[#0008] bg-opacity-75 transition-opacity"></div>
+
+        <!-- CONTENT -->
+        <div class="fixed inset-0 z-10 overflow-y-auto ">
+            <div class="flex min-h-full items-start justify-center p-4 text-center sm:items-center sm:p-0  ">
+                <div
+                    class="transform overflow-hidden rounded-3xl bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-xl p-4 sm:p-8 relative ">
+                    <!-- CLOSE BUTTON -->
+                    <span class="absolute top-2 right-8 text-xl" role="button" closer> x </span>
+
+                    <div class="flex flex-col items-center pt-6 p-4">
+                        <p class="text-sm font-bold">Due to the limitation in the time of the sessions as well as Dr.
+                            Mohammadi's schedule, you need to announce your reason for canceling the session. Also, keep
+                            in mind that sending this form does not mean canceling the session and this requires the
+                            doctor's approval. </p>
+                        <hr class="my-4 border-0" />
+
+                        <div class="relative w-full">
+                            <label for="name" class="text-[11px] absolute top-[-8px] left-4 text-primary bg-white px-2">
+                                Reason</label>
+                            <input type="text" name="name" placeholder="write your cancelation reason"
+                                class="w-full border-[1px] border-solid border-primary rounded-full px-4 py-2 placeholder:text-black50 placeholder:text-xs text-center focus-visible:outline-none" />
+                        </div>
+
+                        <hr class="my-4 border-0" />
+
+                        <small class="text-xs text-darkBlack"> Do you need to change the meeting date?
+                        </small>
+
+                        <hr class="my-4 border-0" />
+
+
+                        <div class="flex  items-center gap-4">
+                            <label>Yes</label>
+                            <input type="radio" name="should-new" class="accent-primary">
+
+                            <label>No</label>
+                            <input type="radio" name="should-new" class="accent-primary">
+                        </div>
+
+
+
+                        <hr class="my-4 border-0" />
+                        
+                        <button
+                        class="bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-xs">
+                        Submit your request</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Notifications Mobile -->
-    <div class="md:hidden flex absolute right-0">
+    <div class="md:hidden flex absolute right-0 ">
         <button class="absolute right-16 top-[18px] w-max" onclick="openNotifications_mobile()">
             <img src="../assets/icons/notification.svg" alt="" class="w-6">
             <span class="absolute right-0 top-0 w-2 h-2 bg-[#FF5353] rounded-full">
                 <span>
         </button>
         <div id="notifications-mobile"
-            class="absolute right-[45px] top-[58px] invisible bg-[#fdfdfd] xs:w-[350px] w-[80vw] h-fit p-3.5 rounded-xl border-solid border-[1px] border-gray-200 shadow-xl opacity-0 duration-[0.2s]">
+            class="absolute right-[45px] top-[58px] invisible bg-[#fdfdfd] xs:w-[350px] w-[80vw] h-fit p-3.5 rounded-xl border-solid border-[1px] border-gray-200 shadow-xl opacity-0 duration-[0.2s] z-30">
             <div
                 class="absolute right-[20px] top-[-7px] w-5 h-5 border-solid border-[#fdfdfd] border-t-[15px] border-r-[15px] rounded-[0.25rem] -rotate-45 shadow-[3px_-3px_7px_#f2f2f2]">
             </div>
@@ -476,96 +551,7 @@
         </div>
     </div>
 
-    <!-- History Mobile -->
-    <div class="md:hidden flex absolute left-0 z-[5]">
-        <button class="absolute left-5 top-[18px] w-max" onclick="openHistory()">
-            <img src="../assets/icons/history.svg" alt="" class="w-7">
-        </button>
-        <div id="history-mobile"
-            class="fixed top-0 -left-[300px] invisible flex items-center flex-col w-[240px] min-h-screen pt-16 bg-gradient-to-r from-[#213C49] to-[#062635] rounded-r-3xl shadow-2xl duration-[0.5s]">
-            <button class="absolute left-6 top-6" onclick="closeHistory()">
-                <img src="../assets/icons/close.svg" alt="">
-            </button>
-            <div
-                class="relative flex justify-between items-center w-[85%] h-fit mb-5 pb-1 border-solid border-b-[1px] border-white/20">
-                <span class="text-[#FFFFFF]/50 pr-3 text-base uppercase">Your History</span>
-            </div>
-            <div class="flex flex-col lg:gap-4 gap-2.5 w-[85%] mb-6">
-                <div
-                    class="w-full lg:px-6 lg:py-3 px-5 py-2.5 bg-white md:rounded-3xl rounded-2xl border-solid border-[1px] border-gray-200 lg:shadow-lg shadow-md">
-                    <h3 class="text-darkBlack xl:text-lg lg:text-base text-sm font-bold lg:mb-1.5 mb-1">
-                        Name of the Problem
-                    </h3>
-                    <p class="text-darkBlack xl:text-[11px] lg:text[10px] text-[9px] mb-3">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the
-                        industry's standard
-                    </p>
-                    <div class="flex justify-between">
-                        <div class="flex items-center">
-                            <span class="lg:w-3 lg:h-3 w-2 h-2 bg-[#FC5555] lg:mr-1.5 mr-1 rounded-full"></span>
-                            <span class="text-[#FC5555] lg:text-[10px] text-[8px]">In Progress</span>
-                        </div>
-                        <span class="text-[#0099FF] lg:text-base text-xs font-bold cursor-pointer">View</span>
-                    </div>
-                </div>
-                <div
-                    class="w-full lg:px-6 lg:py-3 px-5 py-2.5 bg-white rounded-3xl border-solid border-[1px] border-gray-200 lg:shadow-lg shadow-md">
-                    <h3 class="text-darkBlack xl:text-lg lg:text-base text-sm font-bold lg:mb-1.5 mb-1">
-                        Name of the Problem
-                    </h3>
-                    <p class="text-darkBlack xl:text-[11px] lg:text[10px] text-[9px] mb-3">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the
-                        industry's standard
-                    </p>
-                    <div class="flex justify-between">
-                        <div class="flex items-center">
-                            <span class="lg:w-3 lg:h-3 w-2 h-2 bg-[#FC5555] lg:mr-1.5 mr-1 rounded-full"></span>
-                            <span class="text-[#FC5555] lg:text-[10px] text-[8px]">In Progress</span>
-                        </div>
-                        <span class="text-[#0099FF] lg:text-base text-xs font-bold cursor-pointer">View</span>
-                    </div>
-                </div>
-                <div
-                    class="w-full lg:px-6 lg:py-3 px-5 py-2.5 bg-white rounded-3xl border-solid border-[1px] border-gray-200 lg:shadow-lg shadow-md">
-                    <h3 class="text-darkBlack xl:text-lg lg:text-base text-sm font-bold lg:mb-1.5 mb-1">
-                        Name of the Problem
-                    </h3>
-                    <p class="text-darkBlack xl:text-[11px] lg:text[10px] text-[9px] mb-3">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the
-                        industry's standard
-                    </p>
-                    <div class="flex justify-between">
-                        <div class="flex items-center">
-                            <span class="lg:w-3 lg:h-3 w-2 h-2 bg-[#29CC6A] lg:mr-1.5 mr-1 rounded-full"></span>
-                            <span class="text-[#29CC6A] lg:text-[10px] text-[8px]">In Progress</span>
-                        </div>
-                        <span class="text-[#0099FF] lg:text-base text-xs font-bold cursor-pointer">View</span>
-                    </div>
-                </div>
-                <div
-                    class="w-full lg:px-6 lg:py-3 px-5 py-2.5 bg-white rounded-3xl border-solid border-[1px] border-gray-200 lg:shadow-lg shadow-md">
-                    <h3 class="text-darkBlack xl:text-lg lg:text-base text-sm font-bold lg:mb-1.5 mb-1">
-                        Name of the Problem
-                    </h3>
-                    <p class="text-darkBlack xl:text-[11px] lg:text[10px] text-[9px] mb-3">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the
-                        industry's standard
-                    </p>
-                    <div class="flex justify-between">
-                        <div class="flex items-center">
-                            <span class="lg:w-3 lg:h-3 w-2 h-2 bg-[#29CC6A] lg:mr-1.5 mr-1 rounded-full"></span>
-                            <span class="text-[#29CC6A] lg:text-[10px] text-[8px]">In Progress</span>
-                        </div>
-                        <span class="text-[#0099FF] lg:text-base text-xs font-bold cursor-pointer">View</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 </body>
 
 </html>
@@ -573,6 +559,7 @@
 <script src="../assets/js/navbar.js"></script>
 <script src="../assets/js/notifications.js"></script>
 <script src="../assets/js/history.js"></script>
+<script src="../assets/js/master.js"></script>
 
 <script>
     $(".numberInput").on('input', function (e) {
