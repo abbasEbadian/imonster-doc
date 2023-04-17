@@ -2694,6 +2694,22 @@ video {
   color: rgb(209 209 209 / var(--tw-text-opacity));
 }
 
+.text-darkBlack\/50 {
+  color: rgb(24 24 24 / 0.5);
+}
+
+.text-darkBlack\/70 {
+  color: rgb(24 24 24 / 0.7);
+}
+
+.text-darkBlack50\/50 {
+  color: rgb(24 24 24 / 0.5);
+}
+
+.text-darkBlack50\/70 {
+  color: rgb(24 24 24 / 0.7);
+}
+
 .accent-\[\#BC63F2\] {
   accent-color: #BC63F2;
 }
