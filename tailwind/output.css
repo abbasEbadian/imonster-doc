@@ -784,6 +784,10 @@ video {
   grid-column: span 5 / span 5;
 }
 
+.m-12 {
+  margin: 3rem;
+}
+
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -1000,6 +1004,10 @@ video {
   margin-left: 2rem;
 }
 
+.mt-12 {
+  margin-top: 3rem;
+}
+
 .block {
   display: block;
 }
@@ -1127,6 +1135,10 @@ video {
 
 .h-full {
   height: 100%;
+}
+
+.h-\[140px\] {
+  height: 140px;
 }
 
 .max-h-56 {
@@ -1484,6 +1496,10 @@ video {
 
 .items-center {
   align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
 }
 
 .justify-end {
@@ -1944,6 +1960,11 @@ video {
 .to-\[\#062635\] {
   --tw-gradient-to: #062635 var(--tw-gradient-to-position);
   --tw-gradient-to-position:  ;
+}
+
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .p-1 {
