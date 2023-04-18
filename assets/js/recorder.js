@@ -44,8 +44,7 @@ jQuery(function () {
                         this.preview.srcObject = stream;
                         const t = this
                         $(this.reloadButton).on('click', function (e) {
-                            t.preview.src = null
-                            t.preview.srcObject = stream
+                            t.init()
                         });
                         var that = this
                         stop = function() {
@@ -102,7 +101,7 @@ jQuery(function () {
 
     })
 
-    const recorder = $("#record-modal").recorder()
+    const recorder = $(".recorder-section").recorder()
 
     $(window).on("record-modal-opened", () => {
         $(recorder).recorder('instance').init()

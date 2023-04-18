@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../tailwind/output.css">
     <link rel="stylesheet" href="../assets/styles/main.css">
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <title>Payments</title>
+    <title>Mian</title>
 </head>
 
 <body class="flex flex-wrap justify-center bg-[#F5F5F5] font-montserrat">
@@ -36,28 +36,28 @@
                     </div>
                 </div>
             </div>
-            <h3 class="text-[#181818] lg:text-2xl text-xl font-bold lg:-mt-6 -mt-12 mb-1">Jane Cooper</h3>
-            <span class="text-[#181818]/50 lg:text-sm text-xs font-normal">Join 27 September 2022</span>
+            <h3 class="text-darkBlack lg:text-2xl text-xl font-bold lg:-mt-6 -mt-12 mb-1">Jane Cooper</h3>
+            <span class="text-darkBlack/50 lg:text-sm text-xs font-normal">Join 27 September 2022</span>
         </div>
         <div class="w-full lg:pl-10 pl-6 lg:mb-10 mb-8">
             <dl class="mb-6">
-                <dt class="text-[#181818]/50 uppercase mb-5">Menu</dt>
-                <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                <dt class="text-darkBlack/50 uppercase mb-5">Menu</dt>
+                <dd class="lg:text-lg text-sm text-primary font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer  border-primary lg:border-r-8 border-r-4">
                     <a href="/modern/main.html"> Main </a>
                 </dd>
 
-                <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                <dd class="lg:text-lg text-sm text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
                     <a href="/modern/meetings.html"> Meetings </a></dd>
 
-                <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                <dd class="lg:text-lg text-sm text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
                     <a href="/modern/user-information.html"> Your Information </a></dd>
 
                 <dd
-                    class="lg:text-lg text-sm  text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 border-solid cursor-pointer">
+                    class="lg:text-lg text-sm  text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 border-solid cursor-pointer">
                     <a href="/modern/payments.html"> Payments </a>
                 </dd>
                 <dd
-                    class="lg:text-lg text-sm text-[#BC63F2] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer  border-[#BC63F2] lg:border-r-8 border-r-4">
+                    class="lg:text-lg text-sm text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer ">
                     <a href="/modern/faq.html"> FAQ </a>
                 </dd>
             </dl>
@@ -65,7 +65,7 @@
         </div>
         <div class="w-5/6 flex lg:flex-row flex-col-reverse items-center bg-[#FFFCAA]/50 py-4 px-5 rounded-2xl lg:mb-8 mb-6 cursor-pointer"
             onclick="openModal1()">
-            <p class="text-[#181818]/50 lg:text-left text-center lg:text-sm text-xs font-medium mr-3">
+            <p class="text-darkBlack/50 lg:text-left text-center lg:text-sm text-xs font-medium mr-3">
                 By click on this icon, we guide you, how can you use this website step by step
             </p>
             <img src="../assets/icons/question.svg" alt="" class="w-12 lg:mb-0 mb-2">
@@ -144,7 +144,7 @@
 
     <!-- Main -->
     <main
-        class="flex flex-col md:w-6/12 w-full min-h-screen bg-white 2xl:px-8 px-5 pt-16  mg:rounded-3xl rounded-none shadow-xl">
+        class="flex flex-col md:w-6/12 w-full min-h-screen max-h-screen bg-white 2xl:px-8 px-5 pt-16  mg:rounded-3xl rounded-none shadow-xl">
 
         <!-- Meeting (Slider!!) on mobile -->
         <div class=" md:hidden text flex justify-center mb-8">
@@ -162,43 +162,77 @@
                     Meeting link </button>
             </div>
         </div>
+
+
+
         <div class="flex justify-between md:mb-12 mb-16">
             <div class="flex items-center">
-                <img src="../assets/icons/back.svg" alt="" class="w-6 mr-3 cursor-pointer">
-                <p class="xl:flex hidden">Back to Sairous Website</p>
+                <img src="../assets/icons/back.svg" alt="" class="w-4 mr-3 cursor-pointer">
+                <p class="xl:flex hidden text-xs">Back to Sairous Website</p>
             </div>
             <div
                 class="flex md:px-3 md:py-2 px-2 py-1.5 md:text-base text-sm border-solid border-[1px] border-[#062635] rounded-full">
-                <input type="text" placeholder="Search in chat history" class="md:w-48 w-44 pr-3 outline-none">
+                <input type="text" placeholder="Search in chat history" class="md:w-48 w-44 pr-3 outline-none text-xs">
                 <img src="../assets/icons/search.svg" alt="" class="md:w-5 w-4 cursor-pointer">
             </div>
         </div>
-        <div class="flex flex-col md:gap-5 gap-3">
+
+        <div class="flex flex-col md:gap-5 gap-3 grow overflow-y-auto ">
             <div>
                 <div class="flex items-center md:mb-2.5 mb-1">
-                    <img src="../assets/images/doctor.png" alt="" class="md:w-20 w-16 md:mr-4 mr-2">
+                    <img src="../assets/images/doctor.png" alt="" class="md:w-16 w-12 md:mr-4 mr-2">
                     <div>
-                        <h2 class="lg:text-xl md:text-lg xs:text-base text-[15px] font-bold md:mb-1 -mb-1">Dr. Sairous
+                        <h2 class=" xs:text-base text-[14px] font-bold md:mb-1 -mb-1">Dr. Sairous
                             Mohammadi</h2>
-                        <span class="text-[#181818]/50 md:text-sm xs:text-xs text-[10px]">Doctor of Phylosophy in
+                        <span class="text-[#181818]/50 md:text-xs xs:text-xs text-[10px]">Doctor of Phylosophy in
                             Metaphysic</span>
                     </div>
                 </div>
                 <div class="flex flex-col md:gap-1.5 gap-1 xl:ml-24 md:ml-0 xs:ml-[4.5rem] ml-0">
                     <p
-                        class="w-fit bg-[#BC63F2] py-1.5 px-3.5 text-white md:text-base xs:text-sm text-xs md:rounded-3xl rounded-xl">
+                        class="w-fit bg-[#BC63F2] py-1.5 px-3.5 text-white  text-xs md:rounded-3xl rounded-xl">
                         Hello, Dear Jane!
                     </p>
                     <p
-                        class="w-fit bg-[#BC63F2] py-1.5 px-3.5 text-white md:text-base xs:text-sm text-xs md:rounded-3xl rounded-xl">
+                        class="w-fit bg-[#BC63F2] py-1.5 px-3.5 text-white  text-xs md:rounded-3xl rounded-xl">
                         Welcome to my website.
                     </p>
                     <p
-                        class="w-fit bg-[#BC63F2] py-1.5 px-3.5 text-white md:text-base xs:text-sm text-xs md:rounded-3xl rounded-xl">
+                        class="w-fit bg-[#BC63F2] py-1.5 px-3.5 text-white  text-xs md:rounded-3xl rounded-xl">
                         You can write me your problem
                     </p>
                     <p
-                        class="w-fit bg-[#BC63F2] py-1.5 px-3.5 text-white md:text-base xs:text-sm text-xs md:rounded-3xl rounded-xl">
+                        class="w-fit bg-[#BC63F2] py-1.5 px-3.5 text-white  text-xs md:rounded-3xl rounded-xl">
+                        I’ll help you how to book time to
+                        have a meeting with me
+                    </p>
+                </div>
+            </div>
+             <div>
+                <div class="flex items-center md:mb-2.5 mb-1">
+                    <img src="../assets/images/doctor.png" alt="" class="md:w-16 w-12 md:mr-4 mr-2">
+                    <div>
+                        <h2 class=" xs:text-base text-[14px] font-bold md:mb-1 -mb-1">Dr. Sairous
+                            Mohammadi</h2>
+                        <span class="text-[#181818]/50 md:text-xs xs:text-xs text-[10px]">Doctor of Phylosophy in
+                            Metaphysic</span>
+                    </div>
+                </div>
+                <div class="flex flex-col md:gap-1.5 gap-1 xl:ml-24 md:ml-0 xs:ml-[4.5rem] ml-0">
+                    <p
+                        class="w-fit bg-[#BC63F2] py-1.5 px-3.5 text-white  text-xs md:rounded-3xl rounded-xl">
+                        Hello, Dear Jane!
+                    </p>
+                    <p
+                        class="w-fit bg-[#BC63F2] py-1.5 px-3.5 text-white  text-xs md:rounded-3xl rounded-xl">
+                        Welcome to my website.
+                    </p>
+                    <p
+                        class="w-fit bg-[#BC63F2] py-1.5 px-3.5 text-white  text-xs md:rounded-3xl rounded-xl">
+                        You can write me your problem
+                    </p>
+                    <p
+                        class="w-fit bg-[#BC63F2] py-1.5 px-3.5 text-white  text-xs md:rounded-3xl rounded-xl">
                         I’ll help you how to book time to
                         have a meeting with me
                     </p>
@@ -207,19 +241,19 @@
             <div>
                 <div class="flex justify-end items-center md:mb-2.5 mb-1">
                     <div>
-                        <h2 class="lg:text-xl md:text-lg xs:text-base text-[15px] font-bold md:mb-1 -mb-1">Jane Cooper
+                        <h2 class=" text-[14px] font-bold md:mb-1 -mb-1">Jane Cooper
                         </h2>
-                        <span class="text-[#181818]/50 md:text-sm xs:text-xs text-[10px]">Join 27 September 2022</span>
+                        <span class="text-darkBlack50  text-xs">Join 27 September 2022</span>
                     </div>
-                    <img src="../assets/images/profile.png" alt="" class="md:w-20 w-16 md:ml-4 ml-2">
+                    <img src="../assets/images/profile.png" alt="" class="md:w-16 w-12 md:ml-4 ml-2">
                 </div>
                 <div class="flex flex-col items-end md:gap-1.5 gap-1 xl:ml-24 md:ml-0 xs:ml-[4.5rem] ml-0">
                     <p
-                        class="w-fit bg-[#29CC6A] py-1.5 px-3.5 text-white md:text-base xs:text-sm text-xs md:rounded-3xl rounded-xl">
+                        class="w-fit bg-[#29CC6A] py-1.5 px-3.5 text-white text-xs md:rounded-3xl rounded-xl">
                         Hello Dr. Sairous
                     </p>
                     <p
-                        class="w-fit bg-[#29CC6A] py-1.5 px-3.5 text-white md:text-base xs:text-sm text-xs md:rounded-3xl rounded-xl">
+                        class="w-fit bg-[#29CC6A] py-1.5 px-3.5 text-white text-xs md:rounded-3xl rounded-xl">
                         I have Aerophobia and need your
                         to have a meet with you to solve
                         my problem :((
@@ -228,30 +262,67 @@
             </div>
             <div>
                 <div class="flex items-center md:mb-2.5 mb-1">
-                    <img src="../assets/images/doctor.png" alt="" class="md:w-20 w-16 md:mr-4 mr-2">
+                    <img src="../assets/images/doctor.png" alt="" class="md:w-16 w-12 md:mr-4 mr-2">
                     <div>
-                        <h2 class="lg:text-xl md:text-lg xs:text-base text-[15px] font-bold md:mb-1 -mb-1">Dr. Sairous
+                        <h2 class=" xs:text-base text-[14px] font-bold md:mb-1 -mb-1">Dr. Sairous
                             Mohammadi</h2>
-                        <span class="text-[#181818]/50 md:text-sm xs:text-xs text-[10px]">Doctor of Phylosophy in
+                        <span class="text-[#181818]/50 md:text-xs xs:text-xs text-[10px]">Doctor of Phylosophy in
                             Metaphysic</span>
                     </div>
                 </div>
                 <div class="flex flex-col md:gap-1.5 gap-1 xl:ml-24 md:ml-0 xs:ml-[4.5rem] ml-0">
                     <p
-                        class="w-fit bg-[#BC63F2] py-1.5 px-3.5 text-white md:text-base xs:text-sm text-xs md:rounded-3xl rounded-xl">
+                        class="w-fit bg-[#BC63F2] py-1.5 px-3.5 text-white  text-xs md:rounded-3xl rounded-xl">
                         Hello, Dear Jane!
                     </p>
                     <p
-                        class="w-fit bg-[#BC63F2] py-1.5 px-3.5 text-white md:text-base xs:text-sm text-xs md:rounded-3xl rounded-xl">
+                        class="w-fit bg-[#BC63F2] py-1.5 px-3.5 text-white  text-xs md:rounded-3xl rounded-xl">
                         Welcome to my website.
                     </p>
-                    <span class="text-[#181818]/50 md:text-[13px] xs:text-[11px] text-[9px] md:ml-4 ml-2.5">Dr. Sairous
-                        is typing...</span>
+                    <!-- <span class="text-[#181818]/50 md:text-[13px] xs:text-[11px] text-[9px] md:ml-4 ml-2.5">Dr. Sairous
+                        is typing...</span> -->
                 </div>
             </div>
         </div>
-        <div class="flex flex-col items-end md:mb-10 mb-6">
-            <img src="../assets/icons/plus.svg" alt="" class="md:w-7 w-5 md:mb-2.5 mb-1.5 cursor-pointer">
+
+        <div class="flex flex-col items-end mb-6 relative">
+            <div>
+                <img src="../assets/icons/plus.svg" alt="" class="md:w-7 w-5 md:mb-2.5 mb-1.5 cursor-pointer" dropdown-toggler>
+                <div class="flex gap-5 items-center absolute top-[-16px] right-12" togglable>
+                    
+                    <div class="flex flex-col items-center ">
+                        <button class="rounded-full  shadow-[0px_0px_24px_10px_#e1e1e1] w-8 h-8  grid place-items-center bg-white">
+                            <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" fill="#BC63F2"  clip-rule="evenodd" d="M1.8541 4C0.83011 4 0 4.83011 0 5.8541V10.8571C0 12.8619 0 13.8643 0.459827 14.5961C0.69961 14.9777 1.02229 15.3004 1.4039 15.5402C2.13571 16 3.1381 16 5.14286 16H12.8571C14.8619 16 15.8643 16 16.5961 15.5402C16.9777 15.3004 17.3004 14.9777 17.5402 14.5961C18 13.8643 18 12.8619 18 10.8571V5.8541C18 4.83011 17.1699 4 16.1459 4C15.4436 4 14.8016 3.60322 14.4875 2.97508L13.6667 1.33333L13.6666 1.33329C13.5567 1.1134 13.5017 1.00345 13.4394 0.907819C13.1141 0.408817 12.5833 0.0807755 11.9915 0.0129916C11.8781 0 11.7552 0 11.5093 0H6.49071C6.24484 0 6.1219 0 6.00848 0.0129916C5.41668 0.0807755 4.8859 0.408817 4.56062 0.907819C4.49827 1.00346 4.44329 1.11342 4.33333 1.33333L3.51246 2.97508C3.19839 3.60322 2.55638 4 1.8541 4ZM11 9C11 10.1046 10.1046 11 9 11C7.89543 11 7 10.1046 7 9C7 7.89543 7.89543 7 9 7C10.1046 7 11 7.89543 11 9ZM13 9C13 11.2091 11.2091 13 9 13C6.79086 13 5 11.2091 5 9C5 6.79086 6.79086 5 9 5C11.2091 5 13 6.79086 13 9Z" fill="white"/>
+                                </svg>
+                                
+                           
+                        </button>
+                        <span class="text-[10px] text-darkBlack50">record video</span>
+                    </div>
+
+                    <div class="flex flex-col items-center ">
+                        <button class="rounded-full  shadow-[0px_0px_24px_10px_#e1e1e1] w-8 h-8  grid place-items-center bg-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"  class="bi bi-mic" viewBox="0 0 16 16">
+                                <path fill="#BC63F2"  d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/>
+                                <path fill="#BC63F2" d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z"/>
+                              </svg>
+                           
+                        </button>
+                        <span class="text-[10px] text-darkBlack50">record voice</span>
+                    </div>
+
+                    <div class="flex flex-col items-center ">
+                        <button class="rounded-full  shadow-[0px_0px_24px_10px_#e1e1e1] w-8 h-8  grid place-items-center bg-white">
+                            <svg width="16" height="18" viewBox="0 0 22 20" fill="#BC63F2" xmlns="http://www.w3.org/2000/svg" class="fill-primary">
+                                <path  fill="#BC63F2" d="M15.3334 0H6.66675C5.47508 0 4.50008 0.975 4.50008 2.16667V19.5C4.50008 20.6917 5.47508 21.6667 6.66675 21.6667H19.6667C20.8584 21.6667 21.8334 20.6917 21.8334 19.5V6.5L15.3334 0ZM19.6667 19.5H6.66675V2.16667H14.2501V7.58333H19.6667V19.5ZM2.33341 4.33333V23.8333H19.6667V26H2.33341C1.14175 26 0.166748 25.025 0.166748 23.8333V4.33333H2.33341ZM8.83341 10.8333V13H17.5001V10.8333H8.83341ZM8.83341 15.1667V17.3333H14.2501V15.1667H8.83341Z" fill="#F8F8F8"/>
+                                </svg>
+                        </button>
+                        <span class="text-[10px] text-darkBlack50">send file</span>
+                    </div>
+                    
+                </div>
+            </div>
             <div
                 class="flex justify-between w-full md:px-7 px-3 md:py-4 py-2 border-solid border-[1px] border-[#062635] md:rounded-xl rounded-lg">
                 <input type="text" placeholder="Write your message"
@@ -259,6 +330,7 @@
                 <img src="../assets/icons/send.svg" alt="" class="md:w-7 w-5 cursor-pointer">
             </div>
         </div>
+
         <div id="modal1" class="invisible fixed inset-0 z-10 bg-black/60">
             <div
                 class="box absolute inset-y-0 md:inset-x-[25%] inset-x-[10%] bg-white md:p-7 md:pt-14 p-4 pt-10 md:rounded-t-2xl rounded-t-xl">
@@ -496,6 +568,7 @@
 <script src="../assets/js/navbar.js"></script>
 <script src="../assets/js/notifications.js"></script>
 <script src="../assets/js/history.js"></script>
+<script src="../assets/js/master.js"></script>
 
 <script>
     const modal1 = document.getElementById("modal1");

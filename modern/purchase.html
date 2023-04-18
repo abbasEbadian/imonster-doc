@@ -120,7 +120,7 @@
             <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full max-w-xs  px-3 py-2  flex flex-nowrap">
                 <input type="text" class="border-0 bg-none text-sm grow outline-none" placeholder="Enter your code">
                 <button
-                    class="bg-primary text-primaryLight rounded-3xl py-2 px-3 text-[10px] hover:brightness-90 transition">
+                    class="bg-primary text-primaryLight rounded-3xl py-2 px-3 text-[10px] hover:bg-primaryDark transition">
                     Submit
                 </button>
             </div>
@@ -149,12 +149,12 @@
 
             <div class="flex gap-4">
                 <button
-                    class="border-primary border-[1px] border-solid rounded-full px-4 text-xs py-3 mr-2 text-primary hover:bg-primaryLight transition">Paypal</button>
+                    class="border-primary border-[1px] border-solid rounded-full px-4 text-xs py-3 mr-2 text-primary hover:bg-primary  hover:text-white transition">Paypal</button>
                 <button
-                    class="border-primary border-[1px] border-solid rounded-full px-4 text-xs py-3 mr-2 text-primary hover:bg-primaryLight transition">Bank
+                    class="border-primary border-[1px] border-solid rounded-full px-4 text-xs py-3 mr-2 text-primary hover:bg-primary  hover:text-white transition">Bank
                     Account</button>
                 <button
-                    class="border-primary border-[1px] border-solid rounded-full px-4 text-xs py-3 mr-2 text-primary hover:bg-primaryLight transition">Credit
+                    class="border-primary border-[1px] border-solid rounded-full px-4 text-xs py-3 mr-2 text-primary hover:bg-primary  hover:text-white transition">Credit
                     Card</button>
             </div>
 
@@ -164,61 +164,14 @@
 
             <!-- STEPS NAVIGATION -->
             <div class="flex items-center justify-center">
-                <button
-                    class="border-primary border-[1px] border-solid rounded-full text-xs px-8 py-3 mr-2 text-primary hover:bg-primaryLight transition">Prev</button>
-                <button
-                    class="bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-xs">
-                    Next</button>
+                <a href="/modern/set-meeting.html"
+                    class="border-primary border-[1px] border-solid rounded-full text-xs px-8 py-3 mr-2 text-primary hover:bg-primaryLight transition">Prev</a>
+                <a href="/modern/main.html"
+                    class="bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:bg-primaryDark transition text-xs">
+                    Finish</a>
             </div>
     </main>
 
-
-    <!-- UPLOAD RECORD MODAL 
-        {.hidden} => hidden
-        remove hidden class to show.
-    -->
-    <div class="hidden relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-        <!--
-          
-            
-          
-        -->
-        <!-- BACKDROP -->
-        <div class="fixed inset-0 bg-[#0008] bg-opacity-75 transition-opacity"></div>
-
-        <!-- CONTENT -->
-        <div class="fixed inset-0 z-10 overflow-y-auto ">
-            <div class="flex min-h-full items-start justify-center p-4 text-center sm:items-center sm:p-0  ">
-                <div
-                    class="relative transform overflow-hidden rounded-3xl bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-xl p-4 sm:p-8 ">
-
-
-                    <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4 ">
-                        <div class="bg-black rounded-lg flex items-center flex-col justify-center min-h-[300px]">
-                            <p class="text-6xl text-white mb-6 ">!</p>
-                            <small class="text-white max-w-[340px] text-center">Click the icon to start recording. If
-                                you click on the icon again, the recording will stop and the final file will be ready to
-                                be sent.</small>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-center gap-x-4 gap-y-6 mt-6 flex-wrap">
-                        <button
-                            class="order-2 sm:order-1 border-primary border-[1px] border-solid rounded-full px-8 py-3  text-primary hover:bg-primaryLight transition text-sm">Try
-                            again</button>
-                        <div class="order-1 sm:order-2 w-full sm:w-auto flex justify-center">
-                            <button
-                                class="w-16 h-16 rounded-full border-4 border-solid border-primary grid place-items-center ">
-                                <span class="w-6 h-6 bg-primary rounded-full"></span>
-                            </button>
-                        </div>
-                        <button
-                            class="order-3 bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-sm">
-                            Upload</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 </body>
 

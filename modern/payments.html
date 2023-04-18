@@ -163,37 +163,37 @@
         <div class="md:mb-12 mb-16">
             <p class=" text-lg font-bold  mb-12 text-darkBlack50 ">Payment</p>
 
-            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full p-4 grid  grid-cols-5 gap-y-3 mb-8">
+            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full p-4 grid  grid-cols-5 gap-y-3 mb-8" modal-toggler data-target="#payment-id-modal" data-code="test1test1">
                 <div class="text-[13px] text-start text-primary col-span-5 md:col-span-2">Counseling meeting</div>
                 <div class="text-[13px] text-left md:text-center col-span-2 md:col-span-1"> November 1 </div>
                 <div class="text-[13px] text-center col-span-1"> 250$ </div>
                 <div class="text-[13px] text-center col-span-2 md:col-span-1 text-[#15803d]"> Paid </div>
             </div>
-            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full p-4 grid  grid-cols-5 gap-y-3 mb-8">
+            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full p-4 grid  grid-cols-5 gap-y-3 mb-8" modal-toggler data-target="#payment-id-modal" data-code="test2test2">
                 <div class="text-[13px] text-start text-primary col-span-5 md:col-span-2">Counseling meeting</div>
                 <div class="text-[13px] text-left md:text-center col-span-2 md:col-span-1"> November 2 </div>
                 <div class="text-[13px] text-center col-span-1"> 250$ </div>
                 <div class="text-[13px] text-center col-span-2 md:col-span-1 text-[#15803d]"> Paid </div>
             </div>
-            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full p-4 grid  grid-cols-5 gap-y-3 mb-8">
+            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full p-4 grid  grid-cols-5 gap-y-3 mb-8" modal-toggler data-target="#payment-id-modal" data-code="test3test3">
                 <div class="text-[13px] text-start text-primary col-span-5 md:col-span-2">Counseling meeting</div>
                 <div class="text-[13px] text-left md:text-center col-span-2 md:col-span-1"> November 3 </div>
                 <div class="text-[13px] text-center col-span-1"> 20$ </div>
                 <div class="text-[13px] text-center col-span-2 md:col-span-1 text-[#15803d]"> Paid </div>
             </div>
-            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full p-4 grid  grid-cols-5 gap-y-3 mb-8">
+            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full p-4 grid  grid-cols-5 gap-y-3 mb-8" modal-toggler data-target="#payment-id-modal" data-code="test4test4">
                 <div class="text-[13px] text-start text-primary col-span-5 md:col-span-2">Counseling meeting</div>
                 <div class="text-[13px] text-left md:text-center col-span-2 md:col-span-1"> November 4 </div>
                 <div class="text-[13px] text-center col-span-1"> 250$ </div>
                 <div class="text-[13px] text-center col-span-2 md:col-span-1 text-[#15803d]"> Paid </div>
             </div>
-            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full p-4 grid  grid-cols-5 gap-y-3 mb-8">
+            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full p-4 grid  grid-cols-5 gap-y-3 mb-8" modal-toggler data-target="#payment-id-modal" data-code="test5test5">
                 <div class="text-[13px] text-start text-primary col-span-5 md:col-span-2">Counseling meeting</div>
                 <div class="text-[13px] text-left md:text-center col-span-2 md:col-span-1"> November  5</div>
                 <div class="text-[13px] text-center col-span-1"> 50$ </div>
                 <div class="text-[13px] text-center col-span-2 md:col-span-1 text-[#15803d]"> Paid </div>
             </div>
-            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full p-4 grid  grid-cols-5 gap-y-3 mb-8">
+            <div class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full p-4 grid  grid-cols-5 gap-y-3 mb-8" modal-toggler data-target="#payment-id-modal" data-code="test6test6">
                 <div class="text-[13px] text-start text-primary col-span-5 md:col-span-2">Counseling meeting</div>
                 <div class="text-[13px] text-left md:text-center col-span-2 md:col-span-1"> November 6 </div>
                 <div class="text-[13px] text-center col-span-1"> 250$ </div>
@@ -213,7 +213,7 @@
 
 
     <!-- TRACKING CODE MODAL -->
-    <div class="hidden  relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class=" relative z-10 opacity-0" togglable aria-labelledby="modal-title" role="dialog" aria-modal="true" id="payment-id-modal">
         <!-- BACKDROP -->
         <div class="fixed inset-0 bg-[#0008] bg-opacity-75 transition-opacity"></div>
 
@@ -222,10 +222,10 @@
             <div class="flex min-h-full items-start justify-center p-4 text-center sm:items-center sm:p-0  ">
                 <div
                     class="transform overflow-hidden rounded-3xl bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-xl p-4 sm:p-8 relative ">
-                    <span class="absolute top-2 right-8 text-xl">  x</span>
+                    <span class="absolute top-2 right-8 text-xl" closer role="button">  x</span>
                     <div class="flex flex-col items-center">
                         <p class="text-md"> Your tracking code is : </p>
-                        <p class="text-md border-[1px] rounded-full text-center w-full mt-10 py-2"> lsdgdfgjhkjshdflkalsjdlakshglghskdjghskjgh </p>
+                        <p class="text-md border-[1px] rounded-full text-center w-full mt-10 py-2" code-input> lsdgdfgjhkjshdflkalsjdlakshglghskdjghskjgh </p>
                     </div>
                 </div>
             </div>
@@ -436,6 +436,7 @@
 <script src="../assets/js/navbar.js"></script>
 <script src="../assets/js/notifications.js"></script>
 <script src="../assets/js/history.js"></script>
+<script src="../assets/js/master.js"></script>
 
 <script>
     $(".numberInput").on('input', function (e) {

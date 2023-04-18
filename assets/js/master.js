@@ -1,3 +1,4 @@
+
 var init = false
 var INVISIBLE = {
     opacity: 0,
@@ -57,10 +58,18 @@ const initTogglers = () => {
 
     $("[modal-toggler]").each((_, item) => {
         $(item).on('click', () => {
-            console.log($(item).data(), $(item).data('target') === '#record-modal')
-            $($(item).data('target')).css(VISIBLE)
-            if($(item).data('target') === '#record-modal')
+            const target = $(item).data('target');
+            var value;
+            $(target).css(VISIBLE)
+
+
+            if( target === '#record-modal')
                 $(window).trigger("record-modal-opened")
+
+            else if(target){
+                value = $(item).data('code') || "??" ;
+                $(target).find("[code-input]").text(value)
+            }
         })
     })
 
@@ -70,4 +79,29 @@ const initTogglers = () => {
         $(item).parents('[select-container]').find('[selectable-text]').text(value);
         $(item).parents('[selectable]').css(INVISIBLE)
     })
+    $("[carousel]").length && $("[carousel]").slick({
+        infinite: false,
+        autoplay: false,
+        variableWidth: true,
+        centerMode: false
+    })
+    $("[accordion]").length && $("[accordion]").accordion({
+        heightStyle: "content",
+        collapsible: true,
+        actove: false,
+        icons: false,
+        activate: function( event, ui ) {
+            
+            $(ui.newHeader[0]).find("img").length &&
+                $(ui.newHeader[0]).find("img").css("transform", "rotate(180deg)")
+            
+            $(ui.oldHeader[0]).find("img").length &&
+                $(ui.oldHeader[0]).find("img").css("transform", "rotate(0deg)")
+        },
+      
+    })
+
+
+
+    
 }

@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../tailwind/output.css">
     <link rel="stylesheet" href="../assets/styles/main.css">
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <title>Payments</title>
 </head>
 
@@ -47,10 +46,12 @@
                 </dd>
 
                 <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
-                    <a href="/modern/meetings.html"> Meetings </a></dd>
+                    <a href="/modern/meetings.html"> Meetings </a>
+                </dd>
 
                 <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
-                    <a href="/modern/user-information.html"> Your Information </a></dd>
+                    <a href="/modern/user-information.html"> Your Information </a>
+                </dd>
 
                 <dd
                     class="lg:text-lg text-sm  text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 border-solid cursor-pointer">
@@ -169,9 +170,10 @@
             <p class=" text-xs text-start font-bold text-[#d1d1d1] mb-6 uppercase ">FAQ</p>
 
             <!--  ACCORDION -->
-            <div>
+            <div accordion>
+
                 <!--ACCORDION ITEM -->
-                <div class="mb-8 relative  rounded-3xl flex justify-center flex-col items-center gap-y-7 w-full ">
+                <div accrodion-header class="relative z-[2] rounded-3xl flex justify-center flex-col items-center gap-y-7 w-full ">
                     <button type="button"
                         class="pr-8 relative cursor-default  w-full  bg-white rounded-full text-xs py-4 shadow-[0px_0px_8px_2px_#e1e1e1] ">
                         <span class="flex items-center  text-center justify-center">
@@ -184,23 +186,22 @@
                         </span>
                     </button>
 
-
-                    <div class="hidden translate-y-[-64px] z-10 pt-12 px-6 pb-8  w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
-                        tabindex="-1" role="listbox" aria-labelledby="listbox-label"
-                        aria-activedescendant="listbox-option-3">
-                        <p class="text-xs leading-6">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem consequatur impedit molestias
-                            nam consequuntur at aspernatur perspiciatis. Corrupti laborum excepturi saepe maxime, eius
-                            dolorem porro assumenda facilis beatae. Vitae, porro!
-
-                        </p>
-                    </div>
                 </div>
+                <div class="translate-y-[-32px] z-[1] pt-12 px-6 pb-8  w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
+                    tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                    aria-activedescendant="listbox-option-3">
+                    <p class="text-xs leading-6">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem consequatur impedit molestias
+                        nam consequuntur at aspernatur perspiciatis. Corrupti laborum excepturi saepe maxime, eius
+                        dolorem porro assumenda facilis beatae. Vitae, porro!
+
+                    </p>
+                </div>
+
                 <!-- 
                     ACCORDION ITEM
-                    ### ACTIVE ###
                 -->
-                <div class="mb-[-32px] relative  rounded-3xl flex justify-center flex-col items-center gap-y-7 w-full ">
+                <div accrodion-header class="mt-8 relative z-[2]  rounded-3xl flex justify-center flex-col items-center gap-y-7 w-full ">
                     <button type="button"
                         class="pr-8  relative cursor-default  w-full  bg-white rounded-full text-xs py-4 shadow-[0px_0px_8px_2px_#e1e1e1] ">
                         <span class="flex items-center  text-center justify-center">
@@ -210,24 +211,25 @@
                         </span>
                         <span
                             class="pointer-events-none absolute inset-y-0 right-3 ml-3 flex items-center pr-2 rotate-180 transition">
-                            <img src="../assets/icons/arrow-down.svg" alt="arrow">
+                            <img src="../assets/icons/arrow-down.svg" alt="arrow" >
                         </span>
                     </button>
 
+                </div>
 
-                    <div class=" translate-y-[-64px] z-10 pt-12 px-6 pb-8  w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
-                        tabindex="-1" role="listbox" aria-labelledby="listbox-label"
-                        aria-activedescendant="listbox-option-3">
-                        <p class="text-xs leading-6">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem consequatur impedit molestias
-                            nam consequuntur at aspernatur perspiciatis. Corrupti laborum excepturi saepe maxime, eius
-                            dolorem porro assumenda facilis beatae. Vitae, porro!
+                <div class=" translate-y-[-32px] z-[1] pt-12 px-6 pb-8  w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
+                    tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                    aria-activedescendant="listbox-option-3">
+                    <p class="text-xs leading-6">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem consequatur impedit molestias
+                        nam consequuntur at aspernatur perspiciatis. Corrupti laborum excepturi saepe maxime, eius
+                        dolorem porro assumenda facilis beatae. Vitae, porro!
 
-                        </p>
-                    </div>
+                    </p>
                 </div>
                 <!-- ACCORDION ITEM -->
-                <div class="mb-8 relative  rounded-3xl flex justify-center flex-col items-center gap-y-7 w-full ">
+
+                <div accrodion-header class="mt-8 relative  z-[2]  rounded-3xl flex justify-center flex-col items-center gap-y-7 w-full ">
                     <button type="button"
                         class="pr-8  relative cursor-default  w-full  bg-white rounded-full text-xs py-4 shadow-[0px_0px_8px_2px_#e1e1e1] ">
                         <span class="flex items-center  text-center justify-center">
@@ -241,23 +243,28 @@
                     </button>
 
 
-                    <div class="hidden translate-y-[-64px] z-10 pt-12 px-6 pb-8  w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
-                        tabindex="-1" role="listbox" aria-labelledby="listbox-label"
-                        aria-activedescendant="listbox-option-3">
-                        <p class="text-xs leading-6">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem consequatur impedit molestias
-                            nam consequuntur at aspernatur perspiciatis. Corrupti laborum excepturi saepe maxime, eius
-                            dolorem porro assumenda facilis beatae. Vitae, porro!
-
-                        </p>
-                    </div>
                 </div>
-                <div class="flex flex-col items-center gap-4">
-                    <small>Can’t find your answer?</small>
+                <div class="translate-y-[-32px] z-[1] pt-12 px-6 pb-8  w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
+                    tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                    aria-activedescendant="listbox-option-3">
+                    <p class="text-xs leading-6">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem consequatur impedit molestias
+                        nam consequuntur at aspernatur perspiciatis. Corrupti laborum excepturi saepe maxime, eius
+                        dolorem porro assumenda facilis beatae. Vitae, porro!
+
+                    </p>
+                </div>
+
+
+                
+            </div>
+
+            <div class="flex flex-col items-center gap-4 mt-12">
+                <small>Can’t find your answer?</small>
                 <button
+                modal-toggler data-target="#question-modal"
                     class="bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-xs">
                     Send me a message</button>
-                </div>
             </div>
 
 
@@ -266,7 +273,7 @@
 
 
     <!-- ASK MODAL -->
-    <div class=" hidden relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="relative z-10 opacity-0" aria-labelledby="modal-title" role="dialog" aria-modal="true" togglable id="question-modal">
         <!-- BACKDROP -->
         <div class="fixed inset-0 bg-[#0008] bg-opacity-75 transition-opacity"></div>
 
@@ -276,7 +283,7 @@
                 <div
                     class="transform overflow-hidden rounded-3xl bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-xl p-4 sm:p-8 relative ">
                     <!-- CLOSE BUTTON -->
-                    <span class="absolute top-2 right-8 text-xl" role="button"> x </span>
+                    <span class="absolute top-2 right-8 text-xl" role="button" closer> x </span>
                     <div class="flex flex-col items-center gap-6 pt-8">
 
                         <div class="relative w-full">
@@ -309,7 +316,7 @@
     </div>
 
     <!-- Notifications Mobile -->
-    <div class="md:hidden flex absolute right-0">
+    <div class="md:hidden flex absolute right-0 z-30">
         <button class="absolute right-16 top-[18px] w-max" onclick="openNotifications_mobile()">
             <img src="../assets/icons/notification.svg" alt="" class="w-6">
             <span class="absolute right-0 top-0 w-2 h-2 bg-[#FF5353] rounded-full">
@@ -390,7 +397,7 @@
 
 
     <div id="notifications-desktop"
-        class="fixed xl:right-[90px] lg:right-[84px] right-[69px] lg:top-[30px] top-[20px] invisible md:block hidden bg-[#fdfdfd] w-96 h-fit lg:p-5 p-4 lg:rounded-2xl rounded-xl border-solid border-[1px] border-gray-200 shadow-xl opacity-0 duration-[0.2s]">
+        class="fixed xl:right-[90px] lg:right-[84px] right-[69px] lg:top-[30px] top-[20px] invisible md:block hidden bg-[#fdfdfd] w-96 h-fit lg:p-5 p-4 lg:rounded-2xl rounded-xl border-solid border-[1px] border-gray-200 shadow-xl opacity-0 duration-[0.2s] z-30">
         <div
             class="absolute right-[-10px] top-[30px] w-8 h-8 border-solid border-[#fdfdfd] border-t-[15px] border-r-[15px] rounded-md rotate-45">
         </div>
@@ -426,9 +433,11 @@
 
 </html>
 
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/jquery-ui/dist/jquery-ui.min.js"></script>
 <script src="../assets/js/navbar.js"></script>
 <script src="../assets/js/notifications.js"></script>
-<script src="../assets/js/history.js"></script>
+<script src="../assets/js/master.js"></script>
 
 <script>
     $(".numberInput").on('input', function (e) {
