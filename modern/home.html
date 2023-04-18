@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../tailwind/output.css">
     <link rel="stylesheet" href="../assets/styles/main.css">
-   
+
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <title> Home </title>
 </head>
@@ -48,10 +48,10 @@
         <ol class="stepper flex items-center  w-full">
             <!-- STEP 1 -->
             <li class="w-1/4 active-stepper relative h-full">
-                <div
-                    class=" relative z-[2] gap-y-3 flex items-center flex-col   ">
+                <div class=" relative z-[2] gap-y-3 flex items-center flex-col   ">
                     <span text class="whitespace-nowrap text-black50 text-xs text-center sm:hidden block"> Info</span>
-                    <span text class="whitespace-nowrap text-black50 text-xs text-center hidden sm:block"> Your Information</span>
+                    <span text class="whitespace-nowrap text-black50 text-xs text-center hidden sm:block"> Your
+                        Information</span>
                     <span circle
                         class="bg-primary w-4 h-4  border-[1px] border-primary border-solid rounded-full"></span>
                 </div>
@@ -59,10 +59,11 @@
             </li>
             <!-- STEP 2 -->
             <li class="w-1/4 relative h-full">
-                <div
-                    class=" relative z-[2] gap-y-3 flex items-center flex-col  ">
-                    <span text class="whitespace-nowrap text-black50 text-xs text-center sm:hidden block">Documents</span>
-                    <span text class="whitespace-nowrap text-black50 text-xs text-center hidden sm:block">Documents upload</span>
+                <div class=" relative z-[2] gap-y-3 flex items-center flex-col  ">
+                    <span text
+                        class="whitespace-nowrap text-black50 text-xs text-center sm:hidden block">Documents</span>
+                    <span text class="whitespace-nowrap text-black50 text-xs text-center hidden sm:block">Documents
+                        upload</span>
                     <span circle
                         class="bg-primary w-4 h-4  border-[1px] border-primary border-solid rounded-full"></span>
                 </div>
@@ -71,10 +72,10 @@
             </li>
             <!-- STEP 3 -->
             <li class="w-1/4 relative">
-                <div
-                    class=" relative z-[2] gap-y-3 flex items-center flex-col  ">
+                <div class=" relative z-[2] gap-y-3 flex items-center flex-col  ">
                     <span text class="whitespace-nowrap text-black50 text-xs text-center sm:hidden block">Meeting</span>
-                    <span text class="whitespace-nowrap text-black50 text-xs text-center hidden sm:block">Set a meeting</span>
+                    <span text class="whitespace-nowrap text-black50 text-xs text-center hidden sm:block">Set a
+                        meeting</span>
                     <span circle
                         class="bg-primary w-4 h-4  border-[1px] border-primary border-solid rounded-full"></span>
                 </div>
@@ -83,8 +84,7 @@
             </li>
             <!-- STEP 4 -->
             <li class="w-1/4 ">
-                <div
-                    class="relative z-[2] gap-y-3 flex items-center flex-col  ">
+                <div class="relative z-[2] gap-y-3 flex items-center flex-col  ">
                     <span text class="w-[140px] text-black50 text-xs text-center "> Purchase</span>
                     <span circle
                         class=" bg-primary w-4 h-4  border-[1px] border-primary border-solid rounded-full"></span>
@@ -112,29 +112,32 @@
 
 
             <!-- User gender -->
-            <div class="relative  w-full selectBox">
-                <button type="button" data-toggle="dropdown"
-                    class="z-20 relative  w-full  bg-white   border-[1px] border-solid border-primary rounded-full text-xs py-3 "
+            <div class="relative  w-full selectBox" select-container>
+                <button type="button" dropdown-toggler
+                    class="z-[5] relative  w-full  bg-white   border-[1px] border-solid border-primary rounded-full text-xs py-3 "
                     aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
                     <span class="flex items-center  text-center justify-center pointer-events-none">
-                        <span class=" block truncate text-xs text-black50 title" >select your gender</span>
+                        <span class=" block truncate text-xs text-black50 title" selectable-text>select your
+                            gender</span>
                     </span>
                     <i class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
                         <img src="../assets/icons/arrow-down.svg" alt="arrow">
                     </i>
                 </button>
 
-                <ul class="hidden absolute z-10 bg-white pt-12 max-h-56 w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
-                    tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                <ul class="transition-all  absolute z-[4] bg-white pt-12 max-h-56 w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
+                    togglable selectable tabindex="-1" role="listbox" aria-labelledby="listbox-label"
                     aria-activedescendant="listbox-option-3">
-                    <li class=" cursor-pointer select-none py-2 transition-all hover:bg-primaryLight" role="option">
-                        <span class="font-normal block truncate text-center">Male</span>
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter data-value="Male">Male</span>
                     </li>
-                    <li class=" cursor-pointer select-none py-2 transition-all hover:bg-primaryLight" role="option">
-                        <span class="font-normal block truncate text-center">Female</span>
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter
+                            data-value="Female">Female</span>
                     </li>
-                    <li class=" cursor-pointer select-none py-2 transition-all hover:bg-primaryLight" role="option">
-                        <span class="font-normal block truncate text-center">Other</span>
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter
+                            data-value="Other">Other</span>
                     </li>
                 </ul>
             </div>
@@ -166,33 +169,32 @@
 
 
             <!-- User Illness -->
-            <div class="relative  w-full ">
-                <button type="button"
-                    class="relative cursor-default  w-full  bg-white   border-[1px] border-solid border-primary rounded-full text-xs py-3 "
+            <div class="relative  w-full" select-container>
+                <button type="button" dropdown-toggler
+                    class="z-[3] relative cursor-default  w-full  bg-white   border-[1px] border-solid border-primary rounded-full text-xs py-3 "
                     aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
                     <span class="flex items-center  text-center justify-center">
-                        <span class=" block truncate text-xs text-black50 "> choose your illness</span>
+                        <span class=" block truncate text-xs text-black50" selectable-text> choose your illness</span>
                     </span>
                     <span class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
                         <img src="../assets/icons/arrow-down.svg" alt="arrow">
                     </span>
                 </button>
 
-                <!-- 
-                        to show: set { block } class
-                        to hide: set { hidden } class
-                    -->
-                <ul class="hidden absolute z-10 pt-12 max-h-56 w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
-                    tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                <ul class="transition-all absolute z-[2] pt-12 bg-white max-h-56 w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
+                    togglable selectable tabindex="-1" role="listbox" aria-labelledby="listbox-label"
                     aria-activedescendant="listbox-option-3">
-                    <li class=" cursor-pointer select-none py-2 transition-all hover:bg-primaryLight" role="option">
-                        <span class="font-normal block truncate text-center"> option 1</span>
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter data-value="Illness 1">
+                            Illness 1</span>
                     </li>
-                    <li class=" cursor-pointer select-none py-2 transition-all hover:bg-primaryLight" role="option">
-                        <span class="font-normal block truncate text-center"> option 2 </span>
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter data-value="Illness 2">
+                            Illness 2 </span>
                     </li>
-                    <li class=" cursor-pointer select-none py-2 transition-all hover:bg-primaryLight" role="option">
-                        <span class="font-normal block truncate text-center"> option 3 </span>
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter data-value="Illness 3">
+                            Illness 3 </span>
                     </li>
                 </ul>
             </div>
@@ -208,42 +210,47 @@
                 <input type="text" name="name" placeholder="(248) 654 1769"
                     class="w-full border-[1px] border-solid border-primary rounded-full px-4 py-2 placeholder:text-black50 placeholder:text-xs text-left focus-visible:outline-none  pl-28" />
 
-                <!-- Set onClick to this element :)  -->
-                <div class=" absolute left-4 rounded-full bg-primaryLight top-3 h-5 w-20 flex items-center justify-between  pl-1 pr-3 text-sm">
-                    <img src="../assets/images/usa.png" alt="">
-                    <span class=""> +1</span>
-                </div>
-                <!--  
-                    to show: set { block } class
-                    to hide: set { hidden } class -->
-                <div class="hidden absolute z-10 pt-16 max-h-56 w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
-                    tabindex="-1" role="listbox" aria-labelledby="listbox-label"
-                    aria-activedescendant="listbox-option-3">
+                <div select-container
+                    class=" absolute left-4   top-3 ">
 
+                    <div class=" flex items-center justify-between  pl-1 pr-3 text-sm bg-primaryLight h-5 w-20 rounded-full" dropdown-toggler>
+                        <img src="../assets/images/usa.png" alt="">
+                        <span class="" selectable-text> +1</span>
+                    </div>
+
+                    <div togglable selectable
+                        class="transition-all bg-white absolute z-10  max-h-56 w-full overflow-auto  top-5 bg-none rounded-[12px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm flex flex-col"
+                        
+                        >
+
+                        <span selecter data-value="+1" class="cursor-pointer select-none  transition-all hover:bg-primaryLight  text-center"> +1 </span>
+                        <span selecter data-value="+2" class="cursor-pointer select-none  transition-all hover:bg-primaryLight  text-center"> +2 </span>
+                        <span selecter data-value="+98" class="cursor-pointer select-none  transition-all hover:bg-primaryLight text-center"> +98 </span>
+                        
+                    </div>
                 </div>
             </div>
 
             <hr class="my-4 border-0" />
 
 
-             <!-- User email -->
-             <div class="relative w-full">
+            <!-- User email -->
+            <div class="relative w-full">
                 <label for="name" class="text-[11px] absolute top-[-8px] left-4 text-primary bg-white px-2"> Enter your
                     email address </label>
                 <input type="text" name="name" placeholder="for example: yourname@gmail.com"
                     class="w-full border-[1px] border-solid border-primary rounded-full px-4 py-2 placeholder:text-black50 placeholder:text-xs text-center focus-visible:outline-none" />
             </div>
 
-            
+
             <hr class="my-8 border-0" />
 
             <!-- STEPS NAVIGATION -->
             <div class="flex items-center justify-center">
                 <button
-                    class="border-primary border-[1px] border-solid rounded-full text-xs px-8 py-3 mr-2 text-primary hover:bg-primaryLight transition">Prev</button>
-                <button
                     class="bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-xs">
-                    Next</button>
+                    <a href="/modern/document-upload.html"> Next </a>    
+                </button>
             </div>
     </main>
 

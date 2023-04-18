@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="../tailwind/output.css">
     <link rel="stylesheet" href="../assets/styles/main.css">
 
-    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/jquery-ui/dist/jquery-ui.min.js"></script>
     <title>Documents upload</title>
 </head>
 
@@ -114,10 +115,12 @@
                 class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl flex justify-center flex-col items-center gap-y-7 w-full py-16 ">
                 <small>Drag and drop your files here, or:</small>
                 <div class="flex gap-x-3">
-                    <button class="rounded-full grid place-items-center w-12 h-12 bg-[#3C82F5] text-white">
+                    <button class="rounded-full grid place-items-center w-12 h-12 bg-[#3C82F5] text-white" modal-toggler
+                        data-target="#record-modal">
                         <img src="../assets/icons/mic.svg" alt="mic">
                     </button>
-                    <button class="rounded-full grid place-items-center w-12 h-12 bg-[#F63E61]">
+                    <button class="rounded-full grid place-items-center w-12 h-12 bg-[#F63E61]" modal-toggler
+                        data-target="#record-modal">
                         <img src="../assets/icons/webcam.svg" alt="webcam">
                     </button>
                     <button class="rounded-full grid place-items-center w-12 h-12 bg-[#22C35E]">
@@ -131,18 +134,17 @@
 
 
             <!-- NO DOCUMENTS -->
-                <p class="hidden text-darkBlack50 text-xs"> You haven’t upload anything yet!</p>
+            <p class="hidden text-darkBlack50 text-xs"> You haven’t upload anything yet!</p>
 
             <!-- YES DOCUMENTS :D -->
-            <div
-                class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full max-w-sm  p-4 ">
+            <div id="uploads" class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full max-w-sm  p-4 ">
                 <div class="flex  items-center gap-y-7">
                     <img src="../assets/images/docky.png" class="rounded-md" alt="">
                     <div class="flex flex-col mr-auto ml-4 gap-y-3">
                         <p class="text-xs"> Video recorded 5.mp4 </p>
                         <p class="text-darkBlack50 text-xs">5.7 MB of 5.7 MB ...</p>
                     </div>
-                    
+
                     <!-- Progress -->
                     <!-- CHART Should be used here 
                         this is just a placeholder
@@ -159,10 +161,13 @@
             <!-- STEPS NAVIGATION -->
             <div class="flex items-center justify-center">
                 <button
-                    class="border-primary border-[1px] border-solid rounded-full text-xs px-8 py-3 mr-2 text-primary hover:bg-primaryLight transition">Prev</button>
+                    class="border-primary border-[1px] border-solid rounded-full text-xs px-8 py-3 mr-2 text-primary hover:bg-primaryLight transition">
+                    <a href="/modern/home.html"> Prev </a>
+                </button>
                 <button
                     class="bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-xs">
-                    Next</button>
+                    <a href="/modern/set-meeting.html">Next</a>
+                </button>
             </div>
         </div>
     </main>
@@ -172,7 +177,8 @@
         {.hidden} => hidden
         remove hidden class to show.
     -->
-    <div class="hidden relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="relative z-10 transition" id="record-modal" togglable aria-labelledby="modal-title" role="dialog"
+        aria-modal="true">
         <!--
           
             
@@ -187,24 +193,32 @@
                 <div
                     class="relative transform overflow-hidden rounded-3xl bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-xl p-4 sm:p-8 ">
 
+                    <span closer class="left-4 top-0 p-2 absolute" role="button"> x </span>
 
                     <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4 ">
-                        <div class="bg-black rounded-lg flex items-center flex-col justify-center min-h-[300px]">
-                            <p class="text-6xl text-white mb-6 ">!</p>
-                            <small class="text-white max-w-[340px] text-center">Click the icon to start recording. If
-                                you click on the icon again, the recording will stop and the final file will be ready to
-                                be sent.</small>
+                        <div class="bg-black rounded-lg  min-h-[300px] relative overflow-hiddenr">
+                            <video id="preview" autoplay controls></video>
+                            <div class="absolute inset-0 flex items-center flex-col justify-center bg-darkBlack50" id="record-hint">
+                                <p class="text-6xl text-white mb-6 ">!</p>
+                                <small class="text-white max-w-[340px] text-center">Click the icon to start recording.
+                                    If
+                                    you click on the icon again, the recording will stop and the final file will be
+                                    ready to
+                                    be sent.</small>
+                            </div>
                         </div>
                     </div>
+                    <div id="soundClips" class="button"> </div>
                     <div class="flex items-center justify-center gap-x-4 gap-y-6 mt-6 flex-wrap">
-                        <button
+                        <button id="try-again"
                             class="order-2 sm:order-1 border-primary border-[1px] border-solid rounded-full px-8 py-3  text-primary hover:bg-primaryLight transition text-sm">Try
                             again</button>
                         <div class="order-1 sm:order-2 w-full sm:w-auto flex justify-center">
                             <button
-                            class="w-16 h-16 rounded-full border-4 border-solid border-primary grid place-items-center ">
-                            <span class="w-6 h-6 bg-primary rounded-full"></span>
-                        </button>
+                                class="w-16 h-16 rounded-full border-4 border-solid border-primary grid place-items-center"
+                                id="record">
+                                <span class="w-6 h-6 bg-primary rounded-full"></span>
+                            </button>
                         </div>
                         <button
                             class="order-3 bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-sm">
@@ -219,76 +233,8 @@
 
 </html>
 
-<script src="./assets/js/navbar.js"></script>
-<script src="./assets/js/notifications.js"></script>
-<script src="./assets/js/history.js"></script>
-
-<script>
-    var x, i, j, l, ll, selElmnt, a, b, c;
-    x = document.getElementsByClassName("custom-select");
-    l = x.length;
-    for (i = 0; i < l; i++) {
-        selElmnt = x[i].getElementsByTagName("select")[0];
-        ll = selElmnt.length;
-        a = document.createElement("DIV");
-        a.setAttribute("class", "select-selected");
-        a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-        x[i].appendChild(a);
-        b = document.createElement("DIV");
-        b.setAttribute("class", "select-items select-hide");
-        for (j = 1; j < ll; j++) {
-            c = document.createElement("DIV");
-            c.innerHTML = selElmnt.options[j].innerHTML;
-            c.addEventListener("click", function (e) {
-                var y, i, k, s, h, sl, yl;
-                s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-                sl = s.length;
-                h = this.parentNode.previousSibling;
-                for (i = 0; i < sl; i++) {
-                    if (s.options[i].innerHTML == this.innerHTML) {
-                        s.selectedIndex = i;
-                        h.innerHTML = this.innerHTML;
-                        y = this.parentNode.getElementsByClassName("same-as-selected");
-                        yl = y.length;
-                        for (k = 0; k < yl; k++) {
-                            y[k].removeAttribute("class");
-                        }
-                        this.setAttribute("class", "same-as-selected");
-                        break;
-                    }
-                }
-                h.click();
-            });
-            b.appendChild(c);
-        }
-        x[i].appendChild(b);
-        a.addEventListener("click", function (e) {
-            e.stopPropagation();
-            closeAllSelect(this);
-            this.nextSibling.classList.toggle("select-hide");
-            this.classList.toggle("select-arrow-active");
-        });
-    }
-
-    function closeAllSelect(elmnt) {
-        var x, y, i, xl, yl, arrNo = [];
-        x = document.getElementsByClassName("select-items");
-        y = document.getElementsByClassName("select-selected");
-        xl = x.length;
-        yl = y.length;
-        for (i = 0; i < yl; i++) {
-            if (elmnt == y[i]) {
-                arrNo.push(i)
-            } else {
-                y[i].classList.remove("select-arrow-active");
-            }
-        }
-        for (i = 0; i < xl; i++) {
-            if (arrNo.indexOf(i)) {
-                x[i].classList.add("select-hide");
-            }
-        }
-    }
-
-    document.addEventListener("click", closeAllSelect); 
-</script>
+<script src="../assets/js/navbar.js"></script>
+<script src="../assets/js/notifications.js"></script>
+<script src="../assets/js/history.js"></script>
+<script src="../assets/js/master.js"></script>
+<script src="../assets/js/recorder.js"></script>

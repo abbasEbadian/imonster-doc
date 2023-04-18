@@ -8,17 +8,18 @@ var INVISIBLE = {
 var VISIBLE = {
     opacity: 1,
     pointerEvents: "all",
-    visibility: "visible" 
+    visibility: "visible",
 }
-
-document.onreadystatechange = function () {
+jQuery(function() {
     if (init) return
     init = true;
 
     initTogglers();
 
     initMeetingReminder();
-}
+    $("[togglable]").css(INVISIBLE)
+ })
+
 
 const initMeetingReminder = () => {
     const meetingReminder = $('[data-meeting-reminder]')
@@ -37,9 +38,7 @@ const initMeetingReminder = () => {
 }
 
 const initTogglers = () => {
-    
     $("[dropdown-toggler]").each((_, item) => {
-        $(item).next("[togglable]").css(INVISIBLE)
         $(item).on('click', (event) => {
             const visible = $(item).next("[togglable]").css('visibility')
             if (visible === 'visible') {
@@ -51,12 +50,24 @@ const initTogglers = () => {
     })
     $('[closer]').on('click', (e) => {
         $(e.target).closest("[togglable]").css(INVISIBLE)
+        if($(e.target).closest("[togglable]").attr('id') === 'record-modal'){
+            $(window).trigger("record-modal-closed")
+        }
     })
 
     $("[modal-toggler]").each((_, item) => {
         $(item).on('click', () => {
+            console.log($(item).data(), $(item).data('target') === '#record-modal')
             $($(item).data('target')).css(VISIBLE)
+            if($(item).data('target') === '#record-modal')
+                $(window).trigger("record-modal-opened")
         })
     })
 
+    $("[selecter]").on('click', (event) => {
+        const item = $(event.target);
+        const value = item.data('value')
+        $(item).parents('[select-container]').find('[selectable-text]').text(value);
+        $(item).parents('[selectable]').css(INVISIBLE)
+    })
 }

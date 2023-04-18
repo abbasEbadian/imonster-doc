@@ -828,6 +828,14 @@ video {
   z-index: 40;
 }
 
+.z-\[3\] {
+  z-index: 3;
+}
+
+.z-\[4\] {
+  z-index: 4;
+}
+
 .order-1 {
   order: 1;
 }
@@ -1817,6 +1825,10 @@ video {
   border-radius: 0.75rem;
 }
 
+.rounded-\[12px\] {
+  border-radius: 12px;
+}
+
 .rounded-l-3xl {
   border-top-left-radius: 1.5rem;
   border-bottom-left-radius: 1.5rem;
@@ -2077,6 +2089,10 @@ video {
 .bg-success {
   --tw-bg-opacity: 1;
   background-color: rgb(41 204 106 / var(--tw-bg-opacity));
+}
+
+.bg-darkBlack50 {
+  background-color: #18181877;
 }
 
 .bg-opacity-75 {
