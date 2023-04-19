@@ -79,11 +79,16 @@ const initTogglers = () => {
         $(item).parents('[select-container]').find('[selectable-text]').text(value);
         $(item).parents('[selectable]').css(INVISIBLE)
     })
-    $("[carousel]").length && $("[carousel]").slick({
-        infinite: false,
-        autoplay: false,
-        variableWidth: true,
-        centerMode: false
+    $("[carousel]").length && $('[carousel]').each((_, item) => {
+        const count = $(item).data('count');
+        const conf = {
+            infinite: false,
+            autoplay: false,
+            centerMode: false
+        }
+        if(!count) conf["variableWidth"] = true;
+        else conf["slidesToShow"] = count
+        $(item).slick( conf )
     })
     $("[accordion]").length && $("[accordion]").accordion({
         heightStyle: "content",

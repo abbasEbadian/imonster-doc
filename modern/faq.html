@@ -7,7 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../tailwind/output.css">
     <link rel="stylesheet" href="../assets/styles/main.css">
-    <title>Payments</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>FAQ</title>
+    <style>
+        .slick-arrow::before{
+            color: black;
+        }
+    </style>
 </head>
 
 <body class="flex flex-wrap justify-center bg-[#F5F5F5] font-montserrat">
@@ -149,9 +157,9 @@
 
 
         <!-- Meeting (Slider!!) on mobile -->
-        <div class=" md:hidden text flex justify-center mb-8" carousel>
+        <div class=" md:hidden  justify-center mb-8 mx-4" carousel data-count="1">
             <div
-                class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full max-w-xs  p-3  flex flex-col items-center bg-white">
+                class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl    p-3  flex flex-col items-center bg-white mx-3 my-5">
                 <p class="text-sm mb-2">Your next meeting</p>
                 <h3 class="text-primary">November 14</h3>
                 <h3 class="text-primary">11 A.M </h3>
@@ -164,7 +172,7 @@
                     Meeting link </button>
             </div>
             <div
-                class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl  w-full max-w-xs  p-3  flex flex-col items-center bg-white">
+                class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl    p-3  flex flex-col items-center bg-white  mx-3 my-5">
                 <p class="text-sm mb-2">Your next meeting</p>
                 <h3 class="text-primary">November 14</h3>
                 <h3 class="text-primary">11 A.M </h3>
