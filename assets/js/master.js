@@ -39,22 +39,34 @@ const initMeetingReminder = () => {
 }
 
 const initTogglers = () => {
+
+    // dropdown click away listener
+    $(document).on('click', function (e) {
+        $("[togglable]").css(INVISIBLE)
+    })
+
     $("[dropdown-toggler]").each((_, item) => {
         $(item).on('click', (event) => {
+            event.stopPropagation()
             const visible = $(item).next("[togglable]").css('visibility')
             if (visible === 'visible') {
                 $(item).next("[togglable]").css(INVISIBLE);
             } else {
                 $(item).next("[togglable]").css(VISIBLE);
             }
+
+            $("[dropdown-toggler]").not(item).next("[togglable]").css(INVISIBLE)
         })
     })
+
+
     $('[closer]').on('click', (e) => {
         $(e.target).closest("[togglable]").css(INVISIBLE)
         if($(e.target).closest("[togglable]").attr('id') === 'record-modal'){
             $(window).trigger("record-modal-closed")
         }
     })
+
 
     $("[modal-toggler]").each((_, item) => {
         $(item).on('click', () => {
@@ -73,23 +85,65 @@ const initTogglers = () => {
         })
     })
 
+    // SELECTBOX items
     $("[selecter]").on('click', (event) => {
+        event.stopPropagation()
+
+        const item_list = $(event.target).parents("[selectable]").next("[selected-items]");
+        const has_select_list = item_list.length > 0;
         const item = $(event.target);
         const value = item.data('value')
         $(item).parents('[select-container]').find('[selectable-text]').text(value);
         $(item).parents('[selectable]').css(INVISIBLE)
+
+        console.log(has_select_list, item_list)
+        if(has_select_list){
+            const template = item_list.find("[template]").clone();
+            template.text(value).removeClass("hidden").removeAttr("template");
+            item_list.prepend(template)
+            item_list.find("button").css(VISIBLE)
+        }
     })
+
+
+    // CAROUSELS 
+    // set attr of carousel='' to initiate 
     $("[carousel]").length && $('[carousel]').each((_, item) => {
-        const count = $(item).data('count');
+        const count = $(item).data('count') ;
+        const auto = !count && true
         const conf = {
             infinite: false,
             autoplay: false,
-            centerMode: false
+            centerMode: false,
+            mobileFirst: true, 
+            variableWidth: auto,
+            responsive: [
+                {
+                    breakpoint: 360,
+                    settings:{
+                        slidesToShow: 1
+                    },
+                },
+                {
+                    breakpoint: 768,
+                    settings:{
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 1200,
+                    settings:{
+                        slidesToShow: count
+                    }
+                }
+            ]
         }
-        if(!count) conf["variableWidth"] = true;
-        else conf["slidesToShow"] = count
         $(item).slick( conf )
     })
+
+
+
+    // FAQ ACCORDION
     $("[accordion]").length && $("[accordion]").accordion({
         heightStyle: "content",
         collapsible: true,

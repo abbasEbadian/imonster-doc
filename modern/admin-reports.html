@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../tailwind/output.css">
+    <link rel="stylesheet" href="../assets/styles/main.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title> Admin - Patients</title>
+    <style>
+        .slick-arrow::before {
+            color: black;
+        }
+    </style>
+</head>
+
+<body class="flex flex-wrap justify-center bg-[#F5F5F5] font-montserrat">
+    <!-- Menu Desktop -->
+    <nav id="menu-desktop"
+        class="fixed left-0 inset-y-0 md:flex hidden items-center flex-col w-[25vw] min-h-screen overflow-y-scroll md:static">
+        <div class="w-full flex flex-col items-center lg:mb-14 mb-11">
+            <div
+                class="flex justify-center items-center w-[16.5rem] h-[16.5rem] border-solid border-[#062635]/5 border-[0.5px] rounded-full lg:scale-100 scale-75">
+                <div
+                    class="flex justify-center items-center w-[15rem] h-[15rem] border-solid border-[#062635]/10 border-[1px] rounded-full">
+                    <div
+                        class="flex justify-center items-center w-[13.5rem] h-[13.5rem] border-solid border-[#062635]/20 border-[1.25px] rounded-full">
+                        <div
+                            class="flex justify-center items-center w-[12rem] h-[12rem] border-solid border-[#062635]/40 border-[1.5px] rounded-full">
+                            <div
+                                class="relative flex justify-center items-center w-[10.5rem] h-[10.5rem] border-solid border-[#062635]/60 border-2 rounded-full">
+                                <img src="../assets/images/profile.png" alt=""
+                                    class="w-36 h-36 border-solid border-[#062635] border-2 rounded-full">
+                                <button class="absolute right-[13px] bottom-[13px] p-[10px] bg-[#BC63F2] rounded-full">
+                                    <img class="w-5 h-5" src="../assets/icons/camera.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3 class="text-[#181818] lg:text-2xl text-xl font-bold lg:-mt-6 -mt-12 mb-1">Jane Cooper</h3>
+            <span class="text-[#181818]/50 lg:text-sm text-xs font-normal">Join 27 September 2022</span>
+        </div>
+        <div class="w-full lg:pl-10 pl-6 lg:mb-10 mb-8">
+            <dl class="mb-6">
+                <dt class="text-[#181818]/50 uppercase mb-5">Menu</dt>
+                <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                    <a href="/modern/main.html"> Main </a>
+                </dd>
+
+                <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                    <a href="/modern/meetings.html"> Meetings </a>
+                </dd>
+
+                <dd class="lg:text-lg text-sm text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                    <a href="/modern/user-information.html"> Your Information </a>
+                </dd>
+
+                <dd
+                    class="lg:text-lg text-sm  text-[#181818] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 border-solid cursor-pointer">
+                    <a href="/modern/payments.html"> Payments </a>
+                </dd>
+                <dd
+                    class="lg:text-lg text-sm text-primary font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer  border-primary lg:border-r-8 border-r-4">
+                    <a href="/modern/faq.html"> FAQ </a>
+                </dd>
+            </dl>
+
+        </div>
+        <div
+            class="w-5/6 flex lg:flex-row flex-col-reverse items-center bg-[#FFFCAA]/50 py-4 px-5 rounded-2xl lg:mb-8 mb-6">
+            <p class="text-[#181818]/50 lg:text-left text-center lg:text-sm text-xs font-medium mr-3">
+                By click on this icon, we guide you, how can you use this website step by step
+            </p>
+            <img src="../assets/icons/question.svg" alt="" class="w-12 lg:mb-0 mb-2">
+        </div>
+    </nav>
+
+    <!-- Menu Mobile -->
+    <div class="md:hidden flex absolute right-0 z-[6] ">
+        <button class="absolute right-5 top-5 w-max" onclick="openNav()">
+            <img src="../assets/icons/menu.svg" alt="" class="w-6">
+        </button>
+        <nav id="nav-mobile"
+            class="fixed top-0 -right-[300px] invisible flex items-center flex-col w-[240px] min-h-screen bg-gradient-to-l from-[#213C49] to-[#062635] rounded-l-3xl shadow-2xl duration-[0.5s]">
+            <button class="absolute right-6 top-6" onclick="closeNav()">
+                <img src="../assets/icons/close.svg" alt="">
+            </button>
+            <div class="w-full flex flex-col items-center mb-11">
+                <div
+                    class="flex justify-center items-center w-[16.5rem] h-[16.5rem] border-solid border-[#062635]/5 border-[0.5px] rounded-full lg:scale-100 scale-75">
+                    <div
+                        class="flex justify-center items-center w-[15rem] h-[15rem] border-solid border-[#062635]/10 border-[1px] rounded-full">
+                        <div
+                            class="flex justify-center items-center w-[13.5rem] h-[13.5rem] border-solid border-[#062635]/20 border-[1.25px] rounded-full">
+                            <div
+                                class="flex justify-center items-center w-[12rem] h-[12rem] border-solid border-[#062635]/40 border-[1.5px] rounded-full">
+                                <div
+                                    class="relative flex justify-center items-center w-[10.5rem] h-[10.5rem] border-solid border-[#062635]/60 border-2 rounded-full">
+                                    <img src="../assets/images/profile.png" alt=""
+                                        class="w-36 h-36 border-solid border-[#062635] border-2 rounded-full">
+                                    <button
+                                        class="absolute right-[13px] bottom-[13px] p-[10px] bg-[#BC63F2] rounded-full">
+                                        <img class="w-5 h-5" src="../assets/icons/camera.svg" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-[#FFFFFF] lg:text-2xl text-xl font-bold lg:-mt-6 -mt-12 mb-1">Jane Cooper</h3>
+                <span class="text-[#FFFFFF]/50 lg:text-sm text-xs font-normal">Join 27 September 2022</span>
+            </div>
+            <div class="w-full pl-7 mb-11">
+                <dl class="mb-6">
+                    <dt class="text-[#FFFFFF]/50 text-xs uppercase mb-5">Main</dt>
+                    <dd class="lg:text-lg text-sm text-[#FFFFFF] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        Main
+                    </dd>
+                    <dd class="lg:text-lg text-sm text-[#FFFFFF] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        Session
+                    </dd>
+                </dl>
+                <dl class="mb-1">
+                    <dt class="text-[#FFFFFF]/50 text-xs uppercase mb-5">General</dt>
+                    <dd class="lg:text-lg text-sm text-[#FFFFFF] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        Meetings</dd>
+                    <dd class="lg:text-lg text-sm text-[#BC63F2] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        Payments
+                    </dd>
+                    <dd class="lg:text-lg text-sm text-[#FFFFFF] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        Agreements</dd>
+                    <dd class="lg:text-lg text-sm text-[#FFFFFF] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        Your
+                        Information</dd>
+                    <dd class="lg:text-lg text-sm text-[#FFFFFF] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        Tasks
+                    </dd>
+                </dl>
+            </div>
+            <div class="w-5/6 flex lg:flex-row items-center bg-[#FFFCAA]/50 py-4 px-5 rounded-2xl lg:mb-8 mb-6">
+                <p class="text-[#181818]/70 text-xs font-medium">
+                    By click on this icon, we guide you, how can you use this website step by step
+                </p>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Main -->
+    <main
+        class="relative flex flex-col md:w-[75vw] w-full min-h-screen bg-white 2xl:px-8 px-5 py-16  mg:rounded-3xl rounded-none shadow-xl ">
+
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-3">
+
+            <!--  Patients categories -->
+            <div  class="relative z-[9] rounded-3xl flex justify-start flex-col items-center w-full" select-container>
+                <button type="button" dropdown-toggler
+                    class="pr-8 relative cursor-pointer  w-full  bg-white rounded-full text-xs py-4 shadow-[0px_0px_8px_2px_#e1e1e1] z-[5] ">
+                    <span class="flex items-center  text-center justify-center">
+                            Patients categories
+                        </span>
+                    </span>
+                    <span class="pointer-events-none absolute inset-y-0 right-3 ml-3 flex items-center pr-2">
+                        <img src="../assets/icons/arrow-down.svg" alt="arrow">
+                    </span>
+                </button>
+                <ul class="transition-all  absolute z-[4] bg-white pt-12 max-h-56 w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
+                    togglable selectable tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                    aria-activedescendant="listbox-option-3">
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter data-value="Male">Male</span>
+                    </li>
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter
+                            data-value="Female">Female</span>
+                    </li>
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter
+                            data-value="Other">Other</span>
+                    </li>
+                </ul>
+                <div selected-items class="w-full flex flex-wrap mt-2 gap-4">
+                    <!-- this line is template, dont remove it ! 
+                        this is used by js
+                    -->
+                    <small template class="text-[10px] rounded-full px-4 py-1 bg-white shadow-[0px_0px_8px_2px_#ddd] grid place-items-center hidden"></small>
+                    <!-- ENDOF TEMPLATE -->
+
+                   
+
+                    <button class="bg-primary text-white grid place-items-center text-4xl w-6 h-6 rounded-full leading-[16px] opacity-0"> + </button>
+                </div>
+            </div>
+           
+            <!-- Frequency -->
+            <div  class="relative z-[8] rounded-3xl flex justify-start flex-col items-center w-full" select-container>
+                <button type="button" dropdown-toggler
+                    class="pr-8 relative cursor-pointer  w-full  bg-white rounded-full text-xs py-4 shadow-[0px_0px_8px_2px_#e1e1e1] z-[5] ">
+                    <span class="flex items-center  text-center justify-center">
+                            Frequency
+                        </span>
+                    </span>
+                    <span class="pointer-events-none absolute inset-y-0 right-3 ml-3 flex items-center pr-2">
+                        <img src="../assets/icons/arrow-down.svg" alt="arrow">
+                    </span>
+                </button>
+                <ul class="transition-all  absolute z-[4] bg-white pt-12 max-h-56 w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
+                    togglable selectable tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                    aria-activedescendant="listbox-option-3">
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter data-value="Male">Male</span>
+                    </li>
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter
+                            data-value="Female">Female</span>
+                    </li>
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter
+                            data-value="Other">Other</span>
+                    </li>
+                </ul>
+                <div selected-items class="w-full flex flex-wrap mt-2 gap-4">
+                    <!-- this line is template, dont remove it ! 
+                        this is used by js
+                    -->
+                    <small template class="text-[10px] rounded-full px-4 py-1 bg-white shadow-[0px_0px_8px_2px_#ddd] grid place-items-center hidden"></small>
+                    <!-- ENDOF TEMPLATE -->
+
+                   
+
+                    <button class="bg-primary text-white grid place-items-center text-4xl w-6 h-6 rounded-full leading-[16px] opacity-0"> + </button>
+                </div>
+            </div>
+
+
+             <!-- Filter by time -->
+             <div  class="relative z-[7] rounded-3xl flex justify-start flex-col items-center w-full" select-container>
+                <button type="button" dropdown-toggler
+                    class="pr-8 relative cursor-pointer  w-full  bg-white rounded-full text-xs py-4 shadow-[0px_0px_8px_2px_#e1e1e1] z-[5] ">
+                    <span class="flex items-center  text-center justify-center">
+                        Filter by time
+                        </span>
+                    </span>
+                    <span class="pointer-events-none absolute inset-y-0 right-3 ml-3 flex items-center pr-2">
+                        <img src="../assets/icons/arrow-down.svg" alt="arrow">
+                    </span>
+                </button>
+                <ul class="transition-all  absolute z-[4] bg-white pt-12 max-h-56 w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
+                    togglable selectable tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                    aria-activedescendant="listbox-option-3">
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter data-value="Male">Male</span>
+                    </li>
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter
+                            data-value="Female">Female</span>
+                    </li>
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter
+                            data-value="Other">Other</span>
+                    </li>
+                </ul>
+                <div selected-items class="w-full flex flex-wrap mt-2 gap-4">
+                    <!-- this line is template, dont remove it ! 
+                        this is used by js
+                    -->
+                    <small template class="text-[10px] rounded-full px-4 py-1 bg-white shadow-[0px_0px_8px_2px_#ddd] grid place-items-center hidden"></small>
+                    <!-- ENDOF TEMPLATE -->
+
+                   
+
+                    <button class="bg-primary text-white grid place-items-center text-4xl w-6 h-6 rounded-full leading-[16px] opacity-0"> + </button>
+                </div>
+            </div>
+
+
+             <!-- Patient’s Ilness -->
+             <div  class="relative z-[6] rounded-3xl flex justify-start flex-col items-center w-full" select-container>
+                <button type="button" dropdown-toggler
+                    class="pr-8 relative cursor-pointer  w-full  bg-white rounded-full text-xs py-4 shadow-[0px_0px_8px_2px_#e1e1e1] z-[5] ">
+                    <span class="flex items-center  text-center justify-center">
+                        Patient’s Ilness
+                        </span>
+                    </span>
+                    <span class="pointer-events-none absolute inset-y-0 right-3 ml-3 flex items-center pr-2">
+                        <img src="../assets/icons/arrow-down.svg" alt="arrow">
+                    </span>
+                </button>
+                <ul class="transition-all  absolute z-[4] bg-white pt-12 max-h-56 w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
+                    togglable selectable tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                    aria-activedescendant="listbox-option-3">
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter data-value="Male">Male</span>
+                    </li>
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter
+                            data-value="Female">Female</span>
+                    </li>
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter
+                            data-value="Other">Other</span>
+                    </li>
+                </ul>
+                <div selected-items class="w-full flex flex-wrap mt-2 gap-4">
+                    <!-- this line is template, dont remove it ! 
+                        this is used by js
+                    -->
+                    <small template class="text-[10px] rounded-full px-4 py-1 bg-white shadow-[0px_0px_8px_2px_#ddd] grid place-items-center hidden"></small>
+                    <!-- ENDOF TEMPLATE -->
+
+                   
+
+                    <button class="bg-primary text-white grid place-items-center text-4xl w-6 h-6 rounded-full leading-[16px] opacity-0"> + </button>
+                </div>
+            </div>
+
+
+             <!--Patient status -->
+             <div  class="relative z-[5] rounded-3xl flex justify-start flex-col items-center w-full" select-container>
+                <button type="button" dropdown-toggler
+                    class="pr-8 relative cursor-pointer  w-full  bg-white rounded-full text-xs py-4 shadow-[0px_0px_8px_2px_#e1e1e1] z-[5] ">
+                    <span class="flex items-center  text-center justify-center">
+                        Patient status
+                        </span>
+                    </span>
+                    <span class="pointer-events-none absolute inset-y-0 right-3 ml-3 flex items-center pr-2">
+                        <img src="../assets/icons/arrow-down.svg" alt="arrow">
+                    </span>
+                </button>
+                <ul class="transition-all  absolute z-[4] bg-white pt-12 max-h-56 w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
+                    togglable selectable tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                    aria-activedescendant="listbox-option-3">
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter data-value="Male">Male</span>
+                    </li>
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter
+                            data-value="Female">Female</span>
+                    </li>
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter
+                            data-value="Other">Other</span>
+                    </li>
+                </ul>
+                <div selected-items class="w-full flex flex-wrap mt-2 gap-4">
+                    <!-- this line is template, dont remove it ! 
+                        this is used by js
+                    -->
+                    <small template class="text-[10px] rounded-full px-4 py-1 bg-white shadow-[0px_0px_8px_2px_#ddd] grid place-items-center hidden"></small>
+                    <!-- ENDOF TEMPLATE -->
+
+                   
+
+                    <button class="bg-primary text-white grid place-items-center text-4xl w-6 h-6 rounded-full leading-[16px] opacity-0"> + </button>
+                </div>
+            </div>
+
+
+
+             <!--Progress -->
+             <div  class="relative z-[4] rounded-3xl flex justify-start flex-col items-center w-full" select-container>
+                <button type="button" dropdown-toggler
+                    class="pr-8 relative cursor-pointer  w-full  bg-white rounded-full text-xs py-4 shadow-[0px_0px_8px_2px_#e1e1e1] z-[5] ">
+                    <span class="flex items-center  text-center justify-center">
+                        Progress
+                        </span>
+                    </span>
+                    <span class="pointer-events-none absolute inset-y-0 right-3 ml-3 flex items-center pr-2">
+                        <img src="../assets/icons/arrow-down.svg" alt="arrow">
+                    </span>
+                </button>
+                <ul class="transition-all  absolute z-[4] bg-white pt-12 max-h-56 w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
+                    togglable selectable tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                    aria-activedescendant="listbox-option-3">
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter data-value="Male">Male</span>
+                    </li>
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter
+                            data-value="Female">Female</span>
+                    </li>
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter
+                            data-value="Other">Other</span>
+                    </li>
+                </ul>
+                <div selected-items class="w-full flex flex-wrap mt-2 gap-4">
+                    <!-- this line is template, dont remove it ! 
+                        this is used by js
+                    -->
+                    <small template class="text-[10px] rounded-full px-4 py-1 bg-white shadow-[0px_0px_8px_2px_#ddd] grid place-items-center hidden"></small>
+                    <!-- ENDOF TEMPLATE -->
+
+                   
+
+                    <button class="bg-primary text-white grid place-items-center text-4xl w-6 h-6 rounded-full leading-[16px] opacity-0"> + </button>
+                </div>
+            </div>
+
+
+              <!--Sessions -->
+              <div  class="relative z-[3] rounded-3xl flex justify-start flex-col items-center w-full" select-container>
+                <button type="button" dropdown-toggler
+                    class="pr-8 relative cursor-pointer  w-full  bg-white rounded-full text-xs py-4 shadow-[0px_0px_8px_2px_#e1e1e1] z-[5] ">
+                    <span class="flex items-center  text-center justify-center">
+                        Sessions
+                        </span>
+                    </span>
+                    <span class="pointer-events-none absolute inset-y-0 right-3 ml-3 flex items-center pr-2">
+                        <img src="../assets/icons/arrow-down.svg" alt="arrow">
+                    </span>
+                </button>
+                <ul class="transition-all  absolute z-[4] bg-white pt-12 max-h-56 w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
+                    togglable selectable tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                    aria-activedescendant="listbox-option-3">
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter data-value="Male">Male</span>
+                    </li>
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter
+                            data-value="Female">Female</span>
+                    </li>
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter
+                            data-value="Other">Other</span>
+                    </li>
+                </ul>
+                <div selected-items class="w-full flex flex-wrap mt-2 gap-4">
+                    <!-- this line is template, dont remove it ! 
+                        this is used by js
+                    -->
+                    <small template class="text-[10px] rounded-full px-4 py-1 bg-white shadow-[0px_0px_8px_2px_#ddd] grid place-items-center hidden"></small>
+                    <!-- ENDOF TEMPLATE -->
+
+                   
+
+                    <button class="bg-primary text-white grid place-items-center text-4xl w-6 h-6 rounded-full leading-[16px] opacity-0"> + </button>
+                </div>
+            </div>
+
+            <div class="">
+                <button class="bg-primary rounded-full text-primaryLight hover:bg-primaryDark py-3 px-10 w-full mx-auto "> search</button>
+            </div>
+
+        </div>
+
+        <!-- <hr class="mx-[-32px] mt-8"/> -->
+        <div class="overflow-auto pb-8">
+            <table class="min-w-[800px] w-full border-separate border-spacing-x-0 border-spacing-y-1">
+                <thead>
+                    <tr class="text-sm text-left">
+                        <th class="pl-3 py-3 w-[150px]">Patient’s name</th>
+                        <th class="text-center pl-3 py-3 w-[150px]">Problem</th>
+                        <th class="text-center pl-3 py-3 w-[120px]">Status</th>
+                        <th class="text-center pl-3 py-3 w-[150px]">Treatment Progress</th>
+                        <th class="text-center pl-3 py-3 w-[100px]">Sessions</th>
+                        <th class="text-center pl-3 py-3" ></th>
+    
+                    </tr>
+                </thead>
+                <tbody class="">
+                    <tr class=" overflow-hidden">
+                        <td class="py-1 rounded-l-full bg-success  pl-3 text-sm">Amir Moradi</td>
+                        <td class="text-center py-1  bg-success  pl-3 text-sm">Liver</td>
+                        <td class="text-center py-1 bg-success  pl-3 text-sm ">Excellent</td>
+                        <td class="text-center py-1 bg-success  pl-3 text-sm">40%</td>
+                        <td class="text-center py-1 bg-success  pl-3 text-sm">2</td>
+                        <td class="py-1 bg-success  pl-3 text-sm rounded-r-full pr-2">
+                            <button class="bg-primary hover:bg-primaryDark text-primaryLight w-full rounded-full py-1">
+                                profile
+                            </button></td>
+                    </tr>
+
+                    <tr class=" overflow-hidden ">
+                        <td class="py-1 rounded-l-full bg-[#eee]  pl-3 text-sm">Amir Moradi</td>
+                        <td class="text-center py-1  bg-[#eee]  pl-3 text-sm">Liver</td>
+                        <td class="text-center py-1 bg-[#eee]  pl-3 text-sm  ">Normal</td>
+                        <td class="text-center py-1 bg-[#eee]  pl-3 text-sm ">40%</td>
+                        <td class="text-center py-1 bg-[#eee]  pl-3 text-sm">2</td>
+                        <td class="py-1 bg-[#eee] text-white pl-3 text-sm rounded-r-full pr-2">
+                            <button class="bg-primary hover:bg-primaryDark text-primaryLight w-full rounded-full py-1">
+                                profile
+                            </button></td>
+                    </tr>
+                    <tr class=" overflow-hidden ">
+                        <td class="py-1 rounded-l-full bg-error  pl-3 text-sm">Amir Moradi</td>
+                        <td class="text-center py-1  bg-error  pl-3 text-sm">Liver</td>
+                        <td class="text-center py-1 bg-error  pl-3 text-sm  w-[120px]">Bad</td>
+                        <td class="text-center py-1 bg-error  pl-3 text-sm w-[170px]">40%</td>
+                        <td class="text-center py-1 bg-error  pl-3 text-sm">2</td>
+                        <td class="py-1 bg-error text-white pl-3 text-sm rounded-r-full pr-2">
+                            <button class="bg-primary hover:bg-primaryDark text-primaryLight w-full rounded-full py-1">
+                                profile
+                            </button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+
+    <!-- <hr class= "mx-[-20px] 2xl:mx-[-32px] mt-8 "/> -->
+    <!-- ASK MODAL -->
+    <div class="relative z-10 opacity-0" aria-labelledby="modal-title" role="dialog" aria-modal="true" togglable
+        id="question-modal">
+        <!-- BACKDROP -->
+        <div class="fixed inset-0 bg-[#0008] bg-opacity-75 transition-opacity"></div>
+
+        <!-- CONTENT -->
+        <div class="fixed inset-0 z-10 overflow-y-auto ">
+            <div class="flex min-h-full items-start justify-center p-4 text-center sm:items-center sm:p-0  ">
+                <div
+                    class="transform overflow-hidden rounded-3xl bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-xl p-4 sm:p-8 relative ">
+                    <!-- CLOSE BUTTON -->
+                    <span class="absolute top-2 right-8 text-xl" role="button" closer> x </span>
+                    <div class="flex flex-col items-center gap-6 pt-8">
+
+                        <div class="relative w-full">
+                            <label for="name" class="text-[11px] absolute top-[-8px] left-4 text-primary bg-white px-2">
+                                Your name </label>
+                            <input type="text" name="name" placeholder="for example: John Doe"
+                                class="w-full border-[1px] border-solid border-primary rounded-full px-4 py-2 placeholder:text-black50 placeholder:text-xs text-center focus-visible:outline-none" />
+                        </div>
+
+                        <div class="relative w-full">
+                            <label for="name" class="text-[11px] absolute top-[-8px] left-4 text-primary bg-white px-2">
+                                Your email </label>
+                            <input type="text" name="name" placeholder="for example: JohnDoe@gmail.com"
+                                class="w-full border-[1px] border-solid border-primary rounded-full px-4 py-2 placeholder:text-black50 placeholder:text-xs text-center focus-visible:outline-none" />
+                        </div>
+                        <div class="relative w-full">
+                            <label for="name" class="text-[11px] absolute top-[-8px] left-4 text-primary bg-white px-2">
+                                Your message </label>
+                            <textarea type="text" name="name" placeholder="Write your message"
+                                class="w-full border-[1px] border-solid border-primary rounded-2xl px-4 py-2 placeholder:text-black50 placeholder:text-xs focus-visible:outline-none min-h-[140px] pt-4"></textarea>
+                        </div>
+
+                        <button
+                            class="bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-xs">
+                            Send your message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+    integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"
+    integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+    integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="../assets/js/navbar.js"></script>
+<script src="../assets/js/notifications.js"></script>
+<script src="../assets/js/master.js"></script>
+<script src="../assets/js/recorder.js"></script>
+<script src="../assets/js/history.js"></script>
+
+<script>
+    $(".numberInput").on('input', function (e) {
+        $(this).val($(this).val().replace(/[^0-9]/g, ''));
+    });
+
+    $(".input-cardNumber").bind("input", function () {
+        var $this = $(this);
+        setTimeout(function () {
+            if ($this.val().length >= parseInt($this.attr("maxlength"), 10))
+                $this.next("span").next(".input-cardNumber").focus();
+        }, 0);
+    });
+</script>
