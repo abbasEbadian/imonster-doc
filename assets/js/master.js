@@ -42,6 +42,7 @@ const initTogglers = () => {
 
     // dropdown click away listener
     $(document).on('click', function (e) {
+        if( $(e.target).parents('[togglable]').length === 0 )
         $("[togglable]").css(INVISIBLE)
     })
 
@@ -69,11 +70,11 @@ const initTogglers = () => {
 
 
     $("[modal-toggler]").each((_, item) => {
-        $(item).on('click', () => {
+        $(item).on('click', (event) => {
+            event.stopPropagation()
             const target = $(item).data('target');
             var value;
             $(target).css(VISIBLE)
-
 
             if( target === '#record-modal')
                 $(window).trigger("record-modal-opened")

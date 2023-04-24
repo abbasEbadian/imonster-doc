@@ -456,63 +456,36 @@
 
         <hr class="mt-8"/>
 
-        <div class="overflow-auto pb-8 xl:px-20 px-5 pt-8">
-            <table class="min-w-[800px] w-full border-separate border-spacing-x-0 border-spacing-y-1">
-                <thead>
-                    <tr class="text-sm text-left">
-                        <th class="pl-3 py-3 w-[150px]">Patient’s name</th>
-                        <th class="text-center pl-3 py-3 w-[150px]">Problem</th>
-                        <th class="text-center pl-3 py-3 w-[120px]">Status</th>
-                        <th class="text-center pl-3 py-3 w-[150px]">Treatment Progress</th>
-                        <th class="text-center pl-3 py-3 w-[100px]">Sessions</th>
-                        <th class="text-center pl-3 py-3" ></th>
-    
-                    </tr>
-                </thead>
-                <tbody class="">
-                    <tr class=" overflow-hidden">
-                        <td class="py-1 rounded-l-full bg-success  pl-3 text-sm">Amir Moradi</td>
-                        <td class="text-center py-1  bg-success  pl-3 text-sm">Liver</td>
-                        <td class="text-center py-1 bg-success  pl-3 text-sm ">Excellent</td>
-                        <td class="text-center py-1 bg-success  pl-3 text-sm">40%</td>
-                        <td class="text-center py-1 bg-success  pl-3 text-sm">2</td>
-                        <td class="py-1 bg-success  pl-3 text-sm rounded-r-full pr-2">
-                            <button class="bg-primary hover:bg-primaryDark text-primaryLight w-full rounded-full py-1">
-                                profile
-                            </button></td>
-                    </tr>
-
-                    <tr class=" overflow-hidden ">
-                        <td class="py-1 rounded-l-full bg-[#eee]  pl-3 text-sm">Amir Moradi</td>
-                        <td class="text-center py-1  bg-[#eee]  pl-3 text-sm">Liver</td>
-                        <td class="text-center py-1 bg-[#eee]  pl-3 text-sm  ">Normal</td>
-                        <td class="text-center py-1 bg-[#eee]  pl-3 text-sm ">40%</td>
-                        <td class="text-center py-1 bg-[#eee]  pl-3 text-sm">2</td>
-                        <td class="py-1 bg-[#eee] text-white pl-3 text-sm rounded-r-full pr-2">
-                            <button class="bg-primary hover:bg-primaryDark text-primaryLight w-full rounded-full py-1">
-                                profile
-                            </button></td>
-                    </tr>
-                    <tr class=" overflow-hidden ">
-                        <td class="py-1 rounded-l-full bg-error  pl-3 text-sm">Amir Moradi</td>
-                        <td class="text-center py-1  bg-error  pl-3 text-sm">Liver</td>
-                        <td class="text-center py-1 bg-error  pl-3 text-sm  w-[120px]">Bad</td>
-                        <td class="text-center py-1 bg-error  pl-3 text-sm w-[170px]">40%</td>
-                        <td class="text-center py-1 bg-error  pl-3 text-sm">2</td>
-                        <td class="py-1 bg-error text-white pl-3 text-sm rounded-r-full pr-2">
-                            <button class="bg-primary hover:bg-primaryDark text-primaryLight w-full rounded-full py-1">
-                                profile
-                            </button></td>
-                    </tr>
-                </tbody>
-            </table>
+     <div class="flex flex-col lg:flex-row">
+        <div class="lg:border-r-[1px] lg:border-b-[0px] border-b-[1px] border-r-0 ">
+            <div class="px-6 flex flex-col justify-center gap-y-5 py-6">
+                <span class="text-sm">Blood Glucose Level</span>
+                <span class="text-darkBlack50 text-xs">Blood Glucose</span>
+                <span class="text-darkBlack50 text-xs">Blood Glucose</span>
+                <span class="text-darkBlack50 text-xs">Blood Glucose</span>
+            </div>
         </div>
 
-        <hr class="mt-8"/>
+        <div class="grow p-8">
+            <div class="text-center">
+                <button
+                    class="bg-primary rounded-full text-xs px-8 py-3 mr-2 text-primaryLight hover:bg-primaryDark transition shadow-md">Patients</button>
+                <button
+                    class="border-primary border-[1px] border-solid rounded-full text-xs px-8 py-3 mr-2 text-primary hover:bg-primaryLight transition shadow-md">Doctor</button>
+            </div>
+
+
+            <span> CHART</span>
+
+
+        </div>
+     </div>
+
+        <hr class=""/>
         <div class="p-8 flex gap-6">
             <div>
-                <a href="./admin-reports-chart.html"
-                    class="bg-primary rounded-full text-xs px-8 py-3 mr-2 text-primaryLight hover:bg-primaryDark transition shadow-md">View reports</a>
+                <button 
+                    class="bg-primary rounded-full text-xs px-8 py-3 mr-2 text-primaryLight hover:bg-primaryDark transition shadow-md">View reports</button>
                 <button modal-toggler data-target="#send-message-modal"
                     class="border-primary border-[1px] border-solid rounded-full text-xs px-8 py-3 mr-2 text-primary hover:bg-primaryLight transition shadow-md">Send them message</button>
             </div>
@@ -553,8 +526,6 @@
 
 
 
-
-
 </body>
 
 </html>
@@ -572,7 +543,7 @@
 <script src="../assets/js/navbar.js"></script>
 <script src="../assets/js/notifications.js"></script>
 <script src="../assets/js/master.js"></script>
-
+<script src="../assets/js/recorder.js"></script>
 <script src="../assets/js/history.js"></script>
 
 <script>
