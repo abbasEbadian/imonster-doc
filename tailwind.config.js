@@ -16,6 +16,7 @@ module.exports = {
       darkBlack50: "#18181877",
       warning: "#FAF9D0",
       grey: "#F5F5F5",
+      gray: "#F2F3F5",
       white: "#FFF",
       success: "#29CC6A",
       error: "#FF5353",
