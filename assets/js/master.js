@@ -161,7 +161,33 @@ const initTogglers = () => {
       
     })
 
+    $("[range-slider]").each(function(_, slider){
+        const step = $(slider).data('step') ?? 1
+        const min = $(slider).data('min') ?? 0
+        const max = $(slider).data('max') ?? 100
+        const value = $(slider).data('initial_value') ?? min
+        const unit = $(slider).data('unit') || " "
 
+        $(slider).slider({
+            classes: {
+                "ui-slider": "!bg-primary !h-[1px] !border-0",
+                "ui-slider-handle": "!bg-white !border-primary !border-1 !w-4 !h-4 !rounded-full !border-0 !top-[-8px]",
+            },
+            min,
+            max,
+            step,
+            value,
+            create: function (e, ui) {
+                $(e.target).find('.ui-slider-handle').append(`<div range-slider-value class="text-primary text-xs absolute top-[-18px] left-1 flex "> <b value>${ value}</b><span class="text-[10px]">${unit}</span> </div>`)
+                $(slider).next("input").val(value)
+
+            },
+            slide: function (e, ui) {
+                $(ui.handle).find("[range-slider-value] [value]").text(ui.value )
+                $(slider).next("input").val(ui.value)
+            }
+        })
+    })
 
     
 }
