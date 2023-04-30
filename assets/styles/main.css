@@ -27,3 +27,32 @@
     border-radius: 100px;
     scroll-margin-right: 10px;
 }
+
+/* MINI CALENDAR */
+.ui-datepicker-header {
+    font-size: 12px ;
+    display: flex;
+    justify-content: space-between;
+
+}
+.ui-datepicker-calendar {
+    width: 100%;
+    margin-top: 16px;
+}
+.ui-icon {
+    cursor: pointer;
+}
+.ui-datepicker-calendar th{
+    font-size: 12px;
+}
+.ui-datepicker-calendar td{
+    text-align: center;
+}
+.ui-datepicker-calendar a{
+    font-size: 11px;
+}
+.ui-datepicker-today{
+    border-radius: 600px;
+    background-color: #bc63f2;
+    color: white;
+}

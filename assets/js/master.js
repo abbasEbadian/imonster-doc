@@ -42,7 +42,7 @@ const initTogglers = () => {
 
     // dropdown click away listener
     $(document).on('click', function (e) {
-        if( $(e.target).parents('[togglable]').length === 0 )
+        if( $(e.target).parents('[togglable]').length === 0)
         $("[togglable]").css(INVISIBLE)
     })
 
@@ -189,5 +189,18 @@ const initTogglers = () => {
         })
     })
 
+    $("[datepicker]").length && $("[datepicker]").datepicker({
+        nextText: ">",
+        prevText: "<" 
+    });
+
+
+
+    $("[calendar-item]").each((_, item) => {
+        $(item).on('click', function (e) {
+            console.log($(item).find("[togglable]"));
+            $(item).find("[togglable]").eq(0).css(VISIBLE)
+        })
+    })
     
 }

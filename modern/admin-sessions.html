@@ -318,7 +318,7 @@
                     </div>
                     <div class="row-span-2 flex justify-center flex-col items-start">
                         <p class="mb-4">is this patient need more sessions?</p>
-                        <button
+                        <button modal-toggler data-target="#add-session-modal"
                             class="bg-primary rounded-full text-xs px-8 py-3 mr-2  text-primaryLight hover:bg-primaryDark transition shadow-md">Add
                             sessions</button>
                     </div>
@@ -614,12 +614,12 @@
             </div>
 
         </section>
-       
+
     </main>
 
 
     <!-- ASK MODAL -->
-    <div class="relative z-10 opacity-0" togglable id="send-message-modal">
+    <div class="relative z-10 opacity-0 " togglable id="add-session-modal">
         <!-- BACKDROP -->
         <div class="fixed inset-0 bg-[#0008] bg-opacity-75 transition-opacity"></div>
 
@@ -627,13 +627,90 @@
         <div class="fixed inset-0 z-10 overflow-y-auto ">
             <div class="flex min-h-full items-start justify-center p-4 text-center sm:items-center sm:p-0  ">
                 <div
-                    class="transform overflow-hidden rounded-3xl bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-xl p-4 sm:p-8 relative ">
+                    class="transform rounded-3xl bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-xl p-4 sm:p-8 relative ">
                     <!-- CLOSE BUTTON -->
                     <span class="absolute top-2 right-8 text-xl" role="button" closer> x </span>
-                    <div class="flex flex-col items-center gap-6 ">
+                    <div class="flex flex-col items-center gap-6 py-6 ">
 
-                        <span class="text-sm">Write a message for this group of patients</span>
-                        <input type="text" class="border-b-[1px] border-primary mt-12 w-full" />
+                        <div class="flex items-center  gap-5">
+                            <button increase
+                                class="bg-transparent border-0 font-extrabold px-4 py-2 text-3xl">-</button>
+                            <span count class="text-4xl text-primary">1</span>
+                            <button decrease
+                                class="bg-transparent border-0 font-extrabold px-4 py-2 text-3xl">+</button>
+                        </div>
+
+                        <!-- User days -->
+                        <div class="relative  w-full selectBox" select-container>
+                            <button type="button" dropdown-toggler
+                                class="z-[7] relative  w-full  bg-white   border-b-[1px] border-solid border-primary  text-xs py-3 "
+                                aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+                                <span class="flex  pointer-events-none px-4">
+                                    <span class=" block truncate text-xs text-black50 title" selectable-text>select
+                                        days</span>
+                                </span>
+                                <i class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
+                                    <img src="../assets/icons/arrow-down.svg" alt="arrow">
+                                </i>
+                            </button>
+
+                            <ul class="transition-all  absolute z-[6] bg-white pt-12 max-h-56 w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
+                                togglable selectable tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                                aria-activedescendant="listbox-option-3">
+                                <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight"
+                                    role="option">
+                                    <span class="font-normal block truncate py-2 text-center" selecter
+                                        data-value="1">1</span>
+                                </li>
+                                <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight"
+                                    role="option">
+                                    <span class="font-normal block truncate py-2 text-center" selecter
+                                        data-value="2">2</span>
+                                </li>
+                                <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight"
+                                    role="option">
+                                    <span class="font-normal block truncate py-2 text-center" selecter
+                                        data-value="3">3</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- User days -->
+                        <div class="relative  w-full selectBox" select-container>
+                            <button type="button" dropdown-toggler
+                                class="z-[5] relative  w-full  bg-white   border-b-[1px] border-solid border-primary  text-xs py-3 "
+                                aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+                                <span class="flex  pointer-events-none px-4">
+                                    <span class=" block truncate text-xs text-black50 title" selectable-text>Select
+                                        arrangement</span>
+                                </span>
+                                <i class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
+                                    <img src="../assets/icons/arrow-down.svg" alt="arrow">
+                                </i>
+                            </button>
+
+                            <ul class="transition-all  absolute z-[4] bg-white pt-12 max-h-56 w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
+                                togglable selectable tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                                aria-activedescendant="listbox-option-3">
+                                <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight"
+                                    role="option">
+                                    <span class="font-normal block truncate py-2 text-center" selecter
+                                        data-value="1">1</span>
+                                </li>
+                                <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight"
+                                    role="option">
+                                    <span class="font-normal block truncate py-2 text-center" selecter
+                                        data-value="2">2</span>
+                                </li>
+                                <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight"
+                                    role="option">
+                                    <span class="font-normal block truncate py-2 text-center" selecter
+                                        data-value="3">3</span>
+                                </li>
+                            </ul>
+                        </div>
+
+
                         <button
                             class="bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-xs">
                             Send</button>

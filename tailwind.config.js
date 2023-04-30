@@ -3,6 +3,15 @@ module.exports = {
   content: ["./**/*.{html,js}"],
   theme: {
     extend: {
+      gridTemplateRows:{
+        calendar: "repeat(48, minmax(48px, 1fr))"
+      },
+      gridTemplateColumns:{
+        calendar: "repeat(8, minmax(0, 105px))"
+      },
+      boxShadow:{
+        "normal": "0px 0px 24px 10px #e1e1e1"
+      },
       colors: {
         primaryLight: "#F2E0FC",
         primary: "#BC63F2",
