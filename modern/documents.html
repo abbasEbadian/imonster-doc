@@ -147,8 +147,11 @@
 
     <!-- Main -->
     <main
-        class="relative flex flex-col md:w-6/12 w-full min-h-screen bg-white 2xl:px-8 px-5 pt-16  mg:rounded-3xl rounded-none shadow-xl">
-
+        class="relative flex flex-col md:w-6/12 w-full min-h-screen bg-white 2xl:px-8 px-5 py-16  mg:rounded-3xl rounded-none shadow-xl">
+        <a href="/modern/main.html" class="absolute left-3 top-5  md:hidden w-5 h-5">
+            <img src="../assets/icons/back.svg" alt="back">
+        </a>
+        
         <div class=" flex flex-col items-center max-w-full   px-4 mx-auto ">
             <p class="uppercase text-[#d1d1d1] text-xs text-start w-full mb-4">Latest documents</p>
 
@@ -499,9 +502,7 @@
 
     <!-- History Mobile -->
     <div class="md:hidden flex absolute left-0 z-[5]">
-        <button class="absolute left-5 top-[18px] w-max" onclick="openHistory()">
-            <img src="../assets/icons/history.svg" alt="" class="w-7">
-        </button>
+        
         <div id="history-mobile"
             class="fixed top-0 -left-[300px] invisible flex items-center flex-col w-[240px] min-h-screen pt-16 bg-gradient-to-r from-[#213C49] to-[#062635] rounded-r-3xl shadow-2xl duration-[0.5s]">
             <button class="absolute left-6 top-6" onclick="closeHistory()">
