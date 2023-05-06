@@ -1,5 +1,6 @@
 var init2 = false;
 jQuery(function () {
+    return
     if (init2) return
     init2 = true
 

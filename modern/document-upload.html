@@ -7,9 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../tailwind/output.css">
     <link rel="stylesheet" href="../assets/styles/main.css">
-
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../node_modules/jquery-ui/dist/jquery-ui.min.js"></script>
     <title>Documents upload</title>
 </head>
 
@@ -160,19 +157,73 @@
 
             <!-- STEPS NAVIGATION -->
             <div class="flex items-center justify-center">
-                <button
-                    class="border-primary border-[1px] border-solid rounded-full text-xs  mr-2 text-primary hover:bg-primaryLight transition">
-                    <a href="/modern/home.html" class="px-8 py-3"> Prev </a>
-                </button>
-                <button
-                    class="bg-primary border-none rounded-full text-primaryLight hover:brightness-90 transition text-xs">
-                    <a href="/modern/set-meeting.html" class="px-8 py-3">Next</a>
-                </button>
+                <a href="/modern/home.html"
+                    class="border-primary border-[1px] border-solid rounded-full text-xs  mr-2 text-primary hover:bg-primaryLight transition px-8 py-3">
+                    Prev
+                </a>
+                <a  href="/modern/set-meeting.html"
+                    class="bg-primary border-none rounded-full text-primaryLight hover:brightness-90 transition text-xs px-8 py-3">
+                    Next
+                </a>
             </div>
         </div>
     </main>
 
+<!-- UPLOAD RECORD MODAL 
+        {.hidden} => hidden
+        remove hidden class to show.
+    -->
+    <div class="relative z-10 transition" id="record-modal" togglable aria-labelledby="modal-title" role="dialog"
+        aria-modal="true">
+        <!--
+          
+            
+          
+        -->
+        <!-- BACKDROP -->
+        <div class="fixed inset-0 bg-[#0008] bg-opacity-75 transition-opacity"></div>
 
+        <!-- CONTENT -->
+        <div class="fixed inset-0 z-10 overflow-y-auto ">
+            <div class="flex min-h-full items-start justify-center p-4 text-center sm:items-center sm:p-0  ">
+                <div
+                    class="relative transform overflow-hidden rounded-3xl bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-xl p-4 sm:p-8 ">
+
+                    <span closer class="left-4 top-0 p-2 absolute" role="button"> x </span>
+
+                    <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4 ">
+                        <div class="bg-black rounded-lg  min-h-[300px] relative overflow-hiddenr">
+                            <video id="preview" autoplay controls></video>
+                            <div class="absolute inset-0 flex items-center flex-col justify-center bg-darkBlack50" id="record-hint">
+                                <p class="text-6xl text-white mb-6 ">!</p>
+                                <small class="text-white max-w-[340px] text-center">Click the icon to start recording.
+                                    If
+                                    you click on the icon again, the recording will stop and the final file will be
+                                    ready to
+                                    be sent.</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="soundClips" class="button"> </div>
+                    <div class="flex items-center justify-center gap-x-4 gap-y-6 mt-6 flex-wrap">
+                        <button id="try-again"
+                            class="order-2 sm:order-1 border-primary border-[1px] border-solid rounded-full px-8 py-3  text-primary hover:bg-primaryLight transition text-sm">Try
+                            again</button>
+                        <div class="order-1 sm:order-2 w-full sm:w-auto flex justify-center">
+                            <button
+                                class="w-16 h-16 rounded-full border-4 border-solid border-primary grid place-items-center"
+                                id="record">
+                                <span class="w-6 h-6 bg-primary rounded-full"></span>
+                            </button>
+                        </div>
+                        <button
+                            class="order-3 bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-sm">
+                            Upload</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
