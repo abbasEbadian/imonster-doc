@@ -41,10 +41,10 @@ const initMeetingReminder = () => {
 const initTogglers = () => {
 
     // dropdown click away listener
-    $(document).on('click', function (e) {
-        if( $(e.target).parents('[togglable]').length === 0)
-        $("[togglable]").css(INVISIBLE)
-    })
+    // $(document).on('click', function (e) {
+    //     if( $(e.target).parents('[togglable]').length === 0)
+    //     $("[togglable]").css(INVISIBLE)
+    // })
 
     $("[dropdown-toggler]").each((_, item) => {
         $(item).on('click', (event) => {

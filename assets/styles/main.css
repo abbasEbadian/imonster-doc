@@ -48,6 +48,8 @@
     cursor: pointer;
 }
 .ui-datepicker-calendar th{
+    text-align: center;
+    padding-bottom: 16px;
     font-size: 12px;
 }
 .ui-datepicker-calendar td{
