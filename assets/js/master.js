@@ -193,7 +193,19 @@ const initTogglers = () => {
         $(item).datepicker({
             nextText: ">",
             prevText: "<",
-            autoSize: $(item).data("autoSize") && true || false
+            autoSize: $(item).data("autoSize") && true || false,
+            
+        });
+    })
+    $("[meeting-datepicker]").length && $("[meeting-datepicker]").each((_, item) => {
+        $(item).datepicker({
+            nextText: ">",
+            prevText: "<",
+            autoSize: $(item).data("autoSize") && true || false,
+            beforeShowDay: function(date){
+                if(new Date(date).setHours(0,0,0,0).valueOf() < new Date().setHours(0,0,0,0).valueOf()) return [0, "text-stone-400 after:w-full relative after:absolute after:left-0 after:top-1/2 after:bg-stone-400 after:h-[1px] !text-lg"]
+                return[1, "text-primary !text-lg font-extralight"]
+            }
         });
     })
 

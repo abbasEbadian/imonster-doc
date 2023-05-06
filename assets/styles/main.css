@@ -32,9 +32,14 @@
 .ui-datepicker-header {
     font-size: 12px ;
     display: flex;
-    justify-content: space-between;
-
+    justify-content: center;
+    column-gap: 32px;
+    color: #bc63f2; 
+    font-size: 1.2rem;
 }
+.ui-datepicker-header .ui-datepicker-prev{ order: 1 }
+.ui-datepicker-header .ui-datepicker-title{ order: 2 }
+.ui-datepicker-header .ui-datepicker-next{ order: 3 }
 .ui-datepicker-calendar {
     width: 100%;
     margin-top: 16px;
@@ -48,7 +53,7 @@
 .ui-datepicker-calendar td{
     text-align: center;
 }
-.ui-datepicker-calendar a{
+.ui-datepicker-calendar td{
     font-size: 11px;
 }
 .ui-datepicker-today{
