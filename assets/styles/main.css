@@ -56,8 +56,11 @@
 .ui-datepicker-calendar td{
     font-size: 11px;
 }
-.ui-datepicker-today{
+.ui-datepicker-today a{
     border-radius: 600px;
     background-color: #bc63f2;
     color: white;
+    width: 28px;
+    height: 28px;
+    display: inline-block;
 }
