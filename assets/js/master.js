@@ -189,10 +189,13 @@ const initTogglers = () => {
         })
     })
 
-    $("[datepicker]").length && $("[datepicker]").datepicker({
-        nextText: ">",
-        prevText: "<" 
-    });
+    $("[datepicker]").length && $("[datepicker]").each((_, item) => {
+        $(item).datepicker({
+            nextText: ">",
+            prevText: "<",
+            autoSize: $(item).data("autoSize") && true || false
+        });
+    })
 
 
 

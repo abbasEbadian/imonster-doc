@@ -10,6 +10,24 @@
 
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <title> Home </title>
+
+    <style>
+        #ui-datepicker-div {
+            background: #fff;
+            z-index: 3 !important;
+            width: 340px;
+            box-shadow: 0 0 16px 4px #ddd;
+            border-radius: 21px;
+            top: 384px !important;
+            display: none;
+            padding: 64px 16px 16px;
+        }
+        .ui-datepicker-header{
+            padding-bottom: 16px;
+            margin-bottom: 16px;
+            border-bottom:  1px solid #ddd ;
+        }
+    </style>
 </head>
 
 <body class="flex flex-wrap justify-end bg-[#F5F5F5] font-montserrat">
@@ -147,13 +165,12 @@
 
 
             <!-- User birthdate -->
-            <div class="relative w-full">
+            <div class="relative w-full z-[5]">
                 <label for="name" class="text-[11px] absolute top-[-8px] left-4 text-primary bg-white px-2"> Enter your
                     date of birth</label>
-                <input type="text" name="name" placeholder="MM / DD / YYYY"
-                    class="w-full border-[1px] border-solid border-primary rounded-full px-4 py-2 placeholder:text-black50 placeholder:text-xs text-center focus-visible:outline-none" />
+                <input type="text" name="name" placeholder="MM / DD / YYYY" datepicker autoSize
+                    class="w-full border-[1px] border-solid border-primary rounded-full px-4 py-2 placeholder:text-black50 placeholder:text-xs text-center focus-visible:outline-none " />
 
-                <!-- ! TODO : Implement calendar (postponed by the order of mr Salehy)  -->
                 <!--  
                     to show: set { block } class
                     to hide: set { hidden } class -->
@@ -210,23 +227,27 @@
                 <input type="text" name="name" placeholder="(248) 654 1769"
                     class="w-full border-[1px] border-solid border-primary rounded-full px-4 py-2 placeholder:text-black50 placeholder:text-xs text-left focus-visible:outline-none  pl-28" />
 
-                <div select-container
-                    class=" absolute left-4   top-3 ">
+                <div select-container class=" absolute left-4   top-3 ">
 
-                    <div class=" flex items-center justify-between  pl-1 pr-3 text-sm bg-primaryLight h-5 w-20 rounded-full" dropdown-toggler>
+                    <div class=" flex items-center justify-between  pl-1 pr-3 text-sm bg-primaryLight h-5 w-20 rounded-full"
+                        dropdown-toggler>
                         <img src="../assets/images/usa.png" alt="">
                         <span class="" selectable-text> +1</span>
                     </div>
 
                     <div togglable selectable
-                        class="transition-all bg-white absolute z-10  max-h-56 w-full overflow-auto  top-5 bg-none rounded-[12px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm flex flex-col"
-                        
-                        >
+                        class="transition-all bg-white absolute z-10  max-h-56 w-full overflow-auto  top-5 bg-none rounded-[12px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm flex flex-col">
 
-                        <span selecter data-value="+1" class="cursor-pointer select-none  transition-all hover:bg-primaryLight  text-center"> +1 </span>
-                        <span selecter data-value="+2" class="cursor-pointer select-none  transition-all hover:bg-primaryLight  text-center"> +2 </span>
-                        <span selecter data-value="+98" class="cursor-pointer select-none  transition-all hover:bg-primaryLight text-center"> +98 </span>
-                        
+                        <span selecter data-value="+1"
+                            class="cursor-pointer select-none  transition-all hover:bg-primaryLight  text-center"> +1
+                        </span>
+                        <span selecter data-value="+2"
+                            class="cursor-pointer select-none  transition-all hover:bg-primaryLight  text-center"> +2
+                        </span>
+                        <span selecter data-value="+98"
+                            class="cursor-pointer select-none  transition-all hover:bg-primaryLight text-center"> +98
+                        </span>
+
                     </div>
                 </div>
             </div>
@@ -249,7 +270,7 @@
             <div class="flex items-center justify-center">
                 <button
                     class="bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-xs">
-                    <a href="/modern/document-upload.html"> Next </a>    
+                    <a href="/modern/document-upload.html"> Next </a>
                 </button>
             </div>
     </main>
@@ -258,9 +279,15 @@
 
 </html>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+    integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"
+    integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+    integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script src="../assets/js/navbar.js"></script>
 <script src="../assets/js/notifications.js"></script>
