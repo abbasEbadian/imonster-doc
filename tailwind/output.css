@@ -4459,6 +4459,10 @@ video {
     display: flex;
   }
 
+  .lg\:hidden {
+    display: none;
+  }
+
   .lg\:h-10 {
     height: 2.5rem;
   }
