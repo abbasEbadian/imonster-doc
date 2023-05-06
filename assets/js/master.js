@@ -115,7 +115,7 @@ const initTogglers = () => {
         const conf = {
             infinite: false,
             autoplay: false,
-            centerMode: false,
+            centerMode: true,
             mobileFirst: true, 
             variableWidth: auto,
             responsive: [
