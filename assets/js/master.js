@@ -4,14 +4,11 @@ var INVISIBLE = {
     opacity: 0,
     pointerEvents: "none",
     visibility: "hidden",
-    overflow: 'hidden'
 }
-
 var VISIBLE = {
     opacity: 1,
     pointerEvents: "all",
     visibility: "visible",
-    overflow: 'auto'
 }
 jQuery(function() {
     if (init) return
@@ -216,7 +213,10 @@ const initTogglers = () => {
 
     $("[calendar-item]").each((_, item) => {
         $(item).on('click', function (e) {
-            console.log($(item).find("[togglable]"));
+            if( $(e.target)[0].hasAttribute("closer")) {
+                $(item).find("[togglable]").eq(0).css(INVISIBLE)
+
+            }else
             $(item).find("[togglable]").eq(0).css(VISIBLE)
         })
     })

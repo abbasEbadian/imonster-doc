@@ -10,11 +10,12 @@
     <title>Mian</title>
 </head>
 
-<body class="flex flex-wrap justify-center bg-[#F5F5F5] font-montserrat">
+<body class="flex  justify-center bg-[#F5F5F5] font-montserrat">
     <!-- Menu Desktop -->
     <nav id="menu-desktop"
-        class="fixed left-0 lg:relative inset-y-0 md:flex hidden items-center flex-col w-[270px] min-h-screen overflow-y-scroll">
-        <div class="w-full flex flex-col items-center lg:mb-14 mb-11">
+        class="fixed left-0 lg:static inset-y-0 lg:flex hidden items-center flex-col w-[270px] min-h-screen overflow-y-scroll">
+        <h6 class="mt-6"> Howdy, Amir!</h6>
+        <div class="w-full flex flex-col items-center lg:mb-14 mb-11 scale-[0.85]">
             <div
                 class="flex justify-center items-center w-[16.5rem] h-[16.5rem] border-solid border-[#062635]/5 border-[0.5px] rounded-full lg:scale-100 scale-75">
                 <div
@@ -25,7 +26,7 @@
                             class="flex justify-center items-center w-[12rem] h-[12rem] border-solid border-[#062635]/40 border-[1.5px] rounded-full">
                             <div
                                 class="relative flex justify-center items-center w-[10.5rem] h-[10.5rem] border-solid border-[#062635]/60 border-2 rounded-full">
-                                <img src="../assets/images/profile.png" alt=""
+                                <img src="../assets/images/amir.png" alt=""
                                     class="w-36 h-36 border-solid border-[#062635] border-2 rounded-full">
                                 <button class="absolute right-[13px] bottom-[13px] p-[10px] bg-[#BC63F2] rounded-full">
                                     <img class="w-5 h-5" src="../assets/icons/camera.svg" alt="">
@@ -35,31 +36,26 @@
                     </div>
                 </div>
             </div>
-            <h3 class="text-darkBlack lg:text-2xl text-xl font-bold lg:-mt-6 -mt-12 mb-1">Jane Cooper</h3>
+            <h3 class="text-darkBlack lg:text-2xl text-xl font-bold lg:-mt-6 -mt-12 mb-1"> Amir Moradi</h3>
             <span class="text-darkBlack/50 lg:text-sm text-xs font-normal">Join 27 September 2022</span>
         </div>
         <div class="w-full lg:pl-10 pl-6 lg:mb-10 mb-8">
             <dl class="mb-6">
                 <dt class="text-darkBlack/50 uppercase mb-5">Menu</dt>
+                <dd class="lg:text-lg text-sm text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer ">
+                    <a href="/modern/admin-chat.html"> Main </a>
+                </dd>
+
+                <dd class="lg:text-lg text-sm text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                    <a href="/modern/admin-sessions.html"> Sessions </a>
+                </dd>
+
                 <dd
                     class="lg:text-lg text-sm text-primary font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer  border-primary lg:border-r-8 border-r-4">
-                    <a href="/modern/main.html"> Main </a>
+                    <a href="/modern/admin-schedule.html"> Schedule </a>
                 </dd>
-
                 <dd class="lg:text-lg text-sm text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
-                    <a href="/modern/meetings.html"> Meetings </a>
-                </dd>
-
-                <dd class="lg:text-lg text-sm text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
-                    <a href="/modern/user-information.html"> Your Information </a>
-                </dd>
-
-                <dd
-                    class="lg:text-lg text-sm  text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 border-solid cursor-pointer">
-                    <a href="/modern/payments.html"> Payments </a>
-                </dd>
-                <dd class="lg:text-lg text-sm text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer ">
-                    <a href="/modern/faq.html"> FAQ </a>
+                    <a href="/modern/admin-schedule.html"> Patients </a>
                 </dd>
             </dl>
 
@@ -94,7 +90,7 @@
                                 class="flex justify-center items-center w-[12rem] h-[12rem] border-solid border-[#062635]/40 border-[1.5px] rounded-full">
                                 <div
                                     class="relative flex justify-center items-center w-[10.5rem] h-[10.5rem] border-solid border-[#062635]/60 border-2 rounded-full">
-                                    <img src="../assets/images/profile.png" alt=""
+                                    <img src="../assets/images/amir.png" alt=""
                                         class="w-36 h-36 border-solid border-[#062635] border-2 rounded-full">
                                     <button
                                         class="absolute right-[13px] bottom-[13px] p-[10px] bg-[#BC63F2] rounded-full">
@@ -262,15 +258,69 @@
                         </div>
                     </div>
                     <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1">
-                        <div class="bg-sky-600 text-white text-xs  h-full   flex items-center px-1 relative" calendar-item>
+                        <div class="bg-sky-600 text-white text-xs  h-full   flex items-center px-1 relative"
+                            calendar-item>
+                            
                             <span class="truncate ">Abbas Ebadian Abbas Ebadian</span>
 
-                            <div class="absolute bg-white shadow-normal rounded-xl p-4 opacity-0" togglable> 
-                                test
+                            <div togglable
+                                class="absolute bg-white shadow-normal rounded-xl items-center opacity-0 flex flex-col p-4 text-black whitespace-nowrap text gap-y-2 min-w-[240px]">
+                                <span class="absolute top-0 left-0 px-2 py-1" role="button" closer> x </span>
+                                <span class="text-lg"> Amir Moradi</span>
+                                <small class="text-indigo-400 text-[10px]"> Counseling session for</small>
+                                <small>Saturday 1 at 3 P.M</small>
+
+                                <button
+                                    class="bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-xs  mx-auto block">
+                                    Patient’s profile</button>
+
+                                <button
+                                    class="bg-blue-600 border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-xs  mx-auto block">
+                                    Meet now!</button>
                             </div>
                         </div>
                     </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"> <span> </span>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1 cursor-pointer" calendar-item> 
+                        <div togglable
+                                class="absolute bg-white shadow-normal rounded-xl items-center opacity-0 flex flex-col p-4 text-black whitespace-nowrap text gap-y-2 min-w-[240px]">
+                                <span class="absolute top-0 left-0 px-2 py-1" role="button" closer> x </span>
+                                
+                                <small>Tuesday 4 at 6 P.M</small>
+
+                                <div class="relative  w-full selectBox" select-container>
+                                    <button type="button" dropdown-toggler
+                                        class="z-[12] relative  w-full  bg-white   border-[1px] border-solid border-primary rounded-full text-xs py-2 "
+                                        aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+                                        <span class="flex items-center  text-center justify-center pointer-events-none">
+                                            <span class=" block truncate text-xs text-black50 title" selectable-text>category</span>
+                                        </span>
+                                        <i class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
+                                            <img src="../assets/icons/arrow-down.svg" alt="arrow">
+                                        </i>
+                                    </button>
+                    
+                                    <ul class="transition-all  absolute z-[11] bg-white pt-12 max-h-56 w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
+                                        togglable selectable tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                                        aria-activedescendant="listbox-option-3">
+                                        <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                                            <span class="font-normal block truncate py-2 text-center" selecter data-value="personal">personal</span>
+                                        </li>
+                                        <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                                            <span class="font-normal block truncate py-2 text-center" selecter
+                                                data-value="popular">popular</span>
+                                        </li>
+                                        <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                                            <span class="font-normal block truncate py-2 text-center" selecter
+                                                data-value="else">else</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <small class="my-2">Write about this meeting</small>
+                                <input type="text" class="border-0 border-b-1 border-primary">
+                                <button
+                                    class="bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-xs  mx-auto block mt-4">
+                                    Set a time</button>
+                            </div>
                     </div>
                     <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"> <span> </span>
                     </div>

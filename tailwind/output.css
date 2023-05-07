@@ -1589,6 +1589,14 @@ video {
   min-width: 800px;
 }
 
+.min-w-\[320px\] {
+  min-width: 320px;
+}
+
+.min-w-\[240px\] {
+  min-width: 240px;
+}
+
 .max-w-3xl {
   max-width: 48rem;
 }
@@ -2380,6 +2388,11 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-blue-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-75 {
   --tw-bg-opacity: 0.75;
 }
@@ -3052,6 +3065,11 @@ video {
 
 .text-white\/50 {
   color: rgb(255 255 255 / 0.5);
+}
+
+.text-indigo-400 {
+  --tw-text-opacity: 1;
+  color: rgb(129 140 248 / var(--tw-text-opacity));
 }
 
 .accent-\[\#BC63F2\] {
