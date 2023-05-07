@@ -4848,6 +4848,10 @@ video {
 }
 
 @media (min-width: 1200px) {
+  .xl\:static {
+    position: static;
+  }
+
   .xl\:relative {
     position: relative;
   }
