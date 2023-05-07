@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../tailwind/output.css">
     <link rel="stylesheet" href="../assets/styles/main.css">
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <title>Mian</title>
+    <title>Admin chat</title>
 </head>
 
-<body class="flex flex-wrap justify-center bg-[#F5F5F5] font-montserrat">
+<body class="flex justify-center bg-[#F5F5F5] font-montserrat">
     <!-- Menu Desktop -->
     <nav id="menu-desktop"
-        class="fixed left-0 lg:relative inset-y-0 md:flex hidden items-center flex-col w-[270px] min-h-screen overflow-y-scroll">
-        <div class="w-full flex flex-col items-center lg:mb-14 mb-11">
+        class="fixed left-0 lg:static inset-y-0 lg:flex hidden items-center flex-col w-[270px] min-h-screen overflow-y-scroll ">
+        <h6 class="mt-5">Howdy, Amir!</h6>
+        <div class="w-full flex flex-col items-center   scale-[0.85]">
             <div
                 class="flex justify-center items-center w-[16.5rem] h-[16.5rem] border-solid border-[#062635]/5 border-[0.5px] rounded-full lg:scale-100 scale-75">
                 <div
@@ -39,28 +39,23 @@
             <h3 class="text-darkBlack lg:text-2xl text-xl font-bold lg:-mt-6 -mt-12 mb-1">Jane Cooper</h3>
             <span class="text-darkBlack/50 lg:text-sm text-xs font-normal">Join 27 September 2022</span>
         </div>
-        <div class="w-full lg:pl-10 pl-6 lg:mb-10 mb-8">
+        <div class="w-full lg:pl-10 pl-6  mb-4">
             <dl class="mb-6">
                 <dt class="text-darkBlack/50 uppercase mb-5">Menu</dt>
                 <dd
                     class="lg:text-lg text-sm text-primary font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer  border-primary lg:border-r-8 border-r-4">
-                    <a href="/modern/main.html"> Main </a>
+                    <a href="/modern/admin-chat.html"> Main </a>
                 </dd>
 
                 <dd class="lg:text-lg text-sm text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
-                    <a href="/modern/meetings.html"> Meetings </a>
+                    <a href="/modern/admin-sessions.html"> Sessions </a>
                 </dd>
 
                 <dd class="lg:text-lg text-sm text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
-                    <a href="/modern/user-information.html"> Your Information </a>
+                    <a href="/modern/admin-schedule.html"> Schedule </a>
                 </dd>
-
-                <dd
-                    class="lg:text-lg text-sm  text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 border-solid cursor-pointer">
-                    <a href="/modern/payments.html"> Payments </a>
-                </dd>
-                <dd class="lg:text-lg text-sm text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer ">
-                    <a href="/modern/faq.html"> FAQ </a>
+                <dd class="lg:text-lg text-sm text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                    <a href="/modern/admin-schedule.html"> Patients </a>
                 </dd>
             </dl>
 
@@ -75,9 +70,12 @@
     </nav>
 
     <!-- Menu Mobile -->
-    <div class="md:hidden flex absolute right-0 z-[6]">
-        <button class="absolute right-5 top-5 w-max" onclick="openNav()">
-            <img src="../assets/icons/menu.svg" alt="" class="w-6">
+    <div class="xl:hidden flex absolute right-0 z-[6] w-full">
+        <button class="absolute right-5 top-5 " onclick="openDocuments()">
+            <img src="../assets/icons/clipboard-dark.svg" alt="" class="w-6 h-6">
+        </button>
+        <button class="absolute right-10 top-5 " onclick="openNav()">
+            <img src="../assets/icons/menu.svg" alt="" class="w-6 mx-4">
         </button>
         <nav id="nav-mobile"
             class="fixed top-0 -right-[300px] invisible flex items-center flex-col w-[240px] min-h-screen bg-gradient-to-l from-[#213C49] to-[#062635] rounded-l-3xl shadow-2xl duration-[0.5s]">
@@ -111,28 +109,21 @@
             </div>
             <div class="w-full pl-7 mb-11">
                 <dl class="mb-6">
-                    <dt class="text-[#FFFFFF]/50 text-xs uppercase mb-5">Main</dt>
-                    <dd class="lg:text-lg text-sm text-[#FFFFFF] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
-                        Main
+                    <dt class="text-white/50 uppercase mb-5">Menu</dt>
+                    <dd
+                        class="lg:text-lg text-sm text-primary font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer  border-primary lg:border-r-8 border-r-4">
+                        <a href="/modern/admin-chat.html"> Main </a>
                     </dd>
-                    <dd class="lg:text-lg text-sm text-[#FFFFFF] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
-                        Session
+    
+                    <dd class="lg:text-lg text-sm text-white font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        <a href="/modern/admin-sessions.html"> Sessions </a>
                     </dd>
-                </dl>
-                <dl class="mb-1">
-                    <dt class="text-[#FFFFFF]/50 text-xs uppercase mb-5">General</dt>
-                    <dd class="lg:text-lg text-sm text-[#FFFFFF] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
-                        Meetings</dd>
-                    <dd class="lg:text-lg text-sm text-[#BC63F2] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
-                        Payments
+    
+                    <dd class="lg:text-lg text-sm text-white font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        <a href="/modern/admin-schedule.html"> Schedule </a>
                     </dd>
-                    <dd class="lg:text-lg text-sm text-[#FFFFFF] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
-                        Agreements</dd>
-                    <dd class="lg:text-lg text-sm text-[#FFFFFF] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
-                        Your
-                        Information</dd>
-                    <dd class="lg:text-lg text-sm text-[#FFFFFF] font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
-                        Tasks
+                    <dd class="lg:text-lg text-sm text-white font-bold lg:pl-6 pl-4 lg:mb-4 mb-3 cursor-pointer">
+                        <a href="/modern/admin-schedule.html"> Patients </a>
                     </dd>
                 </dl>
             </div>
@@ -142,12 +133,19 @@
                 </p>
             </div>
         </nav>
+        <button class="absolute left-5 top-5 block sm:hidden" onclick="openContacts()">
+            <img src="../assets/icons/contacts.svg"  alt="contacts" class="w-6 pointer-events-none">
+        </button>
     </div>
 
     <!-- Main -->
     <main
         class="flex grow min-h-screen max-h-screen bg-white 2xl:pr-8 pr-5 pt-16  mg:rounded-3xl rounded-none shadow-xl">
-        <section class="w-[240px]   border-r-[1px] border-grey ">
+        
+        <!-- CONTACTS SIDEBAR -->
+        <section id="contacts-sidebar"
+            class="w-[240px] z-[12]  bg-white border-r-[1px] border-grey fixed sm:static -left-[240px] top-12 bottom-0 transition-all" 
+            >
             <div class="relative px-2">
                 <input type="text" class="rounded-full bg-gray w-full pl-8 py-1" placeholder="search">
                 <img src="../assets/icons/search.svg" alt="magnifier"
@@ -213,12 +211,15 @@
                     </div>
                 </div>
             </div>
+
         </section>
+
+
         <section class="flex flex-col grow pl-4">
             <div class="flex justify-between md:mb-8 mb-16">
                 <div class="flex items-center">
                     <img src="../assets/images/doctor.png" alt="" class="w-12 h-12 object-cover mr-3 cursor-pointer">
-                    <p class="xl:flex hidden text-xs">Patient</p>
+                    <p class="text-xs">Patient</p>
                 </div>
                 <div
                     class="flex md:px-3 md:py-1 px-2 py-1.5 md:text-base text-sm border-solid border-[1px] border-[#062635] rounded-full  h-10">
@@ -512,9 +513,9 @@
 
     <!-- History Desktop -->
     <div id="history-desktop"
-        class="border-l-[1px] border-l-[#eee] lg:relative fixed right-0 inset-y-0 md:flex hidden flex-col items-center w-[250px] min-h-screen lg:pt-14 pt-12 overflow-y-scroll bg-white">
-        <div class="relative flex justify-between items-center w-[85%] h-fit mb-7">
-            <span role="button" class="text-[#181818]/50  text-sm uppercase"> x <small class="mx-2 text-black text-xs">
+        class="border-l-[1px] border-l-[#eee] xl:relative fixed -right-[250px] inset-y-0 xl:flex  flex-col items-center w-[250px] min-h-screen lg:pt-14 pt-12 overflow-y-scroll bg-white transition-all z-[11] p-2">
+        <div class="relative flex justify-between items-center w-[85%] h-fit mb-7 ">
+            <span role="button" class="text-[#181818]/50  text-sm uppercase" onclick="openDocuments()"> x <small class="mx-2 text-black text-xs">
                     Documents</small> </span>
         </div>
 
@@ -573,37 +574,6 @@
 
     </div>
 
-    <div id="notifications-desktop"
-        class="fixed xl:right-[90px] lg:right-[84px] right-[69px] lg:top-[30px] top-[20px] invisible md:block hidden bg-[#fdfdfd] w-96 h-fit lg:p-5 p-4 lg:rounded-2xl rounded-xl border-solid border-[1px] border-gray-200 shadow-xl opacity-0 duration-[0.2s]">
-        <div
-            class="absolute right-[-10px] top-[30px] w-8 h-8 border-solid border-[#fdfdfd] border-t-[15px] border-r-[15px] rounded-md rotate-45">
-        </div>
-        <div class="flex flex-col lg:gap-2 gap-1.5">
-            <div
-                class="lg:p-3 px-3 py-2 bg-[#29CC6A] lg:text-sm text-xs text-[#181818] lg:leading-5 leading-4 rounded-xl shadow-lg">
-                You recieve new agreement sheets. Please check agreements session and sign it. If you have any
-                question please check help session.
-            </div>
-            <div
-                class="lg:p-3 px-3 py-2 bg-[#29CC6A] lg:text-sm text-xs text-[#181818] lg:leading-5 leading-4 rounded-xl shadow-lg">
-                New daily tasks added to your profile. please check the Tasks session. If you have any question
-                please check help session.
-            </div>
-            <div
-                class="lg:p-3 px-3 py-2 bg-[#29CC6A] lg:text-sm text-xs text-[#181818] lg:leading-5 leading-4 rounded-xl shadow-lg">
-                Your payment accepted. Check payment session.
-            </div>
-            <div
-                class="lg:p-3 px-3 py-2 bg-[#29CC6A] lg:text-sm text-xs text-[#181818] leading-5 rounded-xl shadow-lg opacity-40">
-                You recieve new agreement sheets. Please check agreements session and sign it. If you have any
-                question please check help session.
-            </div>
-            <div
-                class="lg:p-3 px-3 py-2 bg-[#29CC6A] lg:text-sm text-xs text-[#181818] lg:leading-5 leading-4 rounded-xl shadow-lg opacity-40">
-                Your payment accepted. Check payment session.
-            </div>
-        </div>
-    </div>
 
 
 </body>
@@ -649,6 +619,22 @@
         modal2.style.visibility = "hidden";
     }
 
+    function openContacts() {
+        console.log($("#contacts-sidebar").css('left'));
+        if($("#contacts-sidebar").css('left') === "0px")
+            $("#contacts-sidebar").css("left", -1 * $("#contacts-sidebar").width())
+        else
+            $("#contacts-sidebar").css("left", 0)
+    }
+
+    function openDocuments() {
+        if($("#history-desktop").css('right') === "0px")
+            $("#history-desktop").css("right", -1 * 250)
+        else
+            $("#history-desktop").css("right", 0)
+
+    }
+    
     $(document).click(function (event) {
         var $target = $(event.target);
         if (!$target.closest('#modal1 .box').length &&
