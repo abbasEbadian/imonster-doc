@@ -3,13 +3,15 @@ var init = false
 var INVISIBLE = {
     opacity: 0,
     pointerEvents: "none",
-    visibility: "hidden" 
+    visibility: "hidden",
+    overflow: 'hidden'
 }
 
 var VISIBLE = {
     opacity: 1,
     pointerEvents: "all",
     visibility: "visible",
+    overflow: 'auto'
 }
 jQuery(function() {
     if (init) return
@@ -75,6 +77,7 @@ const initTogglers = () => {
             const target = $(item).data('target');
             var value;
             $(target).css(VISIBLE)
+            $(target).removeClass("hidden")
 
             if( target === '#record-modal')
                 $(window).trigger("record-modal-opened")

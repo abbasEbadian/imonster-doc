@@ -816,6 +816,18 @@ video {
   z-index: 9;
 }
 
+.z-\[14\] {
+  z-index: 14;
+}
+
+.z-\[11\] {
+  z-index: 11;
+}
+
+.z-\[12\] {
+  z-index: 12;
+}
+
 .order-1 {
   order: 1;
 }
@@ -4457,10 +4469,6 @@ video {
 
   .lg\:flex {
     display: flex;
-  }
-
-  .lg\:hidden {
-    display: none;
   }
 
   .lg\:h-10 {
