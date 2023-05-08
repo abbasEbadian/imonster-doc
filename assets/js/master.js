@@ -220,5 +220,22 @@ const initTogglers = () => {
             $(item).find("[togglable]").eq(0).css(VISIBLE)
         })
     })
+
+
+    $("[enterable]").each((_, item) => {
+        const template = $(item).next().find('[template]')
+        $(item).on("keypress", function (e) {
+            if(e.key === "Enter") {
+                const val = $(item).val()
+                const n = template.clone().removeClass('hidden')
+                n.find("small").text(val)
+                $(n).find('img').on('click', function (e){
+                    $(n).detach()
+                })
+                $(item).next().append(n)
+                $(item).val("")
+            }
+        })
+    })
     
 }

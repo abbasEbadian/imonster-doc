@@ -284,8 +284,17 @@
                 </div>
                 <!-- Inputs -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 p-8 gap-y-8 gap-x-24">
-                    <input type="text" class="border-b-[1px] border-primary py-2 border-solid  text-sm col-span-1"
-                        placeholder="Illness" />
+                    <div class="col-span-1 flex flex-col">
+                        <input type="text" class="border-b-[1px] border-primary py-2 border-solid  text-sm w-full"
+                            placeholder="Illness" enterable  />
+
+                        <div class="flex gap-2 py-4">
+                            <div class="rounded-full border-1 border-primary px-2 py-1 flex gap-2 items-center hidden" template>
+                                <small></small>
+                                <img src="../assets/icons/close-primary.svg" class="w-2 h-2" role="button"></img>
+                            </div>
+                        </div>
+                    </div>
 
                     <textarea class="border-b-[1px] border-primary p-2 border-solid  text-sm row-span-2 col-span-1 "
                         placeholder="Write for yourself"></textarea>
@@ -615,6 +624,10 @@
 
         </section>
 
+        <div class="border-t-[1px] border-solid  border-black  h-2 py-16 w-full mt-16">
+            test
+        </div>
+
     </main>
 
 
@@ -719,7 +732,6 @@
             </div>
         </div>
     </div>
-
 
 
 
