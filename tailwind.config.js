@@ -26,6 +26,7 @@ module.exports = {
         white: "#FFF",
         success: "#29CC6A",
         error: "#FF5353",
+        info: "#3C82F5"
       },
       borderWidth: {
         1: "1px"

@@ -200,7 +200,7 @@
                 <div class="grid grid-cols-calendar grow grid-rows-calendar">
 
                     <!-- WEEK NUMS -->
-                    <div class="col-span-1 text-center h-[48px] "> <span> </span></div>
+                    <div class="col-span-1 text-center h-[48px]"> <span> </span></div>
                     <div class="col-span-1 text-center h-[48px]"> <span>1</span></div>
                     <div class="col-span-1 text-center h-[48px]"> <span>2</span></div>
                     <div class="col-span-1 text-center h-[48px]"> <span>3</span></div>
@@ -226,175 +226,157 @@
                     <div class="col-span-1 text-center h-[48px] grid place-items-center text-[11px] text-slate-400">
                         <span> 1 P.M </span>
                     </div>
-                    <div class="col-span-1 text-center border-y-1 border-stone-300 h-[48px] max-w-[] border-l-1"> <span>
-                        </span>
-                    </div>
-                    <div class="col-span-1 text-center border-y-1 border-stone-300 h-[48px] max-w-[] border-l-1"> <span>
-                        </span>
-                    </div>
-                    <div class="col-span-1 text-center border-y-1 border-stone-300 h-[48px] border-l-1"> <span> </span>
-                    </div>
-                    <div class="col-span-1 text-center border-y-1 border-stone-300 h-[48px] border-l-1"> <span> </span>
-                    </div>
-                    <div class="col-span-1 text-center border-y-1 border-stone-300 h-[48px] border-l-1"> <span> </span>
-                    </div>
-                    <div class="col-span-1 text-center border-y-1 border-stone-300 h-[48px] border-l-1"> <span> </span>
-                    </div>
-                    <div class="col-span-1 text-center border-y-1 border-stone-300 h-[48px] border-x-1"> <span> </span>
-                    </div>
+                    <div class="col-span-1 text-center border-y-1 border-stone-300 h-[48px]  border-l-1"></div>
+                    <div class="col-span-1 text-center border-y-1 border-stone-300 h-[48px]  border-l-1"></div>
+                    <div class="col-span-1 text-center border-y-1 border-stone-300 h-[48px] border-l-1"></div>
+                    <div class="col-span-1 text-center border-y-1 border-stone-300 h-[48px] border-l-1"></div>
+                    <div class="col-span-1 text-center border-y-1 border-stone-300 h-[48px] border-l-1"></div>
+                    <div class="col-span-1 text-center border-y-1 border-stone-300 h-[48px] border-l-1"></div>
+                    <div class="col-span-1 text-center border-y-1 border-stone-300 h-[48px] border-x-1"></div>
 
                     <!-- ROW 2 -->
                     <div class="col-span-1 text-center h-[48px] grid place-items-center text-[11px] text-slate-400">
                         <span> 1:30 P.M </span>
                     </div>
+
+                    <!-- Treatment meeting -->
                     <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1">
-                        <div class="bg-success text-white text-xs  h-full   flex items-center px-1 ">
+                        <div class="bg-success text-white text-xs  h-full   flex items-center px-1 cursor-pointer" calendar-item >
                             <span class="truncate ">Abbas Ebadian Abbas Ebadian</span>
                         </div>
-                    </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1">
-                        <div class="bg-primary text-white text-xs  h-full   flex items-center px-1 ">
-                            <span class="truncate ">Abbas Ebadian Abbas Ebadian</span>
-                        </div>
-                    </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1">
-                        <div class="bg-sky-600 text-white text-xs  h-full   flex items-center px-1 relative"
-                            calendar-item>
-                            
-                            <span class="truncate ">Abbas Ebadian Abbas Ebadian</span>
-
-                            <div togglable
-                                class="absolute bg-white shadow-normal rounded-xl items-center opacity-0 flex flex-col p-4 text-black whitespace-nowrap text gap-y-2 min-w-[240px]">
-                                <span class="absolute top-0 left-0 px-2 py-1" role="button" closer> x </span>
-                                <span class="text-lg"> Amir Moradi</span>
-                                <small class="text-indigo-400 text-[10px]"> Counseling session for</small>
-                                <small>Saturday 1 at 3 P.M</small>
-
-                                <button
-                                    class="bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-xs  mx-auto block">
-                                    Patient’s profile</button>
-
-                                <button
-                                    class="bg-blue-600 border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-xs  mx-auto block">
-                                    Meet now!</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1 cursor-pointer" calendar-item> 
                         <div togglable
-                                class="absolute bg-white shadow-normal rounded-xl items-center opacity-0 flex flex-col p-4 text-black whitespace-nowrap text gap-y-2 min-w-[240px]">
-                                <span class="absolute top-0 left-0 px-2 py-1" role="button" closer> x </span>
-                                
-                                <small>Tuesday 4 at 6 P.M</small>
+                            class="opacity-0 absolute bg-white shadow-normal rounded-xl items-center flex flex-col p-4 text-black whitespace-nowrap text gap-y-2 min-w-[240px] ">
+                            <span class="absolute top-0 left-0 px-2 py-1" role="button" closer> x </span>
 
-                                <div class="relative  w-full selectBox" select-container>
-                                    <button type="button" dropdown-toggler
-                                        class="z-[12] relative  w-full  bg-white   border-[1px] border-solid border-primary rounded-full text-xs py-2 "
-                                        aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
-                                        <span class="flex items-center  text-center justify-center pointer-events-none">
-                                            <span class=" block truncate text-xs text-black50 title" selectable-text>category</span>
-                                        </span>
-                                        <i class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
-                                            <img src="../assets/icons/arrow-down.svg" alt="arrow">
-                                        </i>
-                                    </button>
-                    
-                                    <ul class="transition-all  absolute z-[11] bg-white pt-12 max-h-56 w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
-                                        togglable selectable tabindex="-1" role="listbox" aria-labelledby="listbox-label"
-                                        aria-activedescendant="listbox-option-3">
-                                        <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
-                                            <span class="font-normal block truncate py-2 text-center" selecter data-value="personal">personal</span>
-                                        </li>
-                                        <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
-                                            <span class="font-normal block truncate py-2 text-center" selecter
-                                                data-value="popular">popular</span>
-                                        </li>
-                                        <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
-                                            <span class="font-normal block truncate py-2 text-center" selecter
-                                                data-value="else">else</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <small class="my-2">Write about this meeting</small>
-                                <input type="text" class="border-0 border-b-1 border-primary">
-                                <button
-                                    class="bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-xs  mx-auto block mt-4">
-                                    Set a time</button>
-                            </div>
+                            <h2> Amir Moradi</h2>
+                            <span class="text-success"> Treatment session for</span>
+                            <span>Saturday 1 at 3 P.M</span>
+                            <a href="#profileAddress"
+                                class="bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-xs  mx-auto block mt-2">
+                                Patient profile</a>
+                            <a href="#MeetAdress"
+                                class="bg-info border-none rounded-full px-8 py-3 text-white hover:brightness-90 transition text-xs  mx-auto block mt-2">
+                                Meet now</a>
+
+                            <button href="#MeetAdress"
+                                class="bg-transparent border-none rounded-full px-8 py-3 text-darkBlack50 hover:brightness-90 transition text-xs  mx-auto block mt-2">
+                                Cancel meeting</button>
+
+                        </div>
                     </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"> <span> </span>
+
+
+                    <!-- Counseling meeting -->
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1">
+                        <div class="bg-sky-600 text-white text-xs  h-full   flex items-center px-1 relative cursor-pointer" 
+                            calendar-item>
+                            <span class="truncate ">Abbas Ebadian Abbas Ebadian</span>
+                        </div>
+                        <div togglable
+                            class="opacity-0 absolute bg-white shadow-normal rounded-xl items-center flex flex-col p-4 text-black whitespace-nowrap text gap-y-2 min-w-[240px] ">
+                            <span class="absolute top-0 left-0 px-2 py-1" role="button" closer> x </span>
+
+                            <h2> Amir Moradi</h2>
+                            <span class="text-info"> Counseling session for</span>
+                            <span>Saturday 1 at 3 P.M</span>
+                            <a href="#profileAddress"
+                                class="bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-xs  mx-auto block mt-2">
+                                Patient profile</a>
+                            <a href="#MeetAdress"
+                                class="bg-info border-none rounded-full px-8 py-3 text-white hover:brightness-90 transition text-xs  mx-auto block mt-2">
+                                Meet now</a>
+
+                            <button href="#MeetAdress"
+                                class="bg-transparent border-none rounded-full px-8 py-3 text-darkBlack50 hover:brightness-90 transition text-xs  mx-auto block mt-2">
+                                Cancel meeting</button>
+
+                        </div>
                     </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"> <span> </span>
+
+                    <!-- Personal meeting -->
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1">
+                        <div class="bg-primary text-white text-xs  h-full   flex items-center px-1 cursor-pointer" calendar-item>
+                            <span class="truncate ">Abbas Ebadian Abbas Ebadian</span>
+                        </div>
+                        <div togglable
+                            class="opacity-0 absolute bg-white shadow-normal rounded-xl items-center flex flex-col p-4 text-black  text gap-y-2 min-w-[240px] max-w-[270px] ">
+                            <span class="absolute top-0 left-0 px-2 py-1" role="button" closer> x </span>
+
+                            <p class="text-primary text-xl"> Personal meeting </p>
+                            <span>Saturday 1 at 3 P.M</span>
+
+                            <small class="text-[10px] my-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Culpa laboriosam dolores aliquid eligendi, minus omnis doloremque iure id impedit
+                                reiciendis fugit ipsa dolore ea provident quia nesciunt. Sed, quo? Culpa!</small>
+
+                            <button
+                                class="bg-transparent border-none rounded-full px-8 py-3 text-darkBlack50 hover:brightness-90 transition text-xs  mx-auto block mt-2">
+                                Cancel meeting</button>
+
+                        </div>
                     </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-x-1"> <span> </span>
+                    <!-- Off Time -->
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1">
+                        <div class="bg-darkBlack text-white text-xs  h-full   flex items-center px-1 justify-center cursor-pointer"
+                            calendar-item>
+                            <span class="truncate ">OFF TIME </span>
+                        </div>
+                        <div togglable
+                            class="opacity-0 absolute bg-white shadow-normal rounded-xl items-center flex flex-col p-4 text-black  text gap-y-2 min-w-[240px] max-w-[270px] ">
+                            <span class="absolute top-0 left-0 px-2 py-1" role="button" closer> x </span>
+
+                            <p class="text-xl"> Off time</p>
+                            <span>Saturday 1 at 3 P.M</span>
+
+                            <small class="text-[10px] my-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Culpa laboriosam dolores aliquid eligendi, minus omnis doloremque iure id impedit
+                                reiciendis fugit ipsa dolore ea provident quia nesciunt. Sed, quo? Culpa!</small>
+
+                            <button
+                                class="bg-transparent border-none rounded-full px-8 py-3 text-darkBlack50 hover:brightness-90 transition text-xs  mx-auto block mt-2">
+                                Cancel </button>
+
+                        </div>
                     </div>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"></div>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"></div>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-x-1"></div>
 
                     <!-- ROW 3 -->
                     <div class="col-span-1 text-center h-[48px] grid place-items-center text-[11px] text-slate-400">
                         <span> 2 P.M </span>
                     </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1">
-                        <div class="bg-darkBlack text-white text-xs  h-full   flex items-center px-1 ">
-                            <span class="truncate "></span>
-                        </div>
-                    </div>
-
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"> <span> </span>
-                    </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"> <span> </span>
-                    </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"> <span> </span>
-                    </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"> <span> </span>
-                    </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"> <span> </span>
-                    </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-x-1"> <span> </span>
-                    </div>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"></div>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"></div>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"></div>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"></div>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"></div>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"></div>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-x-1"></div>
 
                     <!-- ROW 4 -->
                     <div class="col-span-1 text-center h-[48px] grid place-items-center text-[11px] text-slate-400">
                         <span> 2:30 P.M </span>
                     </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1">
-                        <div class="bg-darkBlack text-white text-xs  h-full   flex items-center px-1 justify-center">
-                            <span class="truncate ">OFF TIME </span>
-                        </div>
-                    </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"> <span> </span>
-                    </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"> <span> </span>
-                    </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"> <span> </span>
-                    </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"> <span> </span>
-                    </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"> <span> </span>
-                    </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-x-1"> <span> </span>
-                    </div>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"></div>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"></div>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"></div>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"></div>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"></div>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"></div>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-x-1"></div>
 
                     <!-- ROW 5 -->
                     <div class="col-span-1 text-center h-[48px] grid place-items-center text-[11px] text-slate-400">
                         <span> 3 P.M </span>
                     </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1">
-                        <div class="bg-darkBlack text-white text-xs  h-full   flex items-center px-1 ">
-                            <span class="truncate "></span>
-                        </div>
-                    </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"> <span> </span>
-                    </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"> <span> </span>
-                    </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"> <span> </span>
-                    </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"> <span> </span>
-                    </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"> <span> </span>
-                    </div>
-                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-x-1"> <span> </span>
-                    </div>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"></div>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"></div>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"></div>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"></div>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"></div>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-l-1"></div>
+                    <div class="col-span-1 text-center border-b-1 border-stone-300 h-[48px] border-x-1"></div>
 
                 </div>
             </section>
@@ -444,6 +426,46 @@
     </div>
 
 
+    <div
+        class="hidden absolute bg-white shadow-normal rounded-xl items-center flex flex-col p-4 text-black whitespace-nowrap text gap-y-2 min-w-[240px] ">
+        <span class="absolute top-0 left-0 px-2 py-1 closer" role="button"> x </span>
+
+        <small>Tuesday 4 at 6 P.M</small>
+
+        <div class="relative  w-full selectBox" select-container>
+            <button type="button" dropdown-toggler
+                class="z-[12] relative  w-full  bg-white   border-[1px] border-solid border-primary rounded-full text-xs py-2 "
+                aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+                <span class="flex items-center  text-center justify-center pointer-events-none">
+                    <span class=" block truncate text-xs text-black50 title" selectable-text>category</span>
+                </span>
+                <i class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
+                    <img src="../assets/icons/arrow-down.svg" alt="arrow">
+                </i>
+            </button>
+
+            <ul class="transition-all  absolute z-[11] bg-white pt-12 max-h-56 w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
+                togglable selectable tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                aria-activedescendant="listbox-option-3">
+                <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                    <span class="font-normal block truncate py-2 text-center" selecter
+                        data-value="personal">personal</span>
+                </li>
+                <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                    <span class="font-normal block truncate py-2 text-center" selecter
+                        data-value="popular">popular</span>
+                </li>
+                <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                    <span class="font-normal block truncate py-2 text-center" selecter data-value="else">else</span>
+                </li>
+            </ul>
+        </div>
+        <small class="my-2">Write about this meeting</small>
+        <input type="text" class="border-0 border-b-1 border-primary">
+        <button
+            class="bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-xs  mx-auto block mt-4">
+            Set a time</button>
+    </div>
 </body>
 
 </html>
@@ -500,5 +522,8 @@
             $('#modal2').css('visibility') == 'visible') {
             closeModal2();
         }
+
     });
+
+
 </script>

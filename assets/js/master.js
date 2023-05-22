@@ -213,11 +213,12 @@ const initTogglers = () => {
 
     $("[calendar-item]").each((_, item) => {
         $(item).on('click', function (e) {
+            $("[calendar-item] + [togglable]").css(INVISIBLE)
             if( $(e.target)[0].hasAttribute("closer")) {
                 $(item).find("[togglable]").eq(0).css(INVISIBLE)
 
             }else
-            $(item).find("[togglable]").eq(0).css(VISIBLE)
+            $(item).next("[togglable]").eq(0).css(VISIBLE)
         })
     })
 
