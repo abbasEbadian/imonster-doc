@@ -3615,6 +3615,10 @@ video {
     padding-top: 3.5rem;
   }
 
+  .lg\:pl-\[300px\] {
+    padding-left: 300px;
+  }
+
   .lg\:text-left {
     text-align: left;
   }

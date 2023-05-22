@@ -12,64 +12,6 @@
 
 <body class="flex  justify-center bg-[#F5F5F5] font-montserrat overflow-hidden">
 
-
-    <!-- Menu Desktop -->
-    <nav id="menu-desktop"
-        class="fixed left-0 lg:static inset-y-0 lg:flex hidden items-center flex-col w-[270px] min-h-screen overflow-y-scroll max-w-[300px] basis-[39%]">
-        <div class="w-full flex flex-col items-center   scale-[0.85]">
-            <div
-                class="flex justify-center items-center w-[16.5rem] h-[16.5rem] border-solid border-[#062635]/5 border-[0.5px] rounded-full lg:scale-100 scale-75">
-                <div
-                    class="flex justify-center items-center w-[15rem] h-[15rem] border-solid border-[#062635]/10 border-[1px] rounded-full">
-                    <div
-                        class="flex justify-center items-center w-[13.5rem] h-[13.5rem] border-solid border-[#062635]/20 border-[1.25px] rounded-full">
-                        <div
-                            class="flex justify-center items-center w-[12rem] h-[12rem] border-solid border-[#062635]/40 border-[1.5px] rounded-full">
-                            <div
-                                class="relative flex justify-center items-center w-[10.5rem] h-[10.5rem] border-solid border-[#062635]/60 border-2 rounded-full">
-                                <img src="../assets/images/amir.png" alt=""
-                                    class="w-36 h-36 border-solid border-[#062635] border-2 rounded-full">
-                                <button class="absolute right-[13px] bottom-[13px] p-[10px] bg-[#BC63F2] rounded-full">
-                                    <img class="w-5 h-5" src="../assets/icons/camera.svg" alt="">
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <h3 class="text-darkBlack lg:text-2xl text-xl font-bold lg:-mt-6 -mt-12 mb-1"> Amir Moradi</h3>
-            <span class="text-darkBlack/50 lg:text-sm text-xs font-normal">Join 27 September 2022</span>
-        </div>
-        <div class="w-full lg:pl-10 pl-6  mb-0">
-            <dl class="mb-6">
-                <dt class="text-darkBlack/50 uppercase mb-5">Menu</dt>
-                <dd class="lg:text-lg text-sm text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-2 cursor-pointer ">
-                    <a href="/modern/admin-chat.html"> Main </a>
-                </dd>
-
-                <dd class="lg:text-lg text-sm text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-2 cursor-pointer">
-                    <a href="/modern/admin-sessions.html"> Sessions </a>
-                </dd>
-
-                <dd
-                    class="lg:text-lg text-sm text-primary font-bold lg:pl-6 pl-4 lg:mb-4 mb-2 cursor-pointer  border-primary lg:border-r-8 border-r-4">
-                    <a href="/modern/admin-schedule.html"> Schedule </a>
-                </dd>
-                <dd class="lg:text-lg text-sm text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-2 cursor-pointer">
-                    <a href="/modern/admin-schedule.html"> Patients </a>
-                </dd>
-            </dl>
-
-        </div>
-        <div class="w-5/6 flex lg:flex-row flex-col-reverse items-center bg-[#FFFCAA]/50 py-4 px-5 rounded-2xl lg:mb-8 mb-6 cursor-pointer"
-            onclick="openModal1()">
-            <p class="text-darkBlack/50 lg:text-left text-center lg:text-sm text-xs font-medium mr-3">
-                By click on this icon, we guide you, how can you use this website step by step
-            </p>
-            <img src="../assets/icons/question.svg" alt="" class="w-12 lg:mb-0 mb-2">
-        </div>
-    </nav>
-
     <!-- Menu Mobile -->
     <div class="md:hidden flex absolute right-0 z-[6]">
         <button class="absolute right-5 top-5 w-max" onclick="openNav()">
@@ -140,9 +82,67 @@
         </nav>
     </div>
 
+    <!-- Menu Desktop -->
+    <nav id="menu-desktop"
+        class="fixed left-0  inset-y-0 lg:flex hidden items-center flex-col  min-h-screen overflow-y-scroll w-[300px] ">
+        <div class="w-full flex flex-col items-center   scale-[0.85]">
+            <div
+                class="flex justify-center items-center w-[16.5rem] h-[16.5rem] border-solid border-[#062635]/5 border-[0.5px] rounded-full lg:scale-100 scale-75">
+                <div
+                    class="flex justify-center items-center w-[15rem] h-[15rem] border-solid border-[#062635]/10 border-[1px] rounded-full">
+                    <div
+                        class="flex justify-center items-center w-[13.5rem] h-[13.5rem] border-solid border-[#062635]/20 border-[1.25px] rounded-full">
+                        <div
+                            class="flex justify-center items-center w-[12rem] h-[12rem] border-solid border-[#062635]/40 border-[1.5px] rounded-full">
+                            <div
+                                class="relative flex justify-center items-center w-[10.5rem] h-[10.5rem] border-solid border-[#062635]/60 border-2 rounded-full">
+                                <img src="../assets/images/amir.png" alt=""
+                                    class="w-36 h-36 border-solid border-[#062635] border-2 rounded-full">
+                                <button class="absolute right-[13px] bottom-[13px] p-[10px] bg-[#BC63F2] rounded-full">
+                                    <img class="w-5 h-5" src="../assets/icons/camera.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3 class="text-darkBlack lg:text-2xl text-xl font-bold lg:-mt-6 -mt-12 mb-1"> Amir Moradi</h3>
+            <span class="text-darkBlack/50 lg:text-sm text-xs font-normal">Join 27 September 2022</span>
+        </div>
+        <div class="w-full lg:pl-10 pl-6  mb-0">
+            <dl class="mb-6">
+                <dt class="text-darkBlack/50 uppercase mb-5">Menu</dt>
+                <dd class="lg:text-lg text-sm text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-2 cursor-pointer ">
+                    <a href="/modern/admin-chat.html"> Main </a>
+                </dd>
+
+                <dd class="lg:text-lg text-sm text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-2 cursor-pointer">
+                    <a href="/modern/admin-sessions.html"> Sessions </a>
+                </dd>
+
+                <dd
+                    class="lg:text-lg text-sm text-primary font-bold lg:pl-6 pl-4 lg:mb-4 mb-2 cursor-pointer  border-primary lg:border-r-8 border-r-4">
+                    <a href="/modern/admin-schedule.html"> Schedule </a>
+                </dd>
+                <dd class="lg:text-lg text-sm text-darkBlack font-bold lg:pl-6 pl-4 lg:mb-4 mb-2 cursor-pointer">
+                    <a href="/modern/admin-schedule.html"> Patients </a>
+                </dd>
+            </dl>
+
+        </div>
+        <div class="w-5/6 flex lg:flex-row flex-col-reverse items-center bg-[#FFFCAA]/50 py-4 px-5 rounded-2xl lg:mb-8 mb-6 cursor-pointer"
+            onclick="openModal1()">
+            <p class="text-darkBlack/50 lg:text-left text-center lg:text-sm text-xs font-medium mr-3">
+                By click on this icon, we guide you, how can you use this website step by step
+            </p>
+            <img src="../assets/icons/question.svg" alt="" class="w-12 lg:mb-0 mb-2">
+        </div>
+    </nav>
+
+
     <!-- Main -->
     <main
-        class="flex grow min-h-screen max-h-screen bg-white 2xl:pr-8 pr-5   mg:rounded-3xl rounded-none shadow-xl flex-col">
+        class="flex grow min-h-screen max-h-screen bg-white 2xl:pr-8 pr-5   mg:rounded-3xl rounded-none shadow-xl flex-col lg:pl-[300px]">
         <div class="px-6 md:py-2 pt-6 gap-y-4 mb-4  bg-transparent flex justify-between w-full items-center flex-wrap md:flex-nowrap">
             <p class="text-sm">
                 <button class="absolute left-5 top-5 md:hidden " onclick="openContacts()">
