@@ -10,7 +10,7 @@ var VISIBLE = {
     pointerEvents: "all",
     visibility: "visible",
 }
-jQuery(function() {
+jQuery(function () {
     if (init) return
     init = true;
 
@@ -18,19 +18,19 @@ jQuery(function() {
 
     initMeetingReminder();
     $("[togglable]").css(INVISIBLE)
- })
+})
 
 
 const initMeetingReminder = () => {
     const meetingReminder = $('[data-meeting-reminder]')
-    
-    if(!meetingReminder.length) return
+
+    if (!meetingReminder.length) return
 
     setTimeout(() => {
-        if( !meetingReminder.data("should-show")) return
+        if (!meetingReminder.data("should-show")) return
         meetingReminder.css(VISIBLE);
-    }, 
-    2000)
+    },
+        2000)
 
     meetingReminder.find("[closer]").on('click', () => {
         meetingReminder.css(INVISIBLE)
@@ -62,7 +62,7 @@ const initTogglers = () => {
 
     $('[closer]').on('click', (e) => {
         $(e.target).closest("[togglable]").css(INVISIBLE)
-        if($(e.target).closest("[togglable]").attr('id') === 'record-modal'){
+        if ($(e.target).closest("[togglable]").attr('id') === 'record-modal') {
             $(window).trigger("record-modal-closed")
         }
     })
@@ -76,11 +76,11 @@ const initTogglers = () => {
             $(target).css(VISIBLE)
             $(target).removeClass("hidden")
 
-            if( target === '#record-modal')
+            if (target === '#record-modal')
                 $(window).trigger("record-modal-opened")
 
-            else if(target){
-                value = $(item).data('code') || "??" ;
+            else if (target) {
+                value = $(item).data('code') || "??";
                 $(target).find("[code-input]").text(value)
             }
         })
@@ -97,49 +97,56 @@ const initTogglers = () => {
         $(item).parents('[select-container]').find('[selectable-text]').text(value);
         $(item).parents('[selectable]').css(INVISIBLE)
 
-        console.log(has_select_list, item_list)
-        if(has_select_list){
+        if (has_select_list) {
             const template = item_list.find("[template]").clone();
             template.text(value).removeClass("hidden").removeAttr("template");
             item_list.prepend(template)
             item_list.find("button").css(VISIBLE)
         }
+
+        if ($(item).parents("[calendar-select]").length) {
+            // Its in calendar
+            // So we should handle meeting type selection
+
+            handleMeetingType($(item).parents("[select-container]").next(), value);
+        }
     })
+
 
 
     // CAROUSELS 
     // set attr of carousel='' to initiate 
     $("[carousel]").length && $('[carousel]').each((_, item) => {
-        const count = $(item).data('count') ;
+        const count = $(item).data('count');
         const auto = !count && true
         const conf = {
             infinite: false,
             autoplay: false,
             centerMode: true,
-            mobileFirst: true, 
+            mobileFirst: true,
             variableWidth: auto,
             responsive: [
                 {
                     breakpoint: 360,
-                    settings:{
+                    settings: {
                         slidesToShow: 1
                     },
                 },
                 {
                     breakpoint: 768,
-                    settings:{
+                    settings: {
                         slidesToShow: 2
                     }
                 },
                 {
                     breakpoint: 1200,
-                    settings:{
+                    settings: {
                         slidesToShow: count
                     }
                 }
             ]
         }
-        $(item).slick( conf )
+        $(item).slick(conf)
     })
 
 
@@ -150,18 +157,18 @@ const initTogglers = () => {
         collapsible: true,
         actove: false,
         icons: false,
-        activate: function( event, ui ) {
-            
+        activate: function (event, ui) {
+
             $(ui.newHeader[0]).find("img").length &&
                 $(ui.newHeader[0]).find("img").css("transform", "rotate(180deg)")
-            
+
             $(ui.oldHeader[0]).find("img").length &&
                 $(ui.oldHeader[0]).find("img").css("transform", "rotate(0deg)")
         },
-      
+
     })
 
-    $("[range-slider]").each(function(_, slider){
+    $("[range-slider]").each(function (_, slider) {
         const step = $(slider).data('step') ?? 1
         const min = $(slider).data('min') ?? 0
         const max = $(slider).data('max') ?? 100
@@ -178,12 +185,12 @@ const initTogglers = () => {
             step,
             value,
             create: function (e, ui) {
-                $(e.target).find('.ui-slider-handle').append(`<div range-slider-value class="text-primary text-xs absolute top-[-18px] left-1 flex "> <b value>${ value}</b><span class="text-[10px]">${unit}</span> </div>`)
+                $(e.target).find('.ui-slider-handle').append(`<div range-slider-value class="text-primary text-xs absolute top-[-18px] left-1 flex "> <b value>${value}</b><span class="text-[10px]">${unit}</span> </div>`)
                 $(slider).next("input").val(value)
 
             },
             slide: function (e, ui) {
-                $(ui.handle).find("[range-slider-value] [value]").text(ui.value )
+                $(ui.handle).find("[range-slider-value] [value]").text(ui.value)
                 $(slider).next("input").val(ui.value)
             }
         })
@@ -194,7 +201,7 @@ const initTogglers = () => {
             nextText: ">",
             prevText: "<",
             autoSize: $(item).data("autoSize") && true || false,
-            
+
         });
     })
     $("[meeting-datepicker]").length && $("[meeting-datepicker]").each((_, item) => {
@@ -202,9 +209,9 @@ const initTogglers = () => {
             nextText: ">",
             prevText: "<",
             autoSize: $(item).data("autoSize") && true || false,
-            beforeShowDay: function(date){
-                if(new Date(date).setHours(0,0,0,0).valueOf() < new Date().setHours(0,0,0,0).valueOf()) return [0, "text-stone-400 after:w-full relative after:absolute after:left-0 after:top-1/2 after:bg-stone-400 after:h-[1px] !text-lg"]
-                return[1, "text-primary !text-lg font-extralight"]
+            beforeShowDay: function (date) {
+                if (new Date(date).setHours(0, 0, 0, 0).valueOf() < new Date().setHours(0, 0, 0, 0).valueOf()) return [0, "text-stone-400 after:w-full relative after:absolute after:left-0 after:top-1/2 after:bg-stone-400 after:h-[1px] !text-lg"]
+                return [1, "text-primary !text-lg font-extralight"]
             }
         });
     })
@@ -214,23 +221,24 @@ const initTogglers = () => {
     $("[calendar-item]").each((_, item) => {
         $(item).on('click', function (e) {
             $("[calendar-item] + [togglable]").css(INVISIBLE)
-            if( $(e.target)[0].hasAttribute("closer")) {
+            if ($(e.target)[0].hasAttribute("closer")) {
                 $(item).find("[togglable]").eq(0).css(INVISIBLE)
 
-            }else
-            $(item).next("[togglable]").eq(0).css(VISIBLE)
+            } else
+                $(item).next("[togglable]").eq(0).css(VISIBLE)
         })
     })
+
 
 
     $("[enterable]").each((_, item) => {
         const template = $(item).next().find('[template]')
         $(item).on("keypress", function (e) {
-            if(e.key === "Enter") {
+            if (e.key === "Enter") {
                 const val = $(item).val()
                 const n = template.clone().removeClass('hidden')
                 n.find("small").text(val)
-                $(n).find('img').on('click', function (e){
+                $(n).find('img').on('click', function (e) {
                     $(n).detach()
                 })
                 $(item).next().append(n)
@@ -238,5 +246,25 @@ const initTogglers = () => {
             }
         })
     })
-    
+
+}
+
+
+const handleMeetingType = (contentEl, selectedType) => {
+    $(contentEl).removeClass("hidden")
+    switch (selectedType) {
+        case "Treatment":
+        case "Counseling":
+            $(contentEl).find('input').removeClass('hidden')
+            $(contentEl).find('textarea').addClass('hidden')
+            break;
+        case "Personal meeting":
+                case "Off time":
+            $(contentEl).find('input').addClass('hidden')
+            $(contentEl).find('textarea').removeClass('hidden').attr('placeholder', "write about your " + selectedType)
+            break;
+        default:
+            $(contentEl).add("hidden")
+            break;
+    }
 }
