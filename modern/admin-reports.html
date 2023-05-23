@@ -86,7 +86,7 @@
     </nav>
 
     <!-- Menu Mobile -->
-    <div class="md:hidden flex absolute right-0 z-[6] ">
+    <div class="md:hidden flex absolute right-0 z-[16] ">
         <button class="absolute right-5 top-5 w-max" onclick="openNav()">
             <img src="../assets/icons/menu.svg" alt="" class="w-6">
         </button>
@@ -509,13 +509,13 @@
         </div>
 
         <hr class="mt-8"/>
-        <div class="p-8 flex gap-6">
-            <div>
-                <a href="./admin-reports-chart.html"
-                    class="bg-primary rounded-full text-xs px-8 py-3 mr-2 text-primaryLight hover:bg-primaryDark transition shadow-md">View reports</a>
-                <button modal-toggler data-target="#send-message-modal"
-                    class="border-primary border-[1px] border-solid rounded-full text-xs px-8 py-3 mr-2 text-primary hover:bg-primaryLight transition shadow-md">Send them message</button>
-            </div>
+        <div class="p-2 lg:p-8 flex gap-2 mt-4">
+            <button
+                class="bg-primary rounded-full text-xs px-4 md:px-8 py-3 mr-2 text-primaryLight hover:bg-primaryDark transition shadow-md">View
+                reports</button>
+            <button modal-toggler data-target="#send-message-modal"
+                class="border-primary border-[1px] border-solid rounded-full text-xs px-4 md:px-8 py-3 mr-2 text-primary hover:bg-primaryLight transition shadow-md">Send
+                them message</button>
 
         </div>
     </main>

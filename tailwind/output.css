@@ -840,6 +840,10 @@ video {
   z-index: 20;
 }
 
+.z-\[16\] {
+  z-index: 16;
+}
+
 .order-1 {
   order: 1;
 }
@@ -3353,6 +3357,11 @@ video {
   .md\:py-4 {
     padding-top: 1rem;
     padding-bottom: 1rem;
+  }
+
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .md\:pr-16 {
