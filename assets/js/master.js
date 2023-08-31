@@ -10,6 +10,7 @@ var VISIBLE = {
     pointerEvents: "all",
     visibility: "visible",
 }
+
 jQuery(function () {
     if (init) return
     init = true;

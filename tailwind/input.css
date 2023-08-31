@@ -18,5 +18,27 @@
     .slick-arrow::before{
         @apply text-darkBlack;
     }
+    .modal {
+        @apply  hidden ;
+    }
+    .modal.open {
+        @apply block ;
+    }
+    .calendar-cell {
+        @apply col-span-1 text-center border-y-1 border-stone-300 h-[48px];
+    }
+    .treatment{
+        @apply bg-success text-white;
+    }
+    .counseling{
+        @apply bg-sky-600 text-white;
+    }
+    .personal{
+        @apply bg-primary text-white;
+    }
+    .off{
+        @apply bg-darkBlack text-white;
+    }
+    
 
 }
