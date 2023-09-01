@@ -1,4 +1,15 @@
 const ModalWidth = 300;
+const ModalHeight = 300;
+var INVISIBLE = {
+    opacity: 0,
+    pointerEvents: "none",
+    visibility: "hidden",
+}
+var VISIBLE = {
+    opacity: 1,
+    pointerEvents: "all",
+    visibility: "visible",
+}
 
 var CalendarTypes = Object.freeze({
     free: "FREE",
@@ -74,6 +85,7 @@ jQuery(function () {
     calendar_init = true;
     
     render_cells()
+
 })
 
 const convert_to_human_readable_time = (_time) => {
@@ -122,7 +134,6 @@ const render_cells = () => {
 
 const handle_cell_click = (clickEvent, _data) => {
     const data = calendarData.find(q => q.id === _data.id) ?? _data
-
     const modal = $("[calendar-cell-modal")
     const treatment_modal_node = $($("#treatment-modal")[0].content.cloneNode(true).firstElementChild)
     const counseling_modal_node = $($("#counseling-modal")[0].content.cloneNode(true).firstElementChild)
@@ -140,7 +151,7 @@ const handle_cell_click = (clickEvent, _data) => {
 
     const modal_template = modal_template_map[data.type]
     $(modal).html(modal_template).removeClass('hidden')
-    
+
     
     data.patient && $(modal).find('[patient-name]').text(data?.patient?.name)
     data.patient && $(modal).find('[patient-profile-href]').attr('href', '#'+data.patient.id)
@@ -151,14 +162,77 @@ const handle_cell_click = (clickEvent, _data) => {
     let left = clickEvent.clientX   
     let top = clickEvent.clientY
     const screen_width = $(window).width()
+    const screen_height = $(window).height()
+
     if (left + ModalWidth > screen_width) {
         left -= (left + ModalWidth) - screen_width
     }
-    $(modal).css({ left, top })
-    
+    if(top + ModalHeight > screen_height){
+        top -= (top + ModalHeight) - screen_height
+    }
+    if(screen_width > 768)
+        $(modal).css({ left, top })
+    else{
+        $(modal).css({
+            bottom : "0",
+            left: 0,
+            right: 0,
+            top: "unset"
+        })
+    }
 
+    
+    if(data.type === CalendarTypes.free) {
+        $("[togglable]").css(INVISIBLE)
+
+        selectEvent(clickEvent)
+    }
     $(modal).find('[closer]').on('click', function (e) {
         $(modal).addClass('hidden')
     })
 
+}
+
+
+var already = false
+const selectEvent = (event) => {
+    event.stopPropagation()
+    const item = $("[calendar-cell-modal] [dropdown-toggler]")
+    item.off('click').on('click', function (e) {
+        const visible = item.next("[togglable]").css('visibility')
+        if (visible === 'visible') {
+            $(item).next("[togglable]").css(INVISIBLE);
+        } else {
+            $(item).next("[togglable]").css(VISIBLE);
+        }
+    })
+    selectorEvent()
+
+    // $("[dropdown-toggler]").not(event.target).next("[togglable]").css(INVISIBLE)
+}
+const selectorEvent = () => {
+    $("[selecter]").on('click', (event) => {
+        event.stopPropagation()
+
+        const item_list = $(event.target).parents("[selectable]").next("[selected-items]");
+        const has_select_list = item_list.length > 0;
+        const item = $(event.target);
+        const value = item.data('value')
+        $(item).parents('[select-container]').find('[selectable-text]').text(value);
+        $(item).parents('[selectable]').css(INVISIBLE)
+
+        if (has_select_list) {
+            const template = item_list.find("[template]").clone();
+            template.text(value).removeClass("hidden").removeAttr("template");
+            item_list.prepend(template)
+            item_list.find("button").css(VISIBLE)
+        }
+
+        if ($(item).parents("[calendar-select]").length) {
+            // Its in calendar
+            // So we should handle meeting type selection
+
+            handleMeetingType($(item).parents("[select-container]").next(), value);
+        }
+    })
 }

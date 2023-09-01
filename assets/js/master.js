@@ -39,7 +39,7 @@ const initMeetingReminder = () => {
 }
 
 const initTogglers = () => {
-
+    console.log("test");
     // dropdown click away listener
     // $(document).on('click', function (e) {
     //     if( $(e.target).parents('[togglable]').length === 0)

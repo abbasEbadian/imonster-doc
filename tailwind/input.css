@@ -19,7 +19,7 @@
         @apply text-darkBlack;
     }
     .modal {
-        @apply  hidden ;
+        @apply  hidden w-full min-h-[275px] lg:min-h-[auto];
     }
     .modal.open {
         @apply block ;

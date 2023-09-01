@@ -494,7 +494,7 @@
         </div>
     </div>
 
-    <div calendar-cell-modal class=" fixed "></div>
+    <div calendar-cell-modal class="fixed bot-0 left-0 right-0 lg:bot-[unset] lg:left-[unset] transition-all w-full lg:w-[fit-content]"></div>
     <!-- templates - hidden for user by default :)  -->
     <template id="calendar-cell">
         <div class=" text-xs  h-full   flex items-center px-1 cursor-pointer" calendar-item>
@@ -505,7 +505,7 @@
 
     <template id="treatment-modal">
         <div 
-            class="modal absolute bg-white shadow-normal rounded-xl items-center flex flex-col p-4 text-black whitespace-nowrap text gap-y-2 min-w-[240px] ">
+            class="modal relative bg-white shadow-normal rounded-xl items-center flex flex-col p-4 text-black whitespace-nowrap text gap-y-2 min-w-[240px] lg:max-w-[270px] ">
             <span class="absolute top-0 left-0 px-2 py-1" role="button" closer> x </span>
         
             <p class="text-xl" patient-name></p>
@@ -527,7 +527,7 @@
 
     <template id="counseling-modal">
         <div 
-            class=" bg-white shadow-normal rounded-xl items-center flex flex-col p-4 text-black whitespace-nowrap text gap-y-2 min-w-[240px] ">
+            class="modal relative bg-white shadow-normal rounded-xl items-center flex flex-col p-4 text-black whitespace-nowrap text gap-y-2 min-w-[240px] lg:max-w-[270px]">
             <span class="absolute top-0 left-0 px-2 py-1" role="button" closer> x </span>
         
             <p class="text-xl" patient-name class="capitalize"> </p>
@@ -548,7 +548,7 @@
 
     <template id="personal-modal">
         <div 
-            class=" absolute bg-white shadow-normal rounded-xl items-center flex flex-col p-4 text-black  text gap-y-2 min-w-[240px] max-w-[270px] ">
+            class=" modal relative bg-white shadow-normal rounded-xl items-center flex flex-col p-4 text-black  text gap-y-2 min-w-[240px] lg:max-w-[270px] ">
             <span class="absolute top-0 left-0 px-2 py-1" role="button" closer> x </span>
         
             <p class="text-primary text-xl"> Personal meeting </p>
@@ -565,7 +565,7 @@
 
     <template id="off-modal">
         <div 
-            class=" absolute bg-white shadow-normal rounded-xl items-center flex flex-col p-4 text-black  text gap-y-2 min-w-[240px] max-w-[270px]  ">
+            class=" modal relative bg-white shadow-normal rounded-xl items-center flex flex-col p-4 text-black  text gap-y-2 min-w-[240px] lg:max-w-[270px]  ">
             <span class="absolute top-0 left-0 px-2 py-1" role="button" closer> x </span>
         
             <p class="text-xl"> Off time</p>
@@ -581,7 +581,7 @@
 
     <template id="free-modal">
         <div
-            class="bg-white shadow-normal rounded-xl items-center flex flex-col p-4 text-black  text gap-y-2 min-w-[240px] max-w-[270px] ">
+            class="modal bg-white shadow-normal rounded-xl items-center flex flex-col p-4 text-black  text gap-y-2 min-w-[240px] lg:max-w-[270px] ">
             <span class="absolute top-0 left-0 px-2 py-1" role="button" closer> x </span>
             <span datetime class="capitalize"></span>
             <div class="relative  w-full selectBox" select-container calendar-select>
