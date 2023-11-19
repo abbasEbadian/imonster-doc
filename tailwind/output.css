@@ -2062,6 +2062,16 @@ video {
   border-top-right-radius: 0.75rem;
 }
 
+.rounded-s-lg {
+  border-start-start-radius: 0.5rem;
+  border-end-start-radius: 0.5rem;
+}
+
+.rounded-e {
+  border-start-end-radius: 0.25rem;
+  border-end-end-radius: 0.25rem;
+}
+
 .\!border-0 {
   border-width: 0px !important;
 }
@@ -2457,6 +2467,14 @@ video {
   padding: 8px;
 }
 
+.p-1 {
+  padding: 0.25rem;
+}
+
+.p-1\.5 {
+  padding: 0.375rem;
+}
+
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -2545,6 +2563,11 @@ video {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.px-1\.5 {
+  padding-left: 0.375rem;
+  padding-right: 0.375rem;
 }
 
 .pb-1 {
@@ -3540,6 +3563,11 @@ video {
   .md\:rounded-t-2xl {
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
+  }
+
+  .md\:rounded-s-xl {
+    border-start-start-radius: 0.75rem;
+    border-end-start-radius: 0.75rem;
   }
 
   .md\:p-16 {
