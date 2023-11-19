@@ -19,6 +19,10 @@ jQuery(function () {
 
     initMeetingReminder();
     $("[togglable]").css(INVISIBLE)
+
+    const draggable = new Draggable.Sortable(document.querySelector('[draggable-buttons]'), {
+        draggable: 'button',
+    });
 })
 
 
