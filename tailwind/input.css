@@ -39,6 +39,12 @@
     .off{
         @apply bg-darkBlack text-white;
     }
+    .r-triangle{
+            translate: 3px 0 ;
+            border-style: solid;
+            border-width: 12px 0 12px 24px;
+            border-color: transparent transparent transparent rgb(188 99 242 / var(--tw-bg-opacity));
+    }
     
 
 }

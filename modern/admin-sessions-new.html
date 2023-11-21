@@ -279,7 +279,7 @@
         </section>
 
         <hr class="border-t-2 my-12 border-darkBlack50" />
-        <section class="p-4">
+        <section class="px-4 lg:px-12">
 
 
 
@@ -299,6 +299,7 @@
                     Problem
                 </button>
             </div>
+
             <div class="mb-16 text-center px-12">
                 <img src="../assets/images/chart.PNG" alt="chart" class="w-full">
             </div>
@@ -309,16 +310,20 @@
             <div class="p-4">
                 <b class="text-lg">Documents</b>
                 <div carousel class="w-full px-4">
-                    <div class="relative w-[140px] h-[140px] overflow-hidden">
-                        <img src="../assets/images/doc1.png" alt="" class="rounded-lg object-cover">
+                    <div class="relative w-[140px] h-[140px] overflow-hidden" modal-toggler
+                        data-target="#view-file-modal">
+                        <img src="../assets/images/doc1.png" alt="" class="rounded-lg object-cover" >
                     </div>
-                    <div class="relative w-[140px] h-[140px] overflow-hidden">
+                    <div class="relative w-[140px] h-[140px] overflow-hidden" modal-toggler
+                        data-target="#view-file-modal">
                         <img src="../assets/images/doc2.png" alt="" class="rounded-lg object-cover">
                     </div>
-                    <div class="relative w-[140px] h-[140px] overflow-hidden">
+                    <div class="relative w-[140px] h-[140px] overflow-hidden" modal-toggler
+                        data-target="#view-file-modal">
                         <img src="../assets/images/doc2.png" alt="" class="rounded-lg object-cover">
                     </div>
-                    <div class="relative w-[140px] h-[140px] overflow-hidden">
+                    <div class="relative w-[140px] h-[140px] overflow-hidden" modal-toggler
+                        data-target="#view-file-modal">
                         <img src="../assets/images/doc2.png" alt="" class="rounded-lg object-cover">
                     </div>
                 </div>
@@ -404,6 +409,7 @@
                         <!-- حواست باشه که اینجا باید نوع فایل ها رو محدود کنی 
                              مهمتر اینکه توی بکند چک بکنی فایل ارسالی رو -->
                         <!-- ############################ -->
+
                         <input type="file" class="hidden" id="chat-file">
 
 
@@ -413,117 +419,114 @@
             </div>
 
         </section>
-
+        
+        <!-- QA -->
+        <section class="p-4 xl:px-12 mt-16">
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                <div class="col-span-1 flex flex-col gap-3">
+                    <span ><b>Question</b></span>
+                    <span class="text-zinc-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aspernatur, consequuntur voluptatibus nesciunt nostrum optio reiciendis eveniet dolore aliquam. Distinctio vitae quas pariatur provident a ex corporis odio ut commodi?</span>
+                </div>
+            
+                <div class="col-span-1 flex flex-col gap-3">
+                    <span><b>Question</b></span>
+                    <span class="text-zinc-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aspernatur,
+                        consequuntur voluptatibus nesciunt nostrum optio reiciendis eveniet dolore aliquam. Distinctio vitae quas
+                        pariatur provident a ex corporis odio ut commodi?</span>
+                </div>
+            
+                <div class="col-span-1 flex flex-col gap-3">
+                    <span><b>Question</b></span>
+                    <span class="text-zinc-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aspernatur,
+                        consequuntur voluptatibus nesciunt nostrum optio reiciendis eveniet dolore aliquam. Distinctio vitae quas
+                        pariatur provident a ex corporis odio ut commodi?</span>
+                </div>
+            
+                <div class="col-span-1 flex flex-col gap-3">
+                    <span><b>Question</b></span>
+                    <span class="text-zinc-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aspernatur,
+                        consequuntur voluptatibus nesciunt nostrum optio reiciendis eveniet dolore aliquam. Distinctio vitae quas
+                        pariatur provident a ex corporis odio ut commodi?</span>
+                </div>
+            
+                <div class="col-span-1 flex flex-col gap-3">
+                    <span><b>Question</b></span>
+                    <span class="text-zinc-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aspernatur,
+                        consequuntur voluptatibus nesciunt nostrum optio reiciendis eveniet dolore aliquam. Distinctio vitae quas
+                        pariatur provident a ex corporis odio ut commodi?</span>
+                </div>
+            
+                <div class="col-span-1 flex flex-col gap-3">
+                    <span><b>Question</b></span>
+                    <span class="text-zinc-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aspernatur,
+                        consequuntur voluptatibus nesciunt nostrum optio reiciendis eveniet dolore aliquam. Distinctio vitae quas
+                        pariatur provident a ex corporis odio ut commodi?</span>
+                </div>
+            
+                <div class="col-span-1 flex flex-col gap-3">
+                    <span><b>Question</b></span>
+                    <span class="text-zinc-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aspernatur,
+                        consequuntur voluptatibus nesciunt nostrum optio reiciendis eveniet dolore aliquam. Distinctio vitae quas
+                        pariatur provident a ex corporis odio ut commodi?</span>
+                </div>
+            </div>
+        </section>
 
 
     </main>
 
 
-    <!-- ASK MODAL -->
-    <div class="relative z-10 opacity-0 " togglable id="add-session-modal">
+
+    <div class="relative z-10 transition" id="view-file-modal" togglable aria-labelledby="modal-title" role="dialog"
+        aria-modal="true">
+        <!--
+              
+                
+              
+            -->
         <!-- BACKDROP -->
         <div class="fixed inset-0 bg-[#0008] bg-opacity-75 transition-opacity"></div>
-
+    
         <!-- CONTENT -->
         <div class="fixed inset-0 z-10 overflow-y-auto ">
             <div class="flex min-h-full items-start justify-center p-4 text-center sm:items-center sm:p-0  ">
                 <div
-                    class="transform rounded-3xl bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-xl p-4 sm:p-8 relative ">
-                    <!-- CLOSE BUTTON -->
-                    <span class="absolute top-2 right-8 text-xl" role="button" closer> x </span>
-                    <div class="flex flex-col items-center gap-6 py-6 ">
-
-                        <div class="flex items-center  gap-5">
-                            <button increase
-                                class="bg-transparent border-0 font-extrabold px-4 py-2 text-3xl">-</button>
-                            <span count class="text-4xl text-primary">1</span>
-                            <button decrease
-                                class="bg-transparent border-0 font-extrabold px-4 py-2 text-3xl">+</button>
+                    class="relative transform overflow-hidden rounded-3xl bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-xl p-4 sm:p-8 ">
+    
+                    <span closer class="left-4 top-0 p-2 absolute" role="button"> x </span>
+    
+                    <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4 ">
+                        <div class="bg-black rounded-lg   relative overflow-hiddenr">
+                            <video id="preview" autoplay controls class="w-full h-full"></video>
+                            
                         </div>
-
-                        <!-- User days -->
-                        <div class="relative  w-full selectBox" select-container>
-                            <button type="button" dropdown-toggler
-                                class="z-[7] relative  w-full  bg-white   border-b-[1px] border-solid border-primary  text-xs py-3 "
-                                aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
-                                <span class="flex  pointer-events-none px-4">
-                                    <span class=" block truncate text-xs text-black50 title" selectable-text>select
-                                        days</span>
-                                </span>
-                                <i class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
-                                    <img src="../assets/icons/arrow-down.svg" alt="arrow">
-                                </i>
+                    </div>
+                    <div id="soundClips" class="button"> </div>
+                    <div class="flex items-center justify-center gap-x-4 gap-y-6 mt-6 flex-wrap">
+                        
+                        <div class="order-1 sm:order-2 w-full sm:w-auto flex justify-center">
+                            <button
+                                class="w-16 h-16 rounded-full border-4 border-solid border-primary grid place-items-center"
+                                id="record">
+                                <span class="r-triangle"></span>
+                                
                             </button>
-
-                            <ul class="transition-all  absolute z-[6] bg-white pt-12 max-h-56 w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
-                                togglable selectable tabindex="-1" role="listbox" aria-labelledby="listbox-label"
-                                aria-activedescendant="listbox-option-3">
-                                <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight"
-                                    role="option">
-                                    <span class="font-normal block truncate py-2 text-center" selecter
-                                        data-value="1">1</span>
-                                </li>
-                                <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight"
-                                    role="option">
-                                    <span class="font-normal block truncate py-2 text-center" selecter
-                                        data-value="2">2</span>
-                                </li>
-                                <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight"
-                                    role="option">
-                                    <span class="font-normal block truncate py-2 text-center" selecter
-                                        data-value="3">3</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- User days -->
-                        <div class="relative  w-full selectBox" select-container>
-                            <button type="button" dropdown-toggler
-                                class="z-[5] relative  w-full  bg-white   border-b-[1px] border-solid border-primary  text-xs py-3 "
-                                aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
-                                <span class="flex  pointer-events-none px-4">
-                                    <span class=" block truncate text-xs text-black50 title" selectable-text>Select
-                                        arrangement</span>
-                                </span>
-                                <i class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
-                                    <img src="../assets/icons/arrow-down.svg" alt="arrow">
-                                </i>
+                            <button
+                                class="w-16 h-16 rounded-full border-4 border-solid border-primary grid place-items-center"
+                                id="record">
+                                <div class="flex justify-center gap-2">
+                                    <span class="block w-2 h-7 bg-primary "></span>
+                                    <span class="block w-2 h-7 bg-primary"></span>
+                                </div>
+                                
                             </button>
-
-                            <ul class="transition-all  absolute z-[4] bg-white pt-12 max-h-56 w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
-                                togglable selectable tabindex="-1" role="listbox" aria-labelledby="listbox-label"
-                                aria-activedescendant="listbox-option-3">
-                                <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight"
-                                    role="option">
-                                    <span class="font-normal block truncate py-2 text-center" selecter
-                                        data-value="1">1</span>
-                                </li>
-                                <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight"
-                                    role="option">
-                                    <span class="font-normal block truncate py-2 text-center" selecter
-                                        data-value="2">2</span>
-                                </li>
-                                <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight"
-                                    role="option">
-                                    <span class="font-normal block truncate py-2 text-center" selecter
-                                        data-value="3">3</span>
-                                </li>
-                            </ul>
                         </div>
-
-
-                        <button
-                            class="bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-xs">
-                            Send</button>
                     </div>
                 </div>
             </div>
         </div>
-
-
     </div>
-
-
 
 
 
