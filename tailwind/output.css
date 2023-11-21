@@ -695,6 +695,10 @@ video {
   bottom: 13px;
 }
 
+.bottom-\[1px\] {
+  bottom: 1px;
+}
+
 .left-0 {
   left: 0px;
 }
@@ -1503,10 +1507,6 @@ video {
   width: max-content;
 }
 
-.w-1 {
-  width: 0.25rem;
-}
-
 .min-w-\[240px\] {
   min-width: 240px;
 }
@@ -2281,6 +2281,10 @@ video {
      object-fit: cover;
 }
 
+.p-1 {
+  padding: 0.25rem;
+}
+
 .p-2 {
   padding: 0.5rem;
 }
@@ -2593,6 +2597,10 @@ video {
   font-size: 24px;
 }
 
+.text-\[36px\] {
+  font-size: 36px;
+}
+
 .text-\[8px\] {
   font-size: 8px;
 }
@@ -2835,6 +2843,11 @@ video {
 .text-zinc-600 {
   --tw-text-opacity: 1;
   color: rgb(82 82 91 / var(--tw-text-opacity));
+}
+
+.text-slate-500 {
+  --tw-text-opacity: 1;
+  color: rgb(100 116 139 / var(--tw-text-opacity));
 }
 
 .accent-darkBlack {
@@ -3812,10 +3825,6 @@ video {
     display: flex;
   }
 
-  .xl\:grid {
-    display: grid;
-  }
-
   .xl\:hidden {
     display: none;
   }
@@ -3840,22 +3849,22 @@ video {
     width: 0.875rem;
   }
 
-  .xl\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
   .xl\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .xl\:px-20 {
-    padding-left: 5rem;
-    padding-right: 5rem;
+  .xl\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .xl\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+
+  .xl\:px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 
   .xl\:pr-24 {
