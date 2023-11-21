@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../tailwind/output.css">
+    <!-- <link rel="stylesheet" href="../tailwind/output.css"> -->
     <link rel="stylesheet" href="../assets/styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,6 +15,55 @@
             color: black;
         }
     </style>
+    <script src="../assets/js/tailwind.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    gridTemplateRows: {
+                        calendar: "repeat(48, minmax(48px, 1fr))"
+                    },
+                    gridTemplateColumns: {
+                        calendar: "repeat(8, minmax(0, 105px))"
+                    },
+                    boxShadow: {
+                        "normal": "0px 0px 24px 10px #e1e1e1"
+                    },
+                    colors: {
+                        primaryLight: "#F2E0FC",
+                        primary: "#BC63F2",
+                        primaryDark: "#A345DC",
+                        black: "#000000",
+                        black50: "#0007",
+                        darkBlack: "#181818",
+                        darkBlack50: "#18181877",
+                        warning: "#FAF9D0",
+                        grey: "#F5F5F5",
+                        gray: "#F2F3F5",
+                        white: "#FFF",
+                        success: "#29CC6A",
+                        error: "#FF5353",
+                        info: "#3C82F5"
+                    },
+                    borderWidth: {
+                        1: "1px"
+                    }
+                },
+                fontFamily: {
+                    montserrat: 'Montserrat'
+                },
+
+                screens: {
+                    '2xl': '1400px',
+                    'xl': '1200px',
+                    'lg': '1024px',
+                    'md': '768px',
+                    'sm': '640px',
+                    'xs': '480px'
+                }
+            }
+        }
+    </script>
 </head>
 
 <body class="flex flex-wrap justify-center bg-[#F5F5F5] font-montserrat">
@@ -187,21 +236,57 @@
             <hr class="my-4 border-0" />
 
 
-            <div
-                class="shadow-[0px_0px_24px_#e1e1e1] rounded-3xl flex justify-center flex-col items-center gap-y-7 w-full py-16 ">
-                <small>Drag and drop your files here, or:</small>
-                <div class="flex gap-x-3">
-                    <button class="rounded-full grid place-items-center w-12 h-12 bg-[#3C82F5] text-white" modal-toggler data-target="#record-modal">
-                        <img src="../assets/icons/mic.svg" alt="mic">
-                    </button>
-                    <button class="rounded-full grid place-items-center w-12 h-12 bg-[#F63E61]" modal-toggler data-target="#record-modal">
-                        <img src="../assets/icons/webcam.svg" alt="webcam">
-                    </button>
-                    <button class="rounded-full grid place-items-center w-12 h-12 bg-[#22C35E]" modal-toggler data-target="#record-modal">
-                        <img src="../assets/icons/clipboard.svg" alt="clipboard">
-                    </button>
+            <div class="flex flex-col 2xl::flex-row gap-4" >
+                <div class="shadow-[0px_0px_24px_#e1e1e1] rounded  w-full max-w-sm  p-2 ">
+                    <div class="flex  items-center gap-y-7 justify-between">
+                
+                        <p class="text-xs pr-4">
+                            <b>Record a video</b>
+                            <br>
+                            <small class="text-slate-500">Click here and record a video using your device's camera and tell your story</small>
+                        </p>
+                
+                        <div class="bg-[#3c82f5] w-16 h-16 min-w-[4rem] flex items-center justify-center rounded" modal-toggler
+                            data-target="#record-modal">
+                            <img src="../assets/icons/camera.svg" class="rounded-md" alt="" width="32">
+                        </div>
+                    </div>
+                </div>
+                <div class="shadow-[0px_0px_24px_#e1e1e1] rounded  w-full max-w-sm  p-2 ">
+                    <div class="flex  items-center gap-y-7 justify-between">
+                
+                        <p class="text-xs pr-4">
+                            <b>Record a Voice</b>
+                            <br>
+
+                            <small class="text-slate-500">Click here and record a voice using your device's microphone and tell your story </small>
+                        </p>
+                
+                        <div class="bg-[#f63e61] w-16 h-16 min-w-[4rem] flex items-center justify-center rounded" modal-toggler
+                            data-target="#record-modal">
+                            <img src="../assets/icons/mic.svg" class="rounded-md" alt="" width="32">
+                        </div>
+                    </div>
+                </div>
+                <div class="shadow-[0px_0px_24px_#e1e1e1] rounded  w-full max-w-sm  p-2 ">
+                    <div class="flex  items-center gap-y-7 justify-between">
+                
+                        <p class="text-xs pr-4">
+                            <b>Send a file</b>
+                            <br>
+                            <small class="text-slate-500">Click here and send your medical documents and tests to Dr. Sairous
+                            </small>
+                            </p>
+                
+                        <div class="bg-[#22c35e] w-16 h-16 min-w-[4rem] flex items-center justify-center rounded" modal-toggler
+                            data-target="#record-modal">
+                            <img src="../assets/icons/clipboard.svg" class="rounded-md" alt="" width="32">
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            
 
 
             <hr class="my-6 border-0" />
@@ -236,8 +321,7 @@
 
             <!-- STEPS NAVIGATION -->
             <div class="flex items-center justify-center">
-                <button
-                    class="border-primary border-[1px] border-solid rounded-full text-xs px-8 py-3 mr-2 text-primary hover:bg-primaryLight transition">Prev</button>
+                
                 <button
                     class="bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-xs">
                     Next</button>
@@ -399,6 +483,10 @@
                                     you click on the icon again, the recording will stop and the final file will be
                                     ready to
                                     be sent.</small>
+
+                            </div>
+                            <div class="absolute bottom-2 block text-center w-full text-white">
+                                00:00
                             </div>
                         </div>
                     </div>
@@ -595,6 +683,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
 <script src="../assets/js/navbar.js"></script>
 <script src="../assets/js/notifications.js"></script>
