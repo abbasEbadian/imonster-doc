@@ -15,6 +15,49 @@
             color: black;
         }
     </style>
+    <style type="text/tailwindcss">
+        
+@layer base {
+    @font-face{
+        font-family: 'Montserrat';
+        src: url(../assets/fonts/Montserrat/Montserrat-Medium.ttf);
+    }
+}
+@layer components{
+    .stepper .active-stepper ~ li [circle]{
+        @apply bg-white;
+    }
+    .stepper .active-stepper [text]{
+        @apply text-black text-[14px];
+    }
+    .slick-arrow::before{
+        @apply text-darkBlack;
+    }
+    .modal {
+        @apply  hidden w-full min-h-[275px] lg:min-h-[auto];
+    }
+    .modal.open {
+        @apply block ;
+    }
+    .calendar-cell {
+        @apply col-span-1 text-center border-y-1 border-stone-300 h-[48px];
+    }
+    .treatment{
+        @apply bg-success text-white;
+    }
+    .counseling{
+        @apply bg-sky-600 text-white;
+    }
+    .personal{
+        @apply bg-primary text-white;
+    }
+    .off{
+        @apply bg-darkBlack text-white;
+    }
+    
+
+}
+    </style>
     <script src="../assets/js/tailwind.js"></script>
     <script>
         tailwind.config = {
