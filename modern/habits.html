@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../tailwind/output.css">
+    <link rel="stylesheet" href="../assets/styles/main.css">
+
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <title> Habits </title>
+
+    <style>
+        #ui-datepicker-div {
+            background: #fff;
+            z-index: 3 !important;
+            width: 340px;
+            box-shadow: 0 0 16px 4px #ddd;
+            border-radius: 21px;
+            top: 384px !important;
+            display: none;
+            padding: 64px 16px 16px;
+        }
+
+        .ui-datepicker-header {
+            padding-bottom: 16px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body class="flex flex-wrap justify-end bg-[#F5F5F5] font-montserrat">
+    <nav id="menu-desktop"
+        class="fixed left-0 inset-y-0 lg:flex hidden items-center flex-col w-3/12 min-h-screen overflow-y-scroll justify-between   ">
+        <div class="placeholder"></div>
+        <div class="w-full pl-10 lg:mb-10 mb-8">
+            <img src="../assets/images/rafiki.svg" alt="rafiki" />
+
+            <p class="mt-4 font-extrabold pe-8">
+                Register now and book an session with <br />Dr.Mohammadi
+            </p>
+            <p class="font-thin pe-8 mt-4 text-sm">
+                To book an session, you need to fill all the available fields with your real information and also upload
+                your latest medical documents and tests.
+            </p>
+        </div>
+        <div
+            class="w-5/6 flex lg:flex-row flex-col-reverse items-center bg-[#FFFCAA]/50 py-4 px-5 rounded-2xl lg:mb-8 mb-6">
+            <p class="text-[#181818]/50 lg:text-left text-center lg:text-sm text-xs font-medium mr-3">
+                By click on this icon, we guide you, how can you use this website step by step
+            </p>
+            <img src="../assets/icons/question.svg" alt="" class="w-12 lg:mb-0 mb-2">
+        </div>
+    </nav>
+
+
+    <main
+        class=" flex flex-col items-center lg:w-3/4 w-full min-h-screen bg-white 2xl:px-12 pt-16  mg:rounded-3xl rounded-none shadow-x overflow-x-hidden pb-8">
+
+
+        <!-- 
+            STEPPER 
+            Set { active-stepper } class to { li } of the current step.
+        -->
+        <ol class="stepper flex items-center  w-full">
+            <!-- STEP 1 -->
+            <li class="w-1/3  relative h-full">
+                <div class=" relative z-[2] gap-y-3 flex items-center flex-col   ">
+                    <span text class="whitespace-nowrap text-black50 text-xs text-center block"> Personal</span>
+                    
+                    <span circle
+                        class="bg-primary w-4 h-4  border-[1px] border-primary border-solid rounded-full"></span>
+                </div>
+                <span class="absolute w-full h-[1px] bg-darkBlack bottom-2 left-1/2 z-[1]"></span>
+            </li>
+            <!-- STEP 2 -->
+            <li class="w-1/3  relative h-full">
+                <div class=" relative z-[2] gap-y-3 flex items-center flex-col  ">
+                    <span text
+                        class="whitespace-nowrap text-black50 text-xs text-center  block">Medical</span>
+                 
+                    <span circle
+                        class="bg-primary w-4 h-4  border-[1px] border-primary border-solid rounded-full"></span>
+                </div>
+                <span class="absolute w-full h-[1px] bg-darkBlack bottom-2 left-1/2 z-[1]"></span>
+
+            </li>
+            <!-- STEP 3 -->
+            <li class="w-1/3 relative active-stepper">
+                <div class=" relative z-[2] gap-y-3 flex items-center flex-col  ">
+                    <span text class="whitespace-nowrap text-black50 text-xs text-center  block">Habits</span>
+                    
+                    <span circle
+                        class="bg-primary w-4 h-4  border-[1px] border-primary border-solid rounded-full"></span>
+                </div>
+
+            </li>
+          
+        </ol>
+
+
+
+        <!-- PERSONAL INFORMATION -->
+        <div
+            class=" mt-16 grid grid-cols-6 items-center max-[340px] w-[340px] px-4 sm:px-0 lg:w-[680px] lg:max-[680px] gap-8">
+            <div class="col-span-6">
+                <h3 class=" w-full  font-bold lg:mb-10 md:mb-8 mb-6 text-center ">Habits
+                    </h3>
+            </div>
+
+            <!-- User full name -->
+            <div class="relative col-span-6">
+                <label for="name" class="text-[11px] absolute top-[-8px] left-4 text-primary bg-white px-2"> Enter your
+                    name</label>
+                <input type="text" name="name" placeholder="for example: John Doe"
+                    class="w-full border-[1px] border-solid border-primary rounded-full px-4 py-2 placeholder:text-black50 placeholder:text-xs text-center focus-visible:outline-none" />
+            </div>
+
+
+
+
+            <!-- User gender -->
+            <!--  pay attention to hasError calss  -->
+            <div class="relative  col-span-6 lg:col-span-2 selectBox hasError"  select-container>
+                <img src="../assets/icons/error.svg" alt="" class="absolute right-7 top-[14px] z-[19]">
+                <button type="button" dropdown-toggler
+                    class="z-[12] relative  w-full  bg-white   border-[1px] border-solid border-primary rounded-full text-xs py-3 "
+                    aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+                    <span class="flex items-center  text-center justify-center pointer-events-none">
+                        <span class=" block truncate text-xs text-black50 title" selectable-text>select your
+                            gender</span>
+                    </span>
+                    <i class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
+                        <img src="../assets/icons/arrow-down.svg" alt="arrow">
+                    </i>
+                </button>
+
+                <ul class="transition-all  absolute z-[11] bg-white pt-12 max-h-56 w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
+                    togglable selectable tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                    aria-activedescendant="listbox-option-3">
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter data-value="Male">Male</span>
+                    </li>
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter
+                            data-value="Female">Female</span>
+                    </li>
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter
+                            data-value="Other">Other</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- User Illness -->
+            <div class="relative  col-span-6 lg:col-span-2" select-container>
+                <img src="../assets/icons/check-circle.svg" alt="" class="absolute right-7 top-[14px] z-[19]">
+                <button type="button" dropdown-toggler
+                    class="z-[3] relative cursor-default  w-full  bg-white   border-[1px] border-solid border-primary rounded-full text-xs py-3 "
+                    aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+                    <span class="flex items-center  text-center justify-center">
+                        <span class=" block truncate text-xs text-black50" selectable-text> choose your illness</span>
+                    </span>
+                    <span class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
+                        <img src="../assets/icons/arrow-down.svg" alt="arrow">
+                    </span>
+                </button>
+
+                <ul class="transition-all absolute z-[2] pt-12 bg-white max-h-56 w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
+                    togglable selectable tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                    aria-activedescendant="listbox-option-3">
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter data-value="Illness 1">
+                            Illness 1</span>
+                    </li>
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter data-value="Illness 2">
+                            Illness 2 </span>
+                    </li>
+                    <li class=" cursor-pointer select-none  transition-all hover:bg-primaryLight" role="option">
+                        <span class="font-normal block truncate py-2 text-center" selecter data-value="Illness 3">
+                            Illness 3 </span>
+                    </li>
+                </ul>
+            </div>
+
+
+
+
+            <!-- User birthdate -->
+            <div class="relative col-span-6 lg:col-span-2 z-[5]">
+                
+                <label for="name" class="text-[11px] absolute top-[-8px] left-4 text-primary bg-white px-2"> Enter your
+                    date of birth</label>
+                <input type="text" name="name" placeholder="MM / DD / YYYY" datepicker autoSize
+                    class="w-full border-[1px] border-solid border-primary rounded-full px-4 py-2 placeholder:text-black50 placeholder:text-xs text-center focus-visible:outline-none " />
+
+                <!--  
+                    to show: set { block } class
+                    to hide: set { hidden } class -->
+                <div class="hidden absolute z-10 pt-16 max-h-56 w-full overflow-auto  top-0 bg-none rounded-[19px] py-1 text-base shadow-lg  focus:outline-none sm:text-sm"
+                    tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                    aria-activedescendant="listbox-option-3">
+
+                </div>
+            </div>
+
+
+            <!-- User phone number -->
+            <div class="relative col-span-6 lg:col-span-3 ">
+                
+                <label for="name" class="text-[11px] absolute top-[-8px] left-4 text-primary bg-white px-2"> Enter your
+                    phone number</label>
+                <input type="text" name="name" placeholder="(248) 654 1769"
+                    class="w-full border-[1px] border-solid border-primary rounded-full px-4 py-2 placeholder:text-black50 placeholder:text-xs text-left focus-visible:outline-none  pl-28" />
+
+                <div select-container class=" absolute left-4   top-3 ">
+
+                    <div class=" flex items-center justify-between  pl-1 pr-3 text-sm bg-primaryLight h-5 w-20 rounded-full"
+                        modal-toggler
+                        data-target="#select-country-modal">
+                        <img src="../assets/images/usa.png" alt="">
+                        <span class="" selectable-text> +1</span>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <!-- User email -->
+            <div class="relative col-span-6 lg:col-span-3">
+                <label for="name" class="text-[11px] absolute top-[-8px] left-4 text-primary bg-white px-2"> Enter your
+                    email address </label>
+                <input type="text" name="name" placeholder="for example: yourname@gmail.com"
+                    class="w-full border-[1px] border-solid border-primary rounded-full px-4 py-2 placeholder:text-black50 placeholder:text-xs text-center focus-visible:outline-none" />
+            </div>
+
+
+
+            <!-- STEPS NAVIGATION -->
+            <div class="flex items-center justify-center col-span-6">
+                <button
+                    class="bg-primary border-none rounded-full px-8 py-3 text-primaryLight hover:brightness-90 transition text-xs">
+                    <a href="/modern/document-upload.html"> Finish </a>
+                </button>
+            </div>
+    </main>
+    <div class="relative z-20 transition" id="select-country-modal"  togglable aria-labelledby="modal-title" role="dialog"
+        aria-modal="true">
+
+        <!-- BACKDROP -->
+        <div class="fixed inset-0 bg-[#0008] bg-opacity-75 transition-opacity" closer></div>
+
+        <!-- CONTENT -->
+        <div class="fixed inset-0 z-10 overflow-y-auto ">
+            <div class="flex min-h-full items-start justify-center p-4 text-center sm:items-center sm:p-0  ">
+                <div
+                    class="relative transform overflow-hidden rounded-3xl bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-xl p-4 sm:p-8 ">
+
+                    <span closer class="left-4 top-0 p-2 absolute" role="button"> x </span>
+
+                    <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4 ">
+                        <div class=" rounded-lg  min-h-[300px] relative overflow-auto  ">
+                            <input type="text" name="name" placeholder="Search"
+                                class="w-full border-[1px] border-solid border-slate-400 rounded-full px-4 py-2 placeholder:text-black50 placeholder:text-xs text-center focus-visible:outline-none" />
+                                <div class="flex flex-col   pt-2">
+                                    <div class="flex gap-4 border-b-1 transition py-4 border-slate-400 hover:bg-primaryLight" role="button">
+                                            <img src="../assets/images/usa.png" class="w-6 h-6 rounded-full object-cover object-center" alt="flag name">
+                                            <span>(+1) America</span>
+                                    </div>
+                                    <div class="flex gap-4 border-b-1 transition py-4 border-slate-400 hover:bg-primaryLight" role="button">
+                                            <img src="../assets/images/usa.png" class="w-6 h-6 rounded-full object-cover object-center" alt="flag name">
+                                            <span>(+1) America</span>
+                                    </div>
+                                    <div class="flex gap-4 border-b-1 transition py-4 border-slate-400 hover:bg-primaryLight" role="button">
+                                            <img src="../assets/images/usa.png" class="w-6 h-6 rounded-full object-cover object-center" alt="flag name">
+                                            <span>(+1) America</span>
+                                    </div>
+                                </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+    integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"
+    integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+    integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="../assets/js/navbar.js"></script>
+<script src="../assets/js/notifications.js"></script>
+<script src="../assets/js/master.js"></script>
+<script src="../assets/js/recorder.js"></script>
+<script src="../assets/js/history.js"></script>
+
+<script>
+    var x, i, j, l, ll, selElmnt, a, b, c;
+    x = document.getElementsByClassName("custom-select");
+    l = x.length;
+    for (i = 0; i < l; i++) {
+        selElmnt = x[i].getElementsByTagName("select")[0];
+        ll = selElmnt.length;
+        a = document.createElement("DIV");
+        a.setAttribute("class", "select-selected");
+        a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+        x[i].appendChild(a);
+        b = document.createElement("DIV");
+        b.setAttribute("class", "select-items select-hide");
+        for (j = 1; j < ll; j++) {
+            c = document.createElement("DIV");
+            c.innerHTML = selElmnt.options[j].innerHTML;
+            c.addEventListener("click", function (e) {
+                var y, i, k, s, h, sl, yl;
+                s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                sl = s.length;
+                h = this.parentNode.previousSibling;
+                for (i = 0; i < sl; i++) {
+                    if (s.options[i].innerHTML == this.innerHTML) {
+                        s.selectedIndex = i;
+                        h.innerHTML = this.innerHTML;
+                        y = this.parentNode.getElementsByClassName("same-as-selected");
+                        yl = y.length;
+                        for (k = 0; k < yl; k++) {
+                            y[k].removeAttribute("class");
+                        }
+                        this.setAttribute("class", "same-as-selected");
+                        break;
+                    }
+                }
+                h.click();
+            });
+            b.appendChild(c);
+        }
+        x[i].appendChild(b);
+        a.addEventListener("click", function (e) {
+            e.stopPropagation();
+            closeAllSelect(this);
+            this.nextSibling.classList.toggle("select-hide");
+            this.classList.toggle("select-arrow-active");
+        });
+    }
+
+    function closeAllSelect(elmnt) {
+        var x, y, i, xl, yl, arrNo = [];
+        x = document.getElementsByClassName("select-items");
+        y = document.getElementsByClassName("select-selected");
+        xl = x.length;
+        yl = y.length;
+        for (i = 0; i < yl; i++) {
+            if (elmnt == y[i]) {
+                arrNo.push(i)
+            } else {
+                y[i].classList.remove("select-arrow-active");
+            }
+        }
+        for (i = 0; i < xl; i++) {
+            if (arrNo.indexOf(i)) {
+                x[i].classList.add("select-hide");
+            }
+        }
+    }
+
+    document.addEventListener("click", closeAllSelect); 
+</script>

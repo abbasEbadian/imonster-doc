@@ -13,7 +13,7 @@
         @apply bg-white;
     }
     .stepper .active-stepper [text]{
-        @apply text-black text-[14px];
+        @apply !text-black text-[14px];
     }
     .slick-arrow::before{
         @apply text-darkBlack;
@@ -38,6 +38,9 @@
     }
     .off{
         @apply bg-darkBlack text-white;
+    }
+    .hasError > *{
+        @apply !border-red-600;
     }
     .r-triangle{
             translate: 3px 0 ;
