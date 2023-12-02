@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../tailwind/output.css">
+    <!-- <link rel="stylesheet" href="../tailwind/output.css"> -->
     <link rel="stylesheet" href="../assets/styles/main.css">
 
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
@@ -29,6 +29,106 @@
             border-bottom: 1px solid #ddd;
         }
     </style>
+    <style type="text/tailwindcss">
+
+        @layer base {
+            @font-face{
+                font-family: 'Montserrat';
+                src: url(../assets/fonts/Montserrat/Montserrat-Medium.ttf);
+            }
+        }
+        @layer components{
+            .stepper .active-stepper ~ li [circle]{
+                @apply bg-white;
+            }
+            .stepper .active-stepper [text]{
+                @apply text-black text-[14px];
+            }
+            .slick-arrow::before{
+                @apply text-darkBlack;
+            }
+            .modal {
+                @apply  hidden w-full min-h-[275px] lg:min-h-[auto];
+            }
+            .modal.open {
+                @apply block ;
+            }
+            .calendar-cell {
+                @apply col-span-1 text-center border-y-1 border-stone-300 h-[48px];
+            }
+            .treatment{
+                @apply bg-success text-white;
+            }
+            .counseling{
+                @apply bg-sky-600 text-white;
+            }
+            .personal{
+                @apply bg-primary text-white;
+            }
+            .off{
+                @apply bg-darkBlack text-white;
+            }
+             .hasError > *{
+        @apply !border-red-600;
+    }
+    .r-triangle{
+            translate: 3px 0 ;
+            border-style: solid;
+            border-width: 12px 0 12px 24px;
+            border-color: transparent transparent transparent rgb(188 99 242 / var(--tw-bg-opacity));
+    }
+        
+        }
+            </style>
+    <script src="../assets/js/tailwind.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    gridTemplateRows: {
+                        calendar: "repeat(48, minmax(48px, 1fr))"
+                    },
+                    gridTemplateColumns: {
+                        calendar: "repeat(8, minmax(0, 105px))"
+                    },
+                    boxShadow: {
+                        "normal": "0px 0px 24px 10px #e1e1e1"
+                    },
+                    colors: {
+                        primaryLight: "#F2E0FC",
+                        primary: "#BC63F2",
+                        primaryDark: "#A345DC",
+                        black: "#000000",
+                        black50: "#0007",
+                        darkBlack: "#181818",
+                        darkBlack50: "#18181877",
+                        warning: "#FAF9D0",
+                        grey: "#F5F5F5",
+                        gray: "#F2F3F5",
+                        white: "#FFF",
+                        success: "#29CC6A",
+                        error: "#FF5353",
+                        info: "#3C82F5"
+                    },
+                    borderWidth: {
+                        1: "1px"
+                    }
+                },
+                fontFamily: {
+                    montserrat: 'Montserrat'
+                },
+
+                screens: {
+                    '2xl': '1400px',
+                    'xl': '1200px',
+                    'lg': '1024px',
+                    'md': '768px',
+                    'sm': '640px',
+                    'xs': '480px'
+                }
+            }
+        }
+    </script>
 </head>
 
 <body class="flex flex-wrap justify-end bg-[#F5F5F5] font-montserrat">
@@ -69,7 +169,7 @@
             <li class="w-1/3  relative h-full">
                 <div class=" relative z-[2] gap-y-3 flex items-center flex-col   ">
                     <span text class="whitespace-nowrap text-black50 text-xs text-center block"> Personal</span>
-                    
+
                     <span circle
                         class="bg-primary w-4 h-4  border-[1px] border-primary border-solid rounded-full"></span>
                 </div>
@@ -78,9 +178,8 @@
             <!-- STEP 2 -->
             <li class="w-1/3 active-stepper relative h-full">
                 <div class=" relative z-[2] gap-y-3 flex items-center flex-col  ">
-                    <span text
-                        class="whitespace-nowrap text-black50 text-xs text-center  block">Medical</span>
-                 
+                    <span text class="whitespace-nowrap text-black50 text-xs text-center  block">Medical</span>
+
                     <span circle
                         class="bg-primary w-4 h-4  border-[1px] border-primary border-solid rounded-full"></span>
                 </div>
@@ -91,13 +190,13 @@
             <li class="w-1/3 relative">
                 <div class=" relative z-[2] gap-y-3 flex items-center flex-col  ">
                     <span text class="whitespace-nowrap text-black50 text-xs text-center  block">Habits</span>
-                    
+
                     <span circle
                         class="bg-primary w-4 h-4  border-[1px] border-primary border-solid rounded-full"></span>
                 </div>
 
             </li>
-          
+
         </ol>
 
 
@@ -110,11 +209,50 @@
                     information</h3>
             </div>
 
-            <!-- User full name -->
             <div class="relative col-span-6">
                 <label for="name" class="text-[11px] absolute top-[-8px] left-4 text-primary bg-white px-2"> Enter your
                     name</label>
                 <input type="text" name="name" placeholder="for example: John Doe"
+                    class="w-full border-[1px] border-solid border-primary rounded-full px-4 py-2 placeholder:text-black50 placeholder:text-xs text-center focus-visible:outline-none" />
+            </div>
+            <div class="relative col-span-6 hasError">
+                <img src="../assets/icons/error.svg" alt="" class="absolute right-7 top-[14px] z-[19]">
+
+                <label for="name"
+                    class="text-[11px] absolute top-[-8px] left-4 text-primary bg-white px-2">Question</label>
+                <input type="text" name="name" placeholder="Answer"
+                    class="w-full border-[1px] border-solid border-primary rounded-full px-4 py-2 placeholder:text-black50 placeholder:text-xs text-center focus-visible:outline-none" />
+            </div>
+            <div class="relative col-span-6 lg:col-span-3">
+                <img src="../assets/icons/check-circle.svg" alt="" class="absolute right-7 top-[14px] z-[19]">
+
+                <label for="name"
+                    class="text-[11px] absolute top-[-8px] left-4 text-primary bg-white px-2">Question</label>
+                <input type="text" name="name" placeholder="Answer"
+                    class="w-full border-[1px] border-solid border-primary rounded-full px-4 py-2 placeholder:text-black50 placeholder:text-xs text-center focus-visible:outline-none" />
+            </div>
+            <div class="relative col-span-6 lg:col-span-3">
+                <label for="name"
+                    class="text-[11px] absolute top-[-8px] left-4 text-primary bg-white px-2">Question</label>
+                <input type="text" name="name" placeholder="Answer"
+                    class="w-full border-[1px] border-solid border-primary rounded-full px-4 py-2 placeholder:text-black50 placeholder:text-xs text-center focus-visible:outline-none" />
+            </div>
+            <div class="relative col-span-6 lg:col-span-2">
+                <label for="name"
+                    class="text-[11px] absolute top-[-8px] left-4 text-primary bg-white px-2">Question</label>
+                <input type="text" name="name" placeholder="Answer"
+                    class="w-full border-[1px] border-solid border-primary rounded-full px-4 py-2 placeholder:text-black50 placeholder:text-xs text-center focus-visible:outline-none" />
+            </div>
+            <div class="relative col-span-6 lg:col-span-2">
+                <label for="name"
+                    class="text-[11px] absolute top-[-8px] left-4 text-primary bg-white px-2">Question</label>
+                <input type="text" name="name" placeholder="Answer"
+                    class="w-full border-[1px] border-solid border-primary rounded-full px-4 py-2 placeholder:text-black50 placeholder:text-xs text-center focus-visible:outline-none" />
+            </div>
+            <div class="relative col-span-6 lg:col-span-2">
+                <label for="name"
+                    class="text-[11px] absolute top-[-8px] left-4 text-primary bg-white px-2">Question</label>
+                <input type="text" name="name" placeholder="Answer"
                     class="w-full border-[1px] border-solid border-primary rounded-full px-4 py-2 placeholder:text-black50 placeholder:text-xs text-center focus-visible:outline-none" />
             </div>
 
@@ -123,7 +261,7 @@
 
             <!-- User gender -->
             <!--  pay attention to hasError calss  -->
-            <div class="relative  col-span-6 lg:col-span-2 selectBox hasError"  select-container>
+            <div class="relative  col-span-6 lg:col-span-2 selectBox hasError" select-container>
                 <img src="../assets/icons/error.svg" alt="" class="absolute right-7 top-[14px] z-[19]">
                 <button type="button" dropdown-toggler
                     class="z-[12] relative  w-full  bg-white   border-[1px] border-solid border-primary rounded-full text-xs py-3 "
@@ -191,7 +329,7 @@
 
             <!-- User birthdate -->
             <div class="relative col-span-6 lg:col-span-2 z-[5]">
-                
+
                 <label for="name" class="text-[11px] absolute top-[-8px] left-4 text-primary bg-white px-2"> Enter your
                     date of birth</label>
                 <input type="text" name="name" placeholder="MM / DD / YYYY" datepicker autoSize
@@ -210,7 +348,7 @@
 
             <!-- User phone number -->
             <div class="relative col-span-6 lg:col-span-3 ">
-                
+
                 <label for="name" class="text-[11px] absolute top-[-8px] left-4 text-primary bg-white px-2"> Enter your
                     phone number</label>
                 <input type="text" name="name" placeholder="(248) 654 1769"
@@ -219,8 +357,7 @@
                 <div select-container class=" absolute left-4   top-3 ">
 
                     <div class=" flex items-center justify-between  pl-1 pr-3 text-sm bg-primaryLight h-5 w-20 rounded-full"
-                        modal-toggler
-                        data-target="#select-country-modal">
+                        modal-toggler data-target="#select-country-modal">
                         <img src="../assets/images/usa.png" alt="">
                         <span class="" selectable-text> +1</span>
                     </div>
@@ -248,8 +385,8 @@
                 </button>
             </div>
     </main>
-    <div class="relative z-20 transition" id="select-country-modal"  togglable aria-labelledby="modal-title" role="dialog"
-        aria-modal="true">
+    <div class="relative z-20 transition" id="select-country-modal" togglable aria-labelledby="modal-title"
+        role="dialog" aria-modal="true">
 
         <!-- BACKDROP -->
         <div class="fixed inset-0 bg-[#0008] bg-opacity-75 transition-opacity" closer></div>
@@ -266,21 +403,27 @@
                         <div class=" rounded-lg  min-h-[300px] relative overflow-auto  ">
                             <input type="text" name="name" placeholder="Search"
                                 class="w-full border-[1px] border-solid border-slate-400 rounded-full px-4 py-2 placeholder:text-black50 placeholder:text-xs text-center focus-visible:outline-none" />
-                                <div class="flex flex-col   pt-2">
-                                    <div class="flex gap-4 border-b-1 transition py-4 border-slate-400 hover:bg-primaryLight" role="button">
-                                            <img src="../assets/images/usa.png" class="w-6 h-6 rounded-full object-cover object-center" alt="flag name">
-                                            <span>(+1) America</span>
-                                    </div>
-                                    <div class="flex gap-4 border-b-1 transition py-4 border-slate-400 hover:bg-primaryLight" role="button">
-                                            <img src="../assets/images/usa.png" class="w-6 h-6 rounded-full object-cover object-center" alt="flag name">
-                                            <span>(+1) America</span>
-                                    </div>
-                                    <div class="flex gap-4 border-b-1 transition py-4 border-slate-400 hover:bg-primaryLight" role="button">
-                                            <img src="../assets/images/usa.png" class="w-6 h-6 rounded-full object-cover object-center" alt="flag name">
-                                            <span>(+1) America</span>
-                                    </div>
+                            <div class="flex flex-col   pt-2">
+                                <div class="flex gap-4 border-b-1 transition py-4 border-slate-400 hover:bg-primaryLight"
+                                    role="button">
+                                    <img src="../assets/images/usa.png"
+                                        class="w-6 h-6 rounded-full object-cover object-center" alt="flag name">
+                                    <span>(+1) America</span>
                                 </div>
-                        </div>  
+                                <div class="flex gap-4 border-b-1 transition py-4 border-slate-400 hover:bg-primaryLight"
+                                    role="button">
+                                    <img src="../assets/images/usa.png"
+                                        class="w-6 h-6 rounded-full object-cover object-center" alt="flag name">
+                                    <span>(+1) America</span>
+                                </div>
+                                <div class="flex gap-4 border-b-1 transition py-4 border-slate-400 hover:bg-primaryLight"
+                                    role="button">
+                                    <img src="../assets/images/usa.png"
+                                        class="w-6 h-6 rounded-full object-cover object-center" alt="flag name">
+                                    <span>(+1) America</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
